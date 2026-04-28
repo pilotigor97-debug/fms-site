@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, AlertCircle } from "lucide-react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { FirebaseError } from "firebase/app";
 import { getClientAuth } from "@/lib/firebase-client";
 
 export default function LoginPage() {
@@ -58,8 +57,13 @@ export default function LoginPage() {
   }
 
   function humanizeFirebaseAuthError(err: unknown): string {
-    if (err instanceof FirebaseError) {
-      switch (err.code) {
+    // Duck-typing em vez de `instanceof FirebaseError`: o Next.js bundler
+    // pode duplicar módulos `firebase/*` vs `@firebase/*`, fazendo o
+    // erro lançado pela SDK NÃO bater com o constructor que importamos.
+    // O `code` (string "auth/...") é estável e sempre presente.
+    const code = (err as { code?: unknown })?.code;
+    if (typeof code === "string") {
+      switch (code) {
         case "auth/invalid-credential":
         case "auth/wrong-password":
         case "auth/user-not-found":
@@ -71,8 +75,9 @@ export default function LoginPage() {
           return "Muitas tentativas. Aguarde alguns minutos.";
         case "auth/network-request-failed":
           return "Sem conexão. Verifique sua internet.";
-        default:
-          return "Erro ao entrar. Tente novamente em instantes.";
+      }
+      if (code.startsWith("auth/")) {
+        return "Erro ao entrar. Tente novamente em instantes.";
       }
     }
     return "Sem conexão com o servidor. Verifique sua internet.";
