@@ -1,0 +1,31 @@
+# Lista de exclusões para `firebase deploy` (App Hosting). Sem este
+# arquivo, gcloud/firebase importa .gitignore — que exclui /public/app/
+# (binário do Flutter Web buildado). Resultado: deploy ia sem o app.
+#
+# Aqui listamos só o que realmente NÃO deve ir pro Cloud (build artifacts
+# pesados, segredos, dependências reinstaláveis). public/app/ NÃO está
+# aqui de propósito — queremos que o Flutter Web buildado vá pro deploy.
+
+node_modules
+.git
+.gitignore
+.next/cache
+
+# Segredos — protege contra deploy acidental de credenciais.
+.env
+.env*.local
+.env*.backup-*
+
+# Logs de debug
+*.log
+firebase-debug.log
+ui-debug.log
+firestore-debug.log
+
+# macOS / IDE
+.DS_Store
+.vscode
+.idea
+
+# Build artifact da AUDITORIA (markdown, fica leve mas não precisa em prod)
+AUDITORIA

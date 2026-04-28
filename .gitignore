@@ -30,8 +30,11 @@ yarn-error.log*
 .env*.backup-*
 
 # build artifact do app Flutter (48MB de canvaskit/main.dart.js).
-# Gerado por `npm run build:flutter`. NÃO committar — é output, não fonte.
-/public/app/
+# Gerado por `npm run build:flutter`. Commitamos por enquanto porque
+# Firebase App Hosting `firebase deploy` usa `.gitignore` para empacotar
+# e ignoraria essa pasta — sem alternativa simples (Cloud Build sem
+# Flutter SDK por padrão). Otimização futura: build hook que instala
+# Flutter no buildpack e roda `flutter build web` durante o rollout.
 
 # typescript
 *.tsbuildinfo
