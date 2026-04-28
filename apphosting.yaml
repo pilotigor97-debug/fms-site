@@ -26,21 +26,28 @@ env:
 
   - variable: NEXT_PUBLIC_APP_URL
     # URL do app Flutter pro handoff de login.
-    value: https://opspilot-dev.web.app
+    # Migrado para relatorio-tecnico-dev em 2026-04-28 (auth unificada
+    # com o projeto Firebase do app Flutter — vide .env.local.backup-opspilot-dev
+    # para o estado anterior).
+    value: https://relatorio-tecnico-dev.web.app
     availability:
       - BUILD
       - RUNTIME
 
   # ─── Server-side (não vão pro bundle client) ─────────────────
+  # NOTA: o site agora compartilha o mesmo Firebase project do app Flutter
+  # para que custom tokens / users / companies fiquem em um lugar só.
+  # Antes: opspilot-dev. Agora: relatorio-tecnico-dev (dev) ou
+  # relatorio-tecnico-4ae8c (prod, quando promover este apphosting.yaml).
   - variable: FIREBASE_PROJECT_ID
-    value: opspilot-dev
+    value: relatorio-tecnico-dev
     availability:
       - RUNTIME
 
   - variable: FIREBASE_WEB_API_KEY
-    # Web API Key não é segredo absoluto (já vai pro client em apps web
-    # normais), mas mantemos server-side por organização.
-    value: AIzaSyA2f8TcsgffjbDylxcyO3OEprR0JY6-Gn8
+    # Web API Key do projeto relatorio-tecnico-dev. Veio de
+    # lib/firebase_options_dev.dart no repo do app Flutter.
+    value: AIzaSyAql8EMHb7RKWbDBtuk2SiHySeUeeHQGOM
     availability:
       - RUNTIME
 
@@ -50,9 +57,15 @@ env:
       - RUNTIME
 
   # ─── Secrets (gerenciados via Google Secret Manager) ─────────
-  # Setar via CLI:
+  # ⚠ Após migração 2026-04-28 (opspilot-dev → relatorio-tecnico-dev), os
+  # secrets precisam ser RE-SETADOS porque secrets são por projeto:
+  #
+  #   firebase use relatorio-tecnico-dev
   #   firebase apphosting:secrets:set FIREBASE_CLIENT_EMAIL
   #   firebase apphosting:secrets:set FIREBASE_PRIVATE_KEY
+  #
+  # Os valores estão em scripts/serviceAccountKeyDev.json (no repo do
+  # app Flutter, fora do git).
   - variable: FIREBASE_CLIENT_EMAIL
     secret: FIREBASE_CLIENT_EMAIL
     availability:

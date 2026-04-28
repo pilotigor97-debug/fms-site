@@ -27,6 +27,11 @@ yarn-error.log*
 # local env files — NUNCA committar (contém Firebase Admin private key)
 .env*.local
 .env
+.env*.backup-*
+
+# build artifact do app Flutter (48MB de canvaskit/main.dart.js).
+# Gerado por `npm run build:flutter`. NÃO committar — é output, não fonte.
+/public/app/
 
 # typescript
 *.tsbuildinfo

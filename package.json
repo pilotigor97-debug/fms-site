@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:flutter": "cd ../relatorio_tecnico && /Users/fernandes/development/flutter/bin/flutter build web --release --dart-define=APP_FLAVOR=dev --base-href=/app/ && rsync -a --delete build/web/ ../fms-site/public/app/",
+    "build:all": "npm run build:flutter && npm run build",
     "start": "next start",
     "lint": "next lint"
   },
