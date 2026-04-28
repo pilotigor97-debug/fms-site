@@ -13,12 +13,31 @@
  *   - Lazy init só roda no PRIMEIRO request real, quando as envs
  *     já estão carregadas. Build passa limpo.
  */
-import { initializeApp, getApps, cert, type App } from 'firebase-admin/app';
+import {
+  initializeApp,
+  getApps,
+  cert,
+  applicationDefault,
+  type App,
+} from 'firebase-admin/app';
 import { getAuth, type Auth } from 'firebase-admin/auth';
 import { getFirestore, type Firestore } from 'firebase-admin/firestore';
 
 let cachedApp: App | null = null;
 
+/**
+ * Resolve credenciais conforme ambiente:
+ *
+ * - **Cloud Run / App Hosting** (detectado por env `K_SERVICE`): usa ADC
+ *   (Application Default Credentials = identidade da SA do runtime, que
+ *   já tem `firebase.sdkAdminServiceAgent`). Elimina complicações com
+ *   formato de PEM em Secret Manager — cada tentativa anterior dava
+ *   `invalid_grant: account not found`.
+ *
+ * - **Local / outros**: usa `cert()` com FIREBASE_CLIENT_EMAIL e
+ *   FIREBASE_PRIVATE_KEY do `.env.local`. Funciona porque dotenv
+ *   parseia o PEM com `\n` literal preservado.
+ */
 function getApp(): App {
   if (cachedApp) return cachedApp;
   if (getApps().length > 0) {
@@ -27,13 +46,26 @@ function getApp(): App {
   }
 
   const projectId = process.env.FIREBASE_PROJECT_ID;
+  if (!projectId) {
+    throw new Error('Firebase Admin: FIREBASE_PROJECT_ID ausente.');
+  }
+
+  // Cloud Run / App Hosting → ADC.
+  if (process.env.K_SERVICE) {
+    cachedApp = initializeApp({
+      credential: applicationDefault(),
+      projectId,
+    });
+    return cachedApp;
+  }
+
+  // Local → cert via env vars.
   const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
   const privateKey = process.env.FIREBASE_PRIVATE_KEY;
-
-  if (!projectId || !clientEmail || !privateKey) {
+  if (!clientEmail || !privateKey) {
     throw new Error(
-      'Firebase Admin: variáveis de ambiente faltando. ' +
-        'Confira FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL e FIREBASE_PRIVATE_KEY.'
+      'Firebase Admin: FIREBASE_CLIENT_EMAIL ou FIREBASE_PRIVATE_KEY faltando ' +
+        'pra modo local. Em Cloud Run usaria ADC automático.'
     );
   }
 
@@ -41,12 +73,8 @@ function getApp(): App {
     credential: cert({
       projectId,
       clientEmail,
-      // No Vercel/dotenv, \n vem escapado como literal "\\n" — reverte.
       privateKey: privateKey.replace(/\\n/g, '\n'),
     }),
-    // Passa explícito pra sobrepor FIREBASE_CONFIG auto-injetado pelo
-    // App Hosting (que aponta pro projeto onde o backend roda, mesmo
-    // quando o Admin SDK precisa apontar pra outro projeto).
     projectId,
   });
   return cachedApp;

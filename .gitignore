@@ -29,7 +29,12 @@ yarn-error.log*
 .env
 .env*.backup-*
 
-# build artifact do app Flutter (48MB de canvaskit/main.dart.js).
+# APKs Android — excedem 100MB do GitHub. APK fica fora do deploy web
+# (download oferecido em outra URL). rsync do build:flutter exclui
+# *.apk via --exclude.
+public/app/**/*.apk
+
+# build artifact do app Flutter (148MB de canvaskit/main.dart.js).
 # Gerado por `npm run build:flutter`. Commitamos por enquanto porque
 # Firebase App Hosting `firebase deploy` usa `.gitignore` para empacotar
 # e ignoraria essa pasta — sem alternativa simples (Cloud Build sem

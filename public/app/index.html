@@ -5,25 +5,173 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="SoluClean - Relatório Técnico">
+  <meta name="description" content="FMS — Field Management System. Software de operações para equipes de campo.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="SoluClean">
+  <meta name="apple-mobile-web-app-title" content="FMS">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Favicon -->
+  <!-- Favicon (fallback — pode ser sobrescrito por tenant via script abaixo) -->
   <link rel="icon" type="image/png" href="favicon.png"/>
+  <meta name="theme-color" content="#2D6BFF">
 
-  <title>SoluClean - Relatório Técnico</title>
+  <title>FMS — Field Management System</title>
   <link rel="manifest" href="manifest.json">
 
   <style>
-    body { background-color: #263750; }
+    body { background-color: #2D6BFF; }
   </style>
+
+  <!--
+    WHITE-LABEL DINÂMICO
+    2 modos de detecção de tenant (na ordem):
+      (1) Path `/t/{slug}` (Phase 2A — branded URL `opspilot-prod.web.app/t/soluclean`)
+          Faz lookup `subdomains/{slug}` → companyId → companies/{companyId}.
+      (2) Query `?c={companyId}` ou `?portal={companyId}` (legacy)
+          Lê direto `companies/{companyId}`.
+
+    Em ambos: sobrescreve title, favicon, theme-color e manifest antes do
+    Flutter carregar pra o PWA instalado ficar com cara do prestador.
+    Falha silenciosa cai no default FMS.
+  -->
+  <script>
+    (async function() {
+      try {
+        // TROCAR EM PROD: 'opspilot-dev' → 'opspilot-prod'
+        var PROJECT = 'opspilot-dev';
+        var REST_BASE = 'https://firestore.googleapis.com/v1/projects/' + PROJECT +
+                        '/databases/(default)/documents/';
+
+        // (1) Path `/t/{slug}` tem precedência
+        var slugMatch = window.location.pathname.match(
+          /^\/t\/([a-z0-9](?:[a-z0-9-]{1,28}[a-z0-9])?)(?:\/|$)/
+        );
+        var slug = slugMatch ? slugMatch[1] : null;
+
+        // (2) Legacy `?c=` / `?portal=`
+        var params = new URLSearchParams(window.location.search);
+        var companyId = params.get('c') || params.get('portal');
+
+        if (!slug && !companyId) return;
+
+        // Cache: chave por slug (estável) ou por companyId (legacy)
+        var cacheKey = slug ? ('brandCache:slug:' + slug)
+                            : ('brandCache:' + companyId);
+        var cached = null;
+        try {
+          var raw = localStorage.getItem(cacheKey);
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && parsed.ts && Date.now() - parsed.ts < 24 * 3600 * 1000) {
+              cached = parsed.data;
+            }
+          }
+        } catch (_) { /* ignore */ }
+
+        var branding = cached;
+
+        // Se viemos por slug e ainda não temos companyId resolvido,
+        // primeiro lookup em `subdomains/{slug}`
+        if (!branding && slug && !companyId) {
+          var subResp = await fetch(REST_BASE + 'subdomains/' +
+                                    encodeURIComponent(slug));
+          if (!subResp.ok) return;
+          var subData = await subResp.json();
+          var subFields = (subData && subData.fields) || {};
+          companyId = (subFields.companyId && subFields.companyId.stringValue) || null;
+          if (!companyId) return;
+        }
+
+        if (!branding && companyId) {
+          var resp = await fetch(REST_BASE + 'companies/' +
+                                 encodeURIComponent(companyId));
+          if (!resp.ok) return;
+          var data = await resp.json();
+          var fields = (data && data.fields && data.fields.branding &&
+                        data.fields.branding.mapValue &&
+                        data.fields.branding.mapValue.fields) || {};
+          branding = {
+            displayName: (fields.displayName && fields.displayName.stringValue) || 'FMS — Field Management System',
+            logoUrl: fields.logoUrl && fields.logoUrl.stringValue,
+            faviconUrl: fields.faviconUrl && fields.faviconUrl.stringValue,
+            primaryColorHex: (fields.primaryColorHex && fields.primaryColorHex.stringValue) || '#2D6BFF',
+          };
+          try {
+            localStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), data: branding }));
+          } catch (_) { /* ignore quota */ }
+        }
+
+        if (!branding) return;
+
+        // Title
+        document.title = branding.displayName;
+        var appleTitle = document.querySelector('meta[name="apple-mobile-web-app-title"]');
+        if (appleTitle) appleTitle.setAttribute('content', branding.displayName);
+
+        // Favicon
+        var iconUrl = branding.faviconUrl || branding.logoUrl;
+        if (iconUrl) {
+          var iconLink = document.querySelector('link[rel="icon"]');
+          if (!iconLink) {
+            iconLink = document.createElement('link');
+            iconLink.rel = 'icon';
+            document.head.appendChild(iconLink);
+          }
+          iconLink.removeAttribute('type');
+          iconLink.href = iconUrl;
+          var appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+          if (appleIcon) appleIcon.href = iconUrl;
+        }
+
+        // Theme color
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (!themeMeta) {
+          themeMeta = document.createElement('meta');
+          themeMeta.name = 'theme-color';
+          document.head.appendChild(themeMeta);
+        }
+        themeMeta.setAttribute('content', branding.primaryColorHex);
+
+        // Manifest dinâmico via Blob URL
+        var iconsArr = branding.logoUrl ? [
+          { src: branding.logoUrl, sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: branding.logoUrl, sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: branding.logoUrl, sizes: '192x192', type: 'image/png', purpose: 'maskable' },
+          { src: branding.logoUrl, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ] : [
+          { src: 'icons/Icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'icons/Icon-512.png', sizes: '512x512', type: 'image/png' },
+        ];
+        var shortName = (branding.displayName || 'FMS').slice(0, 12);
+        var manifest = {
+          name: branding.displayName,
+          short_name: shortName,
+          start_url: window.location.pathname + window.location.search,
+          display: 'standalone',
+          background_color: branding.primaryColorHex,
+          theme_color: branding.primaryColorHex,
+          orientation: 'portrait-primary',
+          icons: iconsArr,
+        };
+        var blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+        var manifestUrl = URL.createObjectURL(blob);
+        var manifestLink = document.querySelector('link[rel="manifest"]');
+        if (!manifestLink) {
+          manifestLink = document.createElement('link');
+          manifestLink.rel = 'manifest';
+          document.head.appendChild(manifestLink);
+        }
+        manifestLink.href = manifestUrl;
+      } catch (e) {
+        // silenciosamente cai no manifest default
+        console.warn('White-label init falhou:', e);
+      }
+    })();
+  </script>
 </head>
 <body>
   <!--

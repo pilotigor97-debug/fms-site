@@ -1,0 +1,13 @@
+{
+  "version": "1.3.0-dev",
+  "buildNumber": 12,
+  "flavor": "dev",
+  "minAndroid": "6.0+",
+  "url": "opspilot.apk",
+  "sizeMb": 101,
+  "releasedAt": "2026-04-27",
+  "firebaseProject": "opspilot-dev",
+  "appName": "DEV — FMS",
+  "applicationId": "com.opspilot.app.dev",
+  "notes": "v1.3.0+12 (DEV) — Sprint 3 QA + Manuais Interativos. Drawer ganhou 'Manuais interativos' (Estoque) lendo de interactive_manuals/* no Firestore. Page viewer com 173 páginas, hotspots clicáveis, dialog de info da peça com botão copiar código."
+}

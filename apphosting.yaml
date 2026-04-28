@@ -25,64 +25,58 @@ env:
       - RUNTIME
 
   - variable: NEXT_PUBLIC_APP_URL
-    # URL do app Flutter pro handoff de login.
-    # Migrado para relatorio-tecnico-dev em 2026-04-28 (auth unificada
-    # com o projeto Firebase do app Flutter — vide .env.local.backup-opspilot-dev
-    # para o estado anterior).
-    value: https://relatorio-tecnico-dev.web.app
+    # URL do app Flutter pro handoff de login (legacy custom token,
+    # ainda usado por apps nativos Android/iOS).
+    value: https://opspilot-dev.web.app
     availability:
       - BUILD
       - RUNTIME
 
   # ─── Server-side (não vão pro bundle client) ─────────────────
-  # NOTA: o site agora compartilha o mesmo Firebase project do app Flutter
-  # para que custom tokens / users / companies fiquem em um lugar só.
-  # Antes: opspilot-dev. Agora: relatorio-tecnico-dev (dev) ou
-  # relatorio-tecnico-4ae8c (prod, quando promover este apphosting.yaml).
+  # O site compartilha o mesmo Firebase project do app OpsPilot SaaS
+  # multi-tenant — opspilot-dev em dev, opspilot-prod em prod.
   - variable: FIREBASE_PROJECT_ID
-    value: relatorio-tecnico-dev
+    value: opspilot-dev
     availability:
       - RUNTIME
 
   - variable: FIREBASE_WEB_API_KEY
-    # Web API Key do projeto relatorio-tecnico-dev. Veio de
-    # lib/firebase_options_dev.dart no repo do app Flutter.
-    # Server-side ainda usado pela rota /api/auth/handoff (custom token
-    # para apps nativos Android/iOS). Auth do site web usa Firebase JS SDK.
-    value: AIzaSyAql8EMHb7RKWbDBtuk2SiHySeUeeHQGOM
+    # Web API Key do projeto opspilot-dev. Usado pelas rotas server-side
+    # (/api/auth/login mantido como fallback pra apps nativos).
+    value: AIzaSyA2f8TcsgffjbDylxcyO3OEprR0JY6-Gn8
     availability:
       - RUNTIME
 
   # ─── Firebase Web SDK (client bundle) ────────────────────────
   # Vão pro bundle public do Next.js. Não são segredos — qualquer app
-  # web Firebase expõe estes valores. Permitem ao site fazer login,
-  # signup, e leitura via Firestore Rules direto do client.
+  # web Firebase expõe estes valores. Permitem signup/login client-side
+  # via Firebase JS SDK no mesmo origin do /app/ (Bloco C2 da migração).
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    value: AIzaSyAql8EMHb7RKWbDBtuk2SiHySeUeeHQGOM
+    value: AIzaSyA2f8TcsgffjbDylxcyO3OEprR0JY6-Gn8
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-    value: relatorio-tecnico-dev.firebaseapp.com
+    value: opspilot-dev.firebaseapp.com
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-    value: relatorio-tecnico-dev
+    value: opspilot-dev
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-    value: 1:539265514207:web:2086faaed4a3614ee0876a
+    value: 1:30848564493:web:9c174736b30e753783c444
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-    value: relatorio-tecnico-dev.firebasestorage.app
+    value: opspilot-dev.firebasestorage.app
     availability:
       - BUILD
       - RUNTIME
@@ -93,15 +87,13 @@ env:
       - RUNTIME
 
   # ─── Secrets (gerenciados via Google Secret Manager) ─────────
-  # ⚠ Após migração 2026-04-28 (opspilot-dev → relatorio-tecnico-dev), os
-  # secrets precisam ser RE-SETADOS porque secrets são por projeto:
+  # Versões 2 e 3 (criadas erroneamente nesta sessão com creds de
+  # relatorio-tecnico-dev) foram revertidas — vide
+  # `gcloud secrets versions list` no opspilot-dev.
   #
-  #   firebase use relatorio-tecnico-dev
+  # Setar via CLI (no projeto opspilot-dev):
   #   firebase apphosting:secrets:set FIREBASE_CLIENT_EMAIL
   #   firebase apphosting:secrets:set FIREBASE_PRIVATE_KEY
-  #
-  # Os valores estão em scripts/serviceAccountKeyDev.json (no repo do
-  # app Flutter, fora do git).
   - variable: FIREBASE_CLIENT_EMAIL
     secret: FIREBASE_CLIENT_EMAIL
     availability:
