@@ -16,9 +16,10 @@ runConfig:
 env:
   # ─── Públicas (vão pro client bundle Next.js) ────────────────
   - variable: NEXT_PUBLIC_ROOT_DOMAIN
-    # Atualiza pro hostname final depois que App Hosting der a URL.
-    # Ex: fms-site--opspilot-dev.us-central1.hosted.app
-    value: opspilot-dev.web.app
+    # URL pública do App Hosting. O middleware compara `host` com isto
+    # pra distinguir "site institucional" de "subdomínio de tenant".
+    # Quando comprar fms.com.br, atualiza aqui pra `fms.com.br`.
+    value: fms-site--opspilot-dev.us-central1.hosted.app
     availability:
       - BUILD
       - RUNTIME

@@ -1,0 +1,7 @@
+{
+  "apphosting": {
+    "backendId": "fms-site",
+    "rootDir": "/",
+    "ignore": ["node_modules", ".git", "firebase-debug.log", ".next/cache", ".env*.local"]
+  }
+}
