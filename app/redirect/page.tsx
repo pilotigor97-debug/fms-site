@@ -24,19 +24,18 @@ function RedirectInner() {
   const sp = useSearchParams();
   const sub = sp.get("sub") ?? "workspace";
   const company = sp.get("company") ?? "Workspace";
-  // `to` é a URL completa de handoff no app Flutter
-  // (ex: https://opspilot-dev.web.app/t/soluclean/__handoff__?token=...)
-  // Vinda do /api/auth/login. Se faltar, fallback pra subdomínio
-  // hipotético (não deve acontecer em prod).
-  const to = sp.get("to") ?? `https://${sub}.opspilot.com.br/`;
+  // `to` agora aponta pra `/app/` no mesmo origin (auth unificada via
+  // Firebase JS SDK — sem custom token cross-origin). Aceita também URL
+  // absoluta caso ainda tenha caller legado mandando handoff externo.
+  const to = sp.get("to") ?? "/app/";
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
     const timers = STAGES.map((_, i) =>
       setTimeout(() => setStage(i + 1), 600 + i * 700)
     );
-    // window.location ao invés de router.push: estamos saindo do
-    // domínio do site institucional pro app Flutter (cross-origin).
+    // Mesmo origin agora — `to` relativo ("/app/") funciona via Next.js
+    // serving estático. URL absoluta também funciona (handoff legacy).
     const arrive = setTimeout(
       () => {
         window.location.href = to;
@@ -49,8 +48,12 @@ function RedirectInner() {
     };
   }, [to]);
 
-  // Pra mostrar o domínio bonito no card, extrai do `to`.
+  // Pra mostrar o domínio bonito no card. Para URL relativa, mostra o
+  // host atual (mesmo origin). Para URL absoluta, parseia.
   const targetHost = (() => {
+    if (to.startsWith("/")) {
+      return typeof window !== "undefined" ? window.location.host : "fms.app";
+    }
     try {
       return new URL(to).host;
     } catch {

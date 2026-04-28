@@ -47,8 +47,44 @@ env:
   - variable: FIREBASE_WEB_API_KEY
     # Web API Key do projeto relatorio-tecnico-dev. Veio de
     # lib/firebase_options_dev.dart no repo do app Flutter.
+    # Server-side ainda usado pela rota /api/auth/handoff (custom token
+    # para apps nativos Android/iOS). Auth do site web usa Firebase JS SDK.
     value: AIzaSyAql8EMHb7RKWbDBtuk2SiHySeUeeHQGOM
     availability:
+      - RUNTIME
+
+  # ─── Firebase Web SDK (client bundle) ────────────────────────
+  # Vão pro bundle public do Next.js. Não são segredos — qualquer app
+  # web Firebase expõe estes valores. Permitem ao site fazer login,
+  # signup, e leitura via Firestore Rules direto do client.
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyAql8EMHb7RKWbDBtuk2SiHySeUeeHQGOM
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: relatorio-tecnico-dev.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: relatorio-tecnico-dev
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:539265514207:web:2086faaed4a3614ee0876a
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: relatorio-tecnico-dev.firebasestorage.app
+    availability:
+      - BUILD
       - RUNTIME
 
   - variable: SALES_LEAD_EMAIL

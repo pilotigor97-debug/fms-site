@@ -3,6 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, AlertCircle, MessageSquare } from "lucide-react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { getClientAuth } from "@/lib/firebase-client";
 
 type Mode = "self" | "sales";
 
@@ -94,24 +96,39 @@ function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
         return;
       }
 
-      // (2) Login automático — gera handoff token e leva pro app
-      const loginR = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const loginData = await loginR.json();
-      if (!loginR.ok) {
-        // Edge case: signup OK mas login falhou. Mando pro /login.
+      // (2) Login automático via Firebase JS SDK no mesmo origin do site.
+      // Auth state vai pra IndexedDB do origin, e o Flutter Web em /app/
+      // detecta a sessão automaticamente quando bootar.
+      try {
+        const auth = getClientAuth();
+        const cred = await signInWithEmailAndPassword(auth, email, password);
+        const idToken = await cred.user.getIdToken();
+
+        // Branding do splash — best-effort, não trava o fluxo.
+        let tenant: { slug: string; company: string } | null = null;
+        try {
+          const resp = await fetch("/api/tenant/me", {
+            headers: { Authorization: `Bearer ${idToken}` },
+          });
+          if (resp.ok) {
+            const tdata = await resp.json();
+            tenant = tdata.tenant;
+          }
+        } catch {
+          // sem branding, splash genérico
+        }
+
+        const params = new URLSearchParams({
+          ...(tenant
+            ? { sub: tenant.slug, company: tenant.company }
+            : { company: companyName }),
+          to: "/app/",
+        });
+        router.push(`/redirect?${params.toString()}`);
+      } catch {
+        // Edge case: signup OK mas auto-login falhou. Manda pro /login.
         router.push("/login?msg=signup_ok");
-        return;
       }
-      const params = new URLSearchParams({
-        sub: loginData.tenant.slug,
-        company: loginData.tenant.company,
-        to: loginData.redirectTo,
-      });
-      router.push(`/redirect?${params.toString()}`);
     } catch {
       setError("Sem conexão com o servidor.");
       setLoading(false);

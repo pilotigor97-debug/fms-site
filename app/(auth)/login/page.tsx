@@ -3,6 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, AlertCircle } from "lucide-react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { FirebaseError } from "firebase/app";
+import { getClientAuth } from "@/lib/firebase-client";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -18,36 +21,61 @@ export default function LoginPage() {
     setLoading(true);
     setError(null);
     try {
-      const r = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await r.json();
-      if (!r.ok) {
-        const msg =
-          data.error === "invalid_credentials"
-            ? "E-mail ou senha incorretos."
-            : data.error === "no_admin_tenant"
-              ? data.hint ?? "Sua conta não está vinculada a uma empresa do FMS."
-              : "Erro ao entrar. Tente novamente em instantes.";
-        setError(msg);
-        setLoading(false);
-        return;
+      // Login direto via Firebase JS SDK. Auth state fica em IndexedDB
+      // do origin atual — Flutter Web em /app/ vai detectar a sessão
+      // automaticamente quando bootar.
+      const auth = getClientAuth();
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      const idToken = await cred.user.getIdToken();
+
+      // Resolve tenant pra branding do redirect splash. Se conta não
+      // tiver empresa associada (ex: cliente do portal logando aqui
+      // por engano), redireciona pra /app/ mesmo — o app Flutter
+      // direciona pro flow correto via _RoleDispatcher.
+      let tenant: { slug: string; company: string } | null = null;
+      try {
+        const resp = await fetch("/api/tenant/me", {
+          headers: { Authorization: `Bearer ${idToken}` },
+        });
+        if (resp.ok) {
+          const data = await resp.json();
+          tenant = data.tenant;
+        }
+      } catch {
+        // Sem tenant info, splash genérico — não trava o fluxo.
       }
-      // Mostra a tela de redirect animada com os dados do tenant
-      // resolvido (logo + cor + nome do prestador), e ela faz o
-      // window.location pro app Flutter via /__handoff__?token=...
+
       const params = new URLSearchParams({
-        sub: data.tenant.slug,
-        company: data.tenant.company,
-        to: data.redirectTo,
+        ...(tenant ? { sub: tenant.slug, company: tenant.company } : {}),
+        to: "/app/",
       });
       router.push(`/redirect?${params.toString()}`);
     } catch (err) {
-      setError("Sem conexão com o servidor. Verifique sua internet.");
+      const msg = humanizeFirebaseAuthError(err);
+      setError(msg);
       setLoading(false);
     }
+  }
+
+  function humanizeFirebaseAuthError(err: unknown): string {
+    if (err instanceof FirebaseError) {
+      switch (err.code) {
+        case "auth/invalid-credential":
+        case "auth/wrong-password":
+        case "auth/user-not-found":
+        case "auth/invalid-email":
+          return "E-mail ou senha incorretos.";
+        case "auth/user-disabled":
+          return "Esta conta está desativada. Fale com o administrador.";
+        case "auth/too-many-requests":
+          return "Muitas tentativas. Aguarde alguns minutos.";
+        case "auth/network-request-failed":
+          return "Sem conexão. Verifique sua internet.";
+        default:
+          return "Erro ao entrar. Tente novamente em instantes.";
+      }
+    }
+    return "Sem conexão com o servidor. Verifique sua internet.";
   }
 
   return (
