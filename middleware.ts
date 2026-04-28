@@ -19,8 +19,11 @@ function isMarketingRoot(host: string): boolean {
   if (host === ROOT) return true;
   if (host === `www.${ROOT}`) return true;
   if (host === "localhost" || host === "127.0.0.1") return true;
-  // Firebase App Hosting domains (qualquer subdomínio de hosted.app)
+  // Firebase App Hosting domains (externo: hosted.app; interno: run.app).
+  // O middleware roda dentro do Cloud Run, então o host interno chega
+  // como `*.run.app` mesmo com URL pública sendo `*.hosted.app`.
   if (host.endsWith(".hosted.app")) return true;
+  if (host.endsWith(".run.app")) return true;
   // Firebase Hosting padrão (futuro custom domain via Firebase)
   if (host.endsWith(".web.app") || host.endsWith(".firebaseapp.com")) return true;
   // Vercel preview/prod
