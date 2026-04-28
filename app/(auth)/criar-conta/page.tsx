@@ -122,7 +122,7 @@ function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
           ...(tenant
             ? { sub: tenant.slug, company: tenant.company }
             : { company: companyName }),
-          to: "/app/",
+          to: "/app/index.html",
         });
         router.push(`/redirect?${params.toString()}`);
       } catch {

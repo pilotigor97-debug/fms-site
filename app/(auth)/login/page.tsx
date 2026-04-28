@@ -47,7 +47,7 @@ export default function LoginPage() {
 
       const params = new URLSearchParams({
         ...(tenant ? { sub: tenant.slug, company: tenant.company } : {}),
-        to: "/app/",
+        to: "/app/index.html",
       });
       router.push(`/redirect?${params.toString()}`);
     } catch (err) {

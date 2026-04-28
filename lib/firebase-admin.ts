@@ -44,6 +44,10 @@ function getApp(): App {
       // No Vercel/dotenv, \n vem escapado como literal "\\n" — reverte.
       privateKey: privateKey.replace(/\\n/g, '\n'),
     }),
+    // Passa explícito pra sobrepor FIREBASE_CONFIG auto-injetado pelo
+    // App Hosting (que aponta pro projeto onde o backend roda, mesmo
+    // quando o Admin SDK precisa apontar pra outro projeto).
+    projectId,
   });
   return cachedApp;
 }

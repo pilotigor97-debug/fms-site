@@ -27,7 +27,7 @@ function RedirectInner() {
   // `to` agora aponta pra `/app/` no mesmo origin (auth unificada via
   // Firebase JS SDK — sem custom token cross-origin). Aceita também URL
   // absoluta caso ainda tenha caller legado mandando handoff externo.
-  const to = sp.get("to") ?? "/app/";
+  const to = sp.get("to") ?? "/app/index.html";
   const [stage, setStage] = useState(0);
 
   useEffect(() => {

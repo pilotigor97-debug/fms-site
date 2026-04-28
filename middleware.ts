@@ -29,12 +29,17 @@ export default function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
 
   // (1) Path-based tenant URLs: `/t/{slug}/...` redireciona pro
-  // app Flutter em /app/ que sabe rotear para o tenant correto.
-  // Ex: /t/cleanpro/__handoff__?token=... → /app/t/cleanpro/__handoff__?token=...
+  // app Flutter em /app/index.html (Flutter web roteia internamente).
   // Mantém compat com o handoff URL emitido por /api/auth/login (legacy).
   if (url.pathname.startsWith("/t/")) {
-    const target = `/app${url.pathname}${url.search}`;
+    const target = `/app/index.html${url.search}`;
     return NextResponse.redirect(new URL(target, req.url), 308);
+  }
+
+  // (1b) Bare /app sem barra → /app/index.html (evita 404 do trailing-
+  // slash strip do Next.js).
+  if (url.pathname === "/app" || url.pathname === "/app/") {
+    return NextResponse.redirect(new URL("/app/index.html", req.url), 308);
   }
 
   // (2) Site institucional ou App Hosting → renderiza marketing normal.

@@ -18,6 +18,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { adminAuth } from '@/lib/firebase-admin';
 import { resolveTenantByUid } from '@/lib/tenant';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   const authHeader = req.headers.get('authorization') ?? '';
   const match = authHeader.match(/^Bearer (.+)$/i);
