@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Smartphone } from "lucide-react";
 import { HeroVisual } from "./hero-visual";
 import { HeroFloaters } from "./hero-floaters";
 
@@ -23,15 +23,18 @@ export function Hero() {
             FMS é um console único para agendamento, despacho, prova fotográfica e faturamento — feito para equipes de
             limpeza, manutenção e empreiteiros que tocam o dia direto do celular.
           </p>
-          <div className="mt-8 flex gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/criar-conta" className="inline-flex items-center gap-2 bg-navy-900 text-white px-5 py-3 rounded font-medium hover:bg-ink-900">
               Comece grátis — 14 dias <ArrowRight size={15} />
             </Link>
             <Link href="/contato" className="inline-flex items-center gap-2 border px-5 py-3 rounded font-medium hover:bg-ink-50">
               Agendar demo
             </Link>
+            <Link href="/download" className="inline-flex items-center gap-2 border px-5 py-3 rounded font-medium hover:bg-ink-50 text-ink-700">
+              <Smartphone size={16} /> Baixar app
+            </Link>
           </div>
-          <div className="mt-8 flex gap-6 text-sm text-ink-500">
+          <div className="mt-8 flex flex-wrap gap-6 text-sm text-ink-500">
             {["Sem cartão", "Configura em 8 minutos", "Cancele quando quiser"].map(t => (
               <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} className="text-success" />{t}</span>
             ))}

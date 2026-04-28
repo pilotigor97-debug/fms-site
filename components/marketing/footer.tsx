@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const cols = [
-  { title: "Produto",   links: [["Recursos","/recursos"],["Planos","/planos"],["Novidades","#"],["Roadmap","#"]] },
+  { title: "Produto",   links: [["Recursos","/recursos"],["Planos","/planos"],["Baixar app","/download"],["Roadmap","#"]] },
   { title: "Empresa",   links: [["Sobre","#"],["Clientes","#"],["Contato","/contato"],["Carreiras","#"]] },
   { title: "Recursos",  links: [["Documentação","#"],["API","#"],["Status","#"],["Segurança","#"]] },
   { title: "Legal",     links: [["Privacidade","#"],["Termos","#"],["DPA","#"],["Cookies","#"]] },
