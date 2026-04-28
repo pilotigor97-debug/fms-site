@@ -1,0 +1,63 @@
+# Firebase App Hosting config — site institucional FMS
+# https://firebase.google.com/docs/app-hosting/configure
+#
+# Backend roda em Cloud Run gerenciado pelo Firebase. Cada push pro
+# GitHub branch conectado dispara um build + deploy automático.
+
+runConfig:
+  # Cloud Run serverless. Sem instância sempre-on (custo zero quando
+  # não tem tráfego). Sobe quando recebe requisição.
+  minInstances: 0
+  maxInstances: 10
+  cpu: 1
+  memoryMiB: 512
+  concurrency: 80
+
+env:
+  # ─── Públicas (vão pro client bundle Next.js) ────────────────
+  - variable: NEXT_PUBLIC_ROOT_DOMAIN
+    # Atualiza pro hostname final depois que App Hosting der a URL.
+    # Ex: fms-site--opspilot-dev.us-central1.hosted.app
+    value: opspilot-dev.web.app
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_APP_URL
+    # URL do app Flutter pro handoff de login.
+    value: https://opspilot-dev.web.app
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # ─── Server-side (não vão pro bundle client) ─────────────────
+  - variable: FIREBASE_PROJECT_ID
+    value: opspilot-dev
+    availability:
+      - RUNTIME
+
+  - variable: FIREBASE_WEB_API_KEY
+    # Web API Key não é segredo absoluto (já vai pro client em apps web
+    # normais), mas mantemos server-side por organização.
+    value: AIzaSyA2f8TcsgffjbDylxcyO3OEprR0JY6-Gn8
+    availability:
+      - RUNTIME
+
+  - variable: SALES_LEAD_EMAIL
+    value: atendimento.solucleanrj@gmail.com
+    availability:
+      - RUNTIME
+
+  # ─── Secrets (gerenciados via Google Secret Manager) ─────────
+  # Setar via CLI:
+  #   firebase apphosting:secrets:set FIREBASE_CLIENT_EMAIL
+  #   firebase apphosting:secrets:set FIREBASE_PRIVATE_KEY
+  - variable: FIREBASE_CLIENT_EMAIL
+    secret: FIREBASE_CLIENT_EMAIL
+    availability:
+      - RUNTIME
+
+  - variable: FIREBASE_PRIVATE_KEY
+    secret: FIREBASE_PRIVATE_KEY
+    availability:
+      - RUNTIME
