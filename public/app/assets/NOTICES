@@ -5787,6 +5787,7 @@ SUCH DAMAGE.
 cross_file
 file_selector_platform_interface
 flutter_plugin_android_lifecycle
+google_fonts
 image_picker_platform_interface
 path_provider_android
 
