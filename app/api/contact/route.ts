@@ -5,14 +5,15 @@
  * `SALES_LEAD_EMAIL` reutilizando a extensão `firestore-send-email`
  * já instalada no projeto (collection `mail/`).
  *
- * Sem auth: é form público anti-spam. Em escala, considerar:
- *   - reCAPTCHA v3 client-side
- *   - Rate-limit por IP via middleware
+ * **Audit A9 fix:** rate-limit por IP via Firestore. 3 leads / 15min
+ * por IP — cobre form aberto sem reCAPTCHA. Anti-spam suficiente até
+ * decidirmos integrar reCAPTCHA v3.
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { adminDb } from '@/lib/firebase-admin';
 import { FieldValue } from 'firebase-admin/firestore';
+import { checkIpRateLimit, getRequestIp } from '@/lib/rate-limit';
 
 const Body = z.object({
   name: z.string().min(2).max(100),
@@ -31,6 +32,35 @@ export async function POST(req: NextRequest) {
       { error: 'server_misconfigured' },
       { status: 500 }
     );
+  }
+
+  // Audit A9 — rate-limit IP. Lead form aberto = alvo de spam bot.
+  // 3 envios / 15min por IP é suficiente pra prospect legítimo
+  // (geralmente envia 1x e espera resposta) e bloqueia farms de bot.
+  try {
+    await checkIpRateLimit(
+      getRequestIp(req),
+      'contact_form',
+      3,
+      15 * 60 * 1000,
+    );
+  } catch (e: unknown) {
+    const err = e as { code?: string; retryAfterSec?: number; message?: string };
+    if (err.code === 'rate_limited') {
+      return NextResponse.json(
+        {
+          error: 'rate_limited',
+          retryAfterSec: err.retryAfterSec,
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(err.retryAfterSec ?? 60),
+          },
+        },
+      );
+    }
+    throw e;
   }
 
   let body: unknown;
