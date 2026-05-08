@@ -4,7 +4,7 @@ const cols = [
   { title: "Produto",   links: [["Recursos","/recursos"],["Planos","/planos"],["Baixar app","/download"],["Roadmap","#"]] },
   { title: "Empresa",   links: [["Sobre","#"],["Clientes","#"],["Contato","/contato"],["Carreiras","#"]] },
   { title: "Recursos",  links: [["Documentação","#"],["API","#"],["Status","#"],["Segurança","#"]] },
-  { title: "Legal",     links: [["Privacidade","#"],["Termos","#"],["DPA","#"],["Cookies","#"]] },
+  { title: "Legal",     links: [["Privacidade","/politica-privacidade"],["Termos","/termos-uso"],["DPO: atendimento.solucleanrj@gmail.com","mailto:atendimento.solucleanrj@gmail.com"]] },
 ] as const;
 
 export function Footer() {
