@@ -1,13 +1,13 @@
 {
-  "version": "1.3.0-dev",
-  "buildNumber": 12,
+  "version": "1.4.0-dev",
+  "buildNumber": 13,
   "flavor": "dev",
   "minAndroid": "6.0+",
-  "url": "opspilot.apk",
-  "sizeMb": 101,
-  "releasedAt": "2026-04-27",
+  "url": "https://firebasestorage.googleapis.com/v0/b/opspilot-dev.firebasestorage.app/o/public-downloads%2Fopspilot.apk?alt=media",
+  "sizeMb": 114,
+  "releasedAt": "2026-05-10",
   "firebaseProject": "opspilot-dev",
   "appName": "DEV — FMS",
   "applicationId": "com.opspilot.app.dev",
-  "notes": "v1.3.0+12 (DEV) — Sprint 3 QA + Manuais Interativos. Drawer ganhou 'Manuais interativos' (Estoque) lendo de interactive_manuals/* no Firestore. Page viewer com 173 páginas, hotspots clicáveis, dialog de info da peça com botão copiar código."
+  "notes": "v1.4.0+13 (DEV) — Fase 1 IA universal (Assistente IA chat read-only, multi-tenant), LGPD Tier 1+2 (excluir conta, exportar dados, política/termos públicos, cookie banner, consent persistido no signup), Knowledge Base de manuais (hub unificado: visualizar / buscar peças / gerenciar — admin upload + pipeline Python OCR + busca textual + 3 manuais seed SoluClean B70/Brava/A5 com 187 páginas e 2222 peças), Hardening (cleanup audit_logs 90d, backup Firestore mensal, Storage versioning, fix 3 erros latentes web release), Wave 1-4 bug fixes (B12 rate-limit resolveTenant, B13 reauth ações sensíveis, OCC B6, atomic counter B10, lint+CI cross-platform), UX 3 tipos resource-exhausted distinguidos no chat IA."
 }

@@ -8,9 +8,12 @@ import {
   Chrome,
 } from "lucide-react";
 
-// URL do APK hospedado no Firebase Hosting do projeto opspilot-dev.
-// Quando promover pra prod, trocar opspilot-dev → opspilot-prod.
-const APK_URL = "https://opspilot-dev.web.app/download/opspilot.apk";
+// URL do APK hospedado no Firebase Storage (path público /public-downloads/).
+// Atualizar via `gsutil cp ... gs://opspilot-{env}.firebasestorage.app/public-downloads/opspilot.apk`
+// quando subir nova build. version.json em /app/download/ tem metadata.
+// Pra prod: trocar opspilot-dev → opspilot-prod.
+const APK_URL =
+  "https://firebasestorage.googleapis.com/v0/b/opspilot-dev.firebasestorage.app/o/public-downloads%2Fopspilot.apk?alt=media";
 
 export const metadata = {
   title: "Baixar app · FMS",
