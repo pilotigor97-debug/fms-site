@@ -38941,14 +38941,14 @@ _.f=f
 _.r=g
 _.w=h
 _.x=i},
-Gf(b1,b2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5=null,a6="defaultQuoteTerms",a7="aiCredits",a8="onboarding",a9=J.S(b2),b0=a9.h(b2,"name")
-b0=A.a7(b0==null?"":b0)
-s=a9.h(b2,"cnpj")
+Gf(b2,b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5=null,a6="defaultQuoteTerms",a7="vertical",a8="aiCredits",a9="onboarding",b0=J.S(b3),b1=b0.h(b3,"name")
+b1=A.a7(b1==null?"":b1)
+s=b0.h(b3,"cnpj")
 s=A.a7(s==null?"":s)
-r=A.a_(a9.h(b2,"logoUrl"))
-q=a9.h(b2,"plan")
+r=A.a_(b0.h(b3,"logoUrl"))
+q=b0.h(b3,"plan")
 q=A.a7(q==null?"free":q)
-p=a9.h(b2,"branding")
+p=b0.h(b3,"branding")
 if(p==null){p=t.z
 p=A.A(p,p)}o=t.P
 o.a(p)
@@ -38969,7 +38969,7 @@ e=A.a_(n.h(p,"subdomain"))
 d=A.a_(n.h(p,"customDomain"))
 p=n.h(p,"notificationEmail")
 p=A.a7(p==null?"":p)
-n=a9.h(b2,"settings")
+n=b0.h(b3,"settings")
 if(n==null){n=t.z
 n=A.A(n,n)}o.a(n)
 c=J.S(n)
@@ -38985,38 +38985,40 @@ a=t.kc.a(c.h(n,"enabledManualIds"))
 a=a==null?a5:J.dH(a,t.N)
 if(a==null)a=B.ay
 a0=A.a_(c.h(n,a6))
-n=(a0==null?"":a0).length!==0?A.a7(c.h(n,a6)):u.v
-c=a9.h(b2,"billing")
-if(c==null){c=t.z
-c=A.A(c,c)}o.a(c)
-a0=J.S(c)
-A.a_(a0.h(c,"asaasCustomerId"))
-A.a_(a0.h(c,"asaasSubscriptionId"))
-A.a_(a0.h(c,"stripeCustomerId"))
-A.a_(a0.h(c,"stripeSubscriptionId"))
-a1=a0.h(c,"status")
+a0=(a0==null?"":a0).length!==0?A.a7(c.h(n,a6)):u.v
+a1=A.a_(c.h(n,a7))
+if((a1==null?a5:a1.length!==0)===!0)A.a7(c.h(n,a7))
+n=b0.h(b3,"billing")
+if(n==null){n=t.z
+n=A.A(n,n)}o.a(n)
+c=J.S(n)
+A.a_(c.h(n,"asaasCustomerId"))
+A.a_(c.h(n,"asaasSubscriptionId"))
+A.a_(c.h(n,"stripeCustomerId"))
+A.a_(c.h(n,"stripeSubscriptionId"))
+a1=c.h(n,"status")
 a1=A.a7(a1==null?"trialing":a1)
 a2=t.Q
-a3=a2.a(a0.h(c,"trialEndsAt"))
+a3=a2.a(c.h(n,"trialEndsAt"))
 a3=a3==null?a5:A.d1(a3.gdG())
-a4=a2.a(a0.h(c,"currentPeriodEnd"))
+a4=a2.a(c.h(n,"currentPeriodEnd"))
 if(a4!=null)A.d1(a4.gdG())
-A.a_(a0.h(c,"paymentMethod"))
-c=a9.h(b2,a7)!=null?A.bSO(o.a(a9.h(b2,a7))):a5
-if(a9.h(b2,a8)!=null){o=o.a(a9.h(b2,a8))
-a0=J.S(o)
-a4=a0.h(o,"completed")
+A.a_(c.h(n,"paymentMethod"))
+n=b0.h(b3,a8)!=null?A.bSO(o.a(b0.h(b3,a8))):a5
+if(b0.h(b3,a9)!=null){o=o.a(b0.h(b3,a9))
+c=J.S(o)
+a4=c.h(o,"completed")
 a4=A.fh(a4==null?!1:a4)
-o=a2.a(a0.h(o,"completedAt"))
+o=a2.a(c.h(o,"completedAt"))
 if(o!=null)A.d1(o.gdG())
 o=new A.aFs(a4)}else o=a5
-a0=a2.a(a9.h(b2,"createdAt"))
-if((a0==null?a5:A.d1(a0.gdG()))==null)Date.now()
-a0=a2.a(a9.h(b2,"updatedAt"))
-if(a0!=null)A.d1(a0.gdG())
-a9=a9.h(b2,"active")
-A.fh(a9==null?!0:a9)
-return new A.OT(b1,b0,s,r,q,new A.qk(m,l,k,j,i,h,g,f,e,d,p),new A.aFt(b,a,n),new A.aFr(a1,a3),c,o)},
+c=a2.a(b0.h(b3,"createdAt"))
+if((c==null?a5:A.d1(c.gdG()))==null)Date.now()
+c=a2.a(b0.h(b3,"updatedAt"))
+if(c!=null)A.d1(c.gdG())
+b0=b0.h(b3,"active")
+A.fh(b0==null?!0:b0)
+return new A.OT(b2,b1,s,r,q,new A.qk(m,l,k,j,i,h,g,f,e,d,p),new A.aFt(b,a,a0),new A.aFr(a1,a3),n,o)},
 c7K(){var s=null
 return new A.qk("FMS \u2014 Field Management System",s,s,s,"#2D6BFF",s,"","",s,s,"")},
 bSO(a){var s,r,q,p=null,o=J.S(a),n=A.c8(o.h(a,"balance"))
@@ -39057,7 +39059,7 @@ _.y=j
 _.z=k},
 aFt:function aFt(a,b,c){this.a=a
 this.e=b
-this.f=c},
+this.r=c},
 aFr:function aFr(a,b){this.e=a
 this.f=b},
 aFs:function aFs(a){this.a=a},
@@ -158868,12 +158870,12 @@ m=s.length!==0?s:m.cx
 p.w.sbM(0,"Or\xe7amento \u2014 "+m)
 p.x.sbM(0,"Or\xe7amento baseado no relat\xf3rio "+n.a.gc5()+".")
 m=r.d
-m=m==null?null:m.r.f
+m=m==null?null:m.r.r
 if(m==null)m=q
 p.z.sbM(0,m)
 o=J.dH(o,t.gt)
 p.ch=o.fY(o,new A.btj(n),new A.btk())}else{o=r.d
-o=o==null?null:o.r.f
+o=o==null?null:o.r.r
 if(o==null)o=q
 p.z.sbM(0,o)}}},
 $S:0}
