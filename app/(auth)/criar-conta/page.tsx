@@ -1,15 +1,31 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Check, AlertCircle, MessageSquare } from "lucide-react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { getClientAuth } from "@/lib/firebase-client";
 
 type Mode = "self" | "sales";
 
+// Mantém em sync com opspilot/assets/verticals.json (IDs canônicos).
+type Vertical = "rental" | "cleaning" | "hvac" | "remodeling";
+const VERTICAL_LABELS: Record<Vertical, string> = {
+  rental: "Locação & Manutenção de Equipamentos",
+  cleaning: "Limpeza Residencial/Comercial",
+  hvac: "HVAC (Climatização)",
+  remodeling: "Reformas & Construção",
+};
+
+function parseVertical(v: string | null): Vertical | null {
+  if (v && v in VERTICAL_LABELS) return v as Vertical;
+  return null;
+}
+
 export default function CriarContaPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const vertical = parseVertical(searchParams.get("vertical"));
   const [mode, setMode] = useState<Mode>("self");
 
   return (
@@ -47,8 +63,15 @@ export default function CriarContaPage() {
         </button>
       </div>
 
+      {vertical && (
+        <div className="mt-6 p-3 rounded-lg bg-blue-50 border border-blue-100 text-sm text-blue-900">
+          <span className="font-medium">Segmento:</span> {VERTICAL_LABELS[vertical]}.
+          O FMS vai configurar a IA e o vocabulário para esse modelo automaticamente.
+        </div>
+      )}
+
       <div className="mt-6">
-        {mode === "self" ? <SelfServiceForm router={router} /> : <SalesForm />}
+        {mode === "self" ? <SelfServiceForm router={router} vertical={vertical} /> : <SalesForm />}
       </div>
 
       <p className="text-sm text-center mt-6 text-ink-500">
@@ -63,7 +86,13 @@ export default function CriarContaPage() {
 
 // ─── Self-service: cria company + diretor direto via signupCompany ─
 
-function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
+function SelfServiceForm({
+  router,
+  vertical,
+}: {
+  router: ReturnType<typeof useRouter>;
+  vertical: Vertical | null;
+}) {
   const [companyName, setCompanyName] = useState("");
   const [directorName, setDirectorName] = useState("");
   const [email, setEmail] = useState("");
@@ -81,7 +110,13 @@ function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
       const r = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ companyName, directorName, email, password }),
+        body: JSON.stringify({
+          companyName,
+          directorName,
+          email,
+          password,
+          ...(vertical ? { vertical } : {}),
+        }),
       });
       const data = await r.json();
       if (!r.ok) {
