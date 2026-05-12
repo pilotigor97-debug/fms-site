@@ -108,7 +108,7 @@
         },
         "audioServiceTypes": ["recorrente", "pos_obra", "profunda", "periodica"]
       },
-      "enabledModules": ["tickets", "orders", "reports", "clients", "recurring"],
+      "enabledModules": ["tickets", "orders", "reports", "clients", "recurring", "contracts"],
       "defaultBranding": {
         "primaryColorHex": "#2563EB"
       },
@@ -119,7 +119,8 @@
           "dispatch": "Escala de equipes",
           "calendar": "Agenda",
           "report": "Visitas concluídas",
-          "client": "Clientes"
+          "client": "Clientes",
+          "contract": "Contratos recorrentes"
         },
         "en": {
           "ticket": "Requests",
@@ -127,7 +128,8 @@
           "dispatch": "Team scheduling",
           "calendar": "Schedule",
           "report": "Completed visits",
-          "client": "Clients"
+          "client": "Clients",
+          "contract": "Recurring contracts"
         }
       }
     },
@@ -169,7 +171,7 @@
         },
         "audioServiceTypes": ["instalacao", "preventiva", "corretiva", "carga_gas", "limpeza"]
       },
-      "enabledModules": ["tickets", "orders", "quotes", "reports", "equipment", "alerts"],
+      "enabledModules": ["tickets", "orders", "quotes", "reports", "equipment", "alerts", "contracts"],
       "defaultBranding": {
         "primaryColorHex": "#DC2626"
       },
@@ -234,7 +236,7 @@
         },
         "audioServiceTypes": ["demolicao", "estrutura", "acabamento", "instalacao", "vistoria"]
       },
-      "enabledModules": ["tickets", "orders", "quotes", "reports", "clients", "milestones"],
+      "enabledModules": ["tickets", "orders", "quotes", "reports", "clients", "milestones", "contracts"],
       "defaultBranding": {
         "primaryColorHex": "#EA580C"
       },
