@@ -9,12 +9,14 @@ import { getClientAuth } from "@/lib/firebase-client";
 type Mode = "self" | "sales";
 
 // Mantém em sync com opspilot/assets/verticals.json (IDs canônicos).
-type Vertical = "rental" | "cleaning" | "hvac" | "remodeling";
+type Vertical = "rental" | "cleaning" | "hvac" | "remodeling" | "facilities" | "landscaping";
 const VERTICAL_LABELS: Record<Vertical, string> = {
   rental: "Locação & Manutenção de Equipamentos",
   cleaning: "Limpeza Residencial/Comercial",
   hvac: "HVAC (Climatização)",
   remodeling: "Reformas & Construção",
+  facilities: "Facilities (Portaria, Limpeza, Segurança)",
+  landscaping: "Landscaping & Lawn Care (US)",
 };
 
 function parseVertical(v: string | null): Vertical | null {
