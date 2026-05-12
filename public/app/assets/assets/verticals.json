@@ -121,6 +121,7 @@
           "report": "Visitas concluídas",
           "client": "Clientes",
           "contract": "Contratos recorrentes",
+          "technician": "Equipe responsável",
           "status.aberto": "Nova solicitação",
           "status.emDiagnostico": "Em avaliação",
           "status.aguardandoDecisao": "Aguardando cliente",
@@ -129,7 +130,14 @@
           "status.aprovado": "Confirmada",
           "status.emExecucao": "Em limpeza",
           "status.finalizado": "Concluída",
-          "status.rejeitado": "Recusada"
+          "status.rejeitado": "Recusada",
+          "contractType.manutencao": "Limpeza recorrente",
+          "contractType.locacao": "Limpeza pontual",
+          "contractType.avulso": "Avulso",
+          "osType.diagnostico": "Vistoria",
+          "osType.execucao": "Limpeza",
+          "osType.retorno": "Retorno",
+          "osType.entrega": "Entrega de chaves"
         },
         "en": {
           "ticket": "Requests",
