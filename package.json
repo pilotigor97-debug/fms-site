@@ -5,17 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:flutter": "cd ../opspilot && /Users/fernandes/development/flutter/bin/flutter build web --release --dart-define=APP_FLAVOR=saas --dart-define=APP_ENV=dev --base-href=/app/ && rsync -a --delete --exclude='*.apk' build/web/ ../fms-site/public/app/",
+    "build:all": "npm run build:flutter && npm run build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "clsx": "^2.1.0",
+    "firebase": "^12.12.1",
+    "firebase-admin": "^12.4.0",
+    "framer-motion": "^11.3.0",
+    "lucide-react": "^0.439.0",
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "firebase-admin": "^12.4.0",
-    "lucide-react": "^0.439.0",
-    "framer-motion": "^11.3.0",
-    "clsx": "^2.1.0",
     "zod": "^3.23.0"
   },
   "devDependencies": {

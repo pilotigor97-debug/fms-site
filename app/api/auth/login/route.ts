@@ -21,6 +21,8 @@ import { z } from 'zod';
 import { adminAuth } from '@/lib/firebase-admin';
 import { resolveTenantByUid } from '@/lib/tenant';
 
+export const dynamic = 'force-dynamic';
+
 const Body = z.object({
   email: z.string().email(),
   password: z.string().min(6),

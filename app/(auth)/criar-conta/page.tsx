@@ -1,13 +1,31 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Check, AlertCircle, MessageSquare } from "lucide-react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { getClientAuth } from "@/lib/firebase-client";
 
 type Mode = "self" | "sales";
 
+// Mantém em sync com opspilot/assets/verticals.json (IDs canônicos).
+type Vertical = "rental" | "cleaning" | "hvac" | "remodeling";
+const VERTICAL_LABELS: Record<Vertical, string> = {
+  rental: "Locação & Manutenção de Equipamentos",
+  cleaning: "Limpeza Residencial/Comercial",
+  hvac: "HVAC (Climatização)",
+  remodeling: "Reformas & Construção",
+};
+
+function parseVertical(v: string | null): Vertical | null {
+  if (v && v in VERTICAL_LABELS) return v as Vertical;
+  return null;
+}
+
 export default function CriarContaPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const vertical = parseVertical(searchParams.get("vertical"));
   const [mode, setMode] = useState<Mode>("self");
 
   return (
@@ -45,8 +63,15 @@ export default function CriarContaPage() {
         </button>
       </div>
 
+      {vertical && (
+        <div className="mt-6 p-3 rounded-lg bg-blue-50 border border-blue-100 text-sm text-blue-900">
+          <span className="font-medium">Segmento:</span> {VERTICAL_LABELS[vertical]}.
+          O FMS vai configurar a IA e o vocabulário para esse modelo automaticamente.
+        </div>
+      )}
+
       <div className="mt-6">
-        {mode === "self" ? <SelfServiceForm router={router} /> : <SalesForm />}
+        {mode === "self" ? <SelfServiceForm router={router} vertical={vertical} /> : <SalesForm />}
       </div>
 
       <p className="text-sm text-center mt-6 text-ink-500">
@@ -61,7 +86,13 @@ export default function CriarContaPage() {
 
 // ─── Self-service: cria company + diretor direto via signupCompany ─
 
-function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
+function SelfServiceForm({
+  router,
+  vertical,
+}: {
+  router: ReturnType<typeof useRouter>;
+  vertical: Vertical | null;
+}) {
   const [companyName, setCompanyName] = useState("");
   const [directorName, setDirectorName] = useState("");
   const [email, setEmail] = useState("");
@@ -79,7 +110,13 @@ function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
       const r = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ companyName, directorName, email, password }),
+        body: JSON.stringify({
+          companyName,
+          directorName,
+          email,
+          password,
+          ...(vertical ? { vertical } : {}),
+        }),
       });
       const data = await r.json();
       if (!r.ok) {
@@ -94,24 +131,39 @@ function SelfServiceForm({ router }: { router: ReturnType<typeof useRouter> }) {
         return;
       }
 
-      // (2) Login automático — gera handoff token e leva pro app
-      const loginR = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const loginData = await loginR.json();
-      if (!loginR.ok) {
-        // Edge case: signup OK mas login falhou. Mando pro /login.
+      // (2) Login automático via Firebase JS SDK no mesmo origin do site.
+      // Auth state vai pra IndexedDB do origin, e o Flutter Web em /app/
+      // detecta a sessão automaticamente quando bootar.
+      try {
+        const auth = getClientAuth();
+        const cred = await signInWithEmailAndPassword(auth, email, password);
+        const idToken = await cred.user.getIdToken();
+
+        // Branding do splash — best-effort, não trava o fluxo.
+        let tenant: { slug: string; company: string } | null = null;
+        try {
+          const resp = await fetch("/api/tenant/me", {
+            headers: { Authorization: `Bearer ${idToken}` },
+          });
+          if (resp.ok) {
+            const tdata = await resp.json();
+            tenant = tdata.tenant;
+          }
+        } catch {
+          // sem branding, splash genérico
+        }
+
+        const params = new URLSearchParams({
+          ...(tenant
+            ? { sub: tenant.slug, company: tenant.company }
+            : { company: companyName }),
+          to: "/app/index.html",
+        });
+        router.push(`/redirect?${params.toString()}`);
+      } catch {
+        // Edge case: signup OK mas auto-login falhou. Manda pro /login.
         router.push("/login?msg=signup_ok");
-        return;
       }
-      const params = new URLSearchParams({
-        sub: loginData.tenant.slug,
-        company: loginData.tenant.company,
-        to: loginData.redirectTo,
-      });
-      router.push(`/redirect?${params.toString()}`);
     } catch {
       setError("Sem conexão com o servidor.");
       setLoading(false);

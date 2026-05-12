@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoluClean — Acompanhar Chamado</title>
+  <style>
+    :root {
+      --primary: #009192;
+      --secondary: #263750;
+      --accent: #E9A825;
+      --bg: #f4f6f8;
+      --success: #34C759;
+      --warning: #FF9500;
+      --error: #FF3B30;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--secondary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      background: var(--secondary);
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 28px 24px;
+      margin: 24px 16px;
+      max-width: 420px;
+      width: calc(100% - 32px);
+    }
+    .card h2 {
+      font-size: 17px;
+      margin-bottom: 20px;
+      color: var(--secondary);
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    input:focus { border-color: var(--primary); }
+    .input-group { margin-bottom: 16px; }
+    .input-hint {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    button:hover { opacity: 0.9; }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .error-msg {
+      background: #FFF0F0;
+      color: var(--error);
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-top: 16px;
+      display: none;
+    }
+    .result {
+      display: none;
+      margin-top: 0;
+    }
+    .result-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .result-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .result-subject {
+      font-size: 14px;
+      color: #666;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .status-aberto, .status-aceito { background: #E3F2FD; color: #1565C0; }
+    .status-aprovado { background: #E8F5E9; color: #2E7D32; }
+    .status-agendado { background: #FFF3E0; color: #E65100; }
+    .status-emExecucao { background: #FFF8E1; color: #F57F17; }
+    .status-resolvido { background: #E8F5E9; color: #1B5E20; }
+    .status-pendente { background: #FFF3E0; color: #E65100; }
+    .status-rejeitado { background: #FFEBEE; color: #B71C1C; }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .info-item {
+      padding: 12px;
+      background: var(--bg);
+      border-radius: 10px;
+    }
+    .info-item .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .info-item .value {
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 4px;
+      color: var(--secondary);
+    }
+    .os-status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, var(--primary), #00B4B5);
+      border-radius: 12px;
+      color: white;
+    }
+    .os-status .label {
+      font-size: 11px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .os-status .value {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .back-btn {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      margin-top: 16px;
+    }
+    .back-btn:hover { background: rgba(0,145,146,0.05); }
+    .footer {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+    .footer a { color: var(--primary); text-decoration: none; }
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>SoluClean</h1>
+    <p>Acompanhe o status do seu chamado</p>
+  </div>
+
+  <!-- Search Form -->
+  <div class="card" id="searchCard">
+    <h2>Consultar chamado</h2>
+    <form id="searchForm" onsubmit="lookup(event)">
+      <div class="input-group">
+        <label for="ticketNumber">Numero do chamado</label>
+        <input type="number" id="ticketNumber" placeholder="Ex: 5" required min="1" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="phoneLast4">Ultimos 4 digitos do telefone</label>
+        <input type="text" id="phoneLast4" placeholder="Ex: 1234" required maxlength="4" pattern="\d{4}" inputmode="numeric">
+        <div class="input-hint">O telefone informado ao abrir o chamado</div>
+      </div>
+      <button type="submit" id="searchBtn">Consultar</button>
+    </form>
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+
+  <!-- Result -->
+  <div class="card result" id="resultCard">
+    <div class="result-header">
+      <div>
+        <div class="result-number" id="resNumber"></div>
+        <div class="result-subject" id="resSubject"></div>
+      </div>
+    </div>
+
+    <div id="resStatusBadge" class="status-badge"></div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Cliente</div>
+        <div class="value" id="resClient"></div>
+      </div>
+      <div class="info-item">
+        <div class="label">Aberto em</div>
+        <div class="value" id="resCreated"></div>
+      </div>
+      <div class="info-item" id="resUpdatedItem" style="display:none">
+        <div class="label">Atualizado em</div>
+        <div class="value" id="resUpdated"></div>
+      </div>
+    </div>
+
+    <div class="os-status" id="osStatusBox" style="display:none">
+      <div class="label">Ordem de Servico</div>
+      <div class="value" id="resOsStatus"></div>
+    </div>
+
+    <button class="back-btn" onclick="showSearch()">Consultar outro chamado</button>
+  </div>
+
+  <div class="footer">
+    <a href="https://solucleanrj.com.br" target="_blank">solucleanrj.com.br</a>
+  </div>
+
+  <script>
+    // Detect project from hostname
+    const isDevHost = location.hostname.includes('relatorio-tecnico-dev');
+    const PROJECT_ID = isDevHost ? 'relatorio-tecnico-dev' : 'relatorio-tecnico-4ae8c';
+    const REGION = 'southamerica-east1';
+    const FUNCTION_URL = `https://${REGION}-${PROJECT_ID}.cloudfunctions.net/lookupTicketStatus`;
+
+    function formatDate(isoStr) {
+      if (!isoStr) return '\u2014';
+      const d = new Date(isoStr);
+      const pad = n => String(n).padStart(2, '0');
+      return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    function showSearch() {
+      document.getElementById('searchCard').style.display = '';
+      document.getElementById('resultCard').style.display = 'none';
+    }
+
+    async function lookup(e) {
+      e.preventDefault();
+      const btn = document.getElementById('searchBtn');
+      const errDiv = document.getElementById('errorMsg');
+      errDiv.style.display = 'none';
+
+      const ticketNumber = parseInt(document.getElementById('ticketNumber').value, 10);
+      const phoneLast4 = document.getElementById('phoneLast4').value.trim();
+
+      if (!ticketNumber || phoneLast4.length !== 4) {
+        errDiv.textContent = 'Preencha todos os campos corretamente.';
+        errDiv.style.display = '';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Consultando...';
+
+      try {
+        const resp = await fetch(FUNCTION_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: { ticketNumber, phoneLast4 } }),
+        });
+
+        const json = await resp.json();
+
+        if (json.error) {
+          const msg = json.error.message || 'Erro ao consultar.';
+          errDiv.textContent = msg;
+          errDiv.style.display = '';
+          return;
+        }
+
+        const data = json.result || json;
+
+        // Fill result
+        document.getElementById('resNumber').textContent = `Chamado #${data.number}`;
+        document.getElementById('resSubject').textContent = data.subject;
+        document.getElementById('resClient').textContent = data.clientName;
+        document.getElementById('resCreated').textContent = formatDate(data.createdAt);
+
+        const badge = document.getElementById('resStatusBadge');
+        badge.textContent = data.statusLabel;
+        badge.className = 'status-badge status-' + data.status;
+
+        if (data.updatedAt) {
+          document.getElementById('resUpdated').textContent = formatDate(data.updatedAt);
+          document.getElementById('resUpdatedItem').style.display = '';
+        } else {
+          document.getElementById('resUpdatedItem').style.display = 'none';
+        }
+
+        if (data.hasServiceOrder) {
+          document.getElementById('resOsStatus').textContent = data.serviceOrderStatus;
+          document.getElementById('osStatusBox').style.display = '';
+        } else {
+          document.getElementById('osStatusBox').style.display = 'none';
+        }
+
+        // Show result, hide form
+        document.getElementById('searchCard').style.display = 'none';
+        document.getElementById('resultCard').style.display = '';
+
+      } catch (err) {
+        errDiv.textContent = 'Erro de conexao. Tente novamente.';
+        errDiv.style.display = '';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Consultar';
+      }
+    }
+  </script>
+</body>
+</html>

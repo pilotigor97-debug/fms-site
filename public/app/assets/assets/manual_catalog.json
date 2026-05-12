@@ -1,0 +1,3286 @@
+[
+  {
+    "type": "folder",
+    "name": "Alfa",
+    "path": "Alfa",
+    "parentPath": "",
+    "order": 0,
+    "childCount": 270
+  },
+  {
+    "type": "folder",
+    "name": "Alfa Italia",
+    "path": "Alfa/Alfa Italia",
+    "parentPath": "Alfa",
+    "order": 0,
+    "childCount": 62
+  },
+  {
+    "type": "folder",
+    "name": "A135",
+    "path": "Alfa/Alfa Italia/A135",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 0,
+    "childCount": 6
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operações_A135_PT.pdf",
+    "path": "Alfa/Alfa Italia/A135/Manual_de_Operações_A135_PT.pdf",
+    "parentPath": "Alfa/Alfa Italia/A135",
+    "order": 0,
+    "size": 10662515,
+    "sizeFormatted": "10.2 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A135.pdf",
+    "path": "Alfa/Alfa Italia/A135/Manual_de_Peças_Rev00_A135.pdf",
+    "parentPath": "Alfa/Alfa Italia/A135",
+    "order": 1,
+    "size": 1073062,
+    "sizeFormatted": "1.0 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A135LI.pdf",
+    "path": "Alfa/Alfa Italia/A135/Manual_de_Peças_Rev00_A135LI.pdf",
+    "parentPath": "Alfa/Alfa Italia/A135",
+    "order": 2,
+    "size": 1054646,
+    "sizeFormatted": "1.0 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "O_A135LI.pdf",
+    "path": "Alfa/Alfa Italia/A135/O_A135LI.pdf",
+    "parentPath": "Alfa/Alfa Italia/A135",
+    "order": 3,
+    "size": 10105410,
+    "sizeFormatted": "9.6 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "a135li-brochure-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/A135/a135li-brochure-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/A135",
+    "order": 4,
+    "size": 754073,
+    "sizeFormatted": "736 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "pldc04058_-_416s_-_a135_servicio.pdf",
+    "path": "Alfa/Alfa Italia/A135/pldc04058_-_416s_-_a135_servicio.pdf",
+    "parentPath": "Alfa/Alfa Italia/A135",
+    "order": 5,
+    "size": 20446956,
+    "sizeFormatted": "19.5 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A250",
+    "path": "Alfa/Alfa Italia/A250",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 1,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "O 250-470.pdf",
+    "path": "Alfa/Alfa Italia/A250/O 250-470.pdf",
+    "parentPath": "Alfa/Alfa Italia/A250",
+    "order": 0,
+    "size": 1405291,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "P 250.pdf",
+    "path": "Alfa/Alfa Italia/A250/P 250.pdf",
+    "parentPath": "Alfa/Alfa Italia/A250",
+    "order": 1,
+    "size": 1359646,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "S A250.pdf",
+    "path": "Alfa/Alfa Italia/A250/S A250.pdf",
+    "parentPath": "Alfa/Alfa Italia/A250",
+    "order": 2,
+    "size": 9691342,
+    "sizeFormatted": "9.2 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "file",
+    "name": "VLX 1040S NA-TECH DOCS.pdf",
+    "path": "Alfa/Alfa Italia/A250/VLX 1040S NA-TECH DOCS.pdf",
+    "parentPath": "Alfa/Alfa Italia/A250",
+    "order": 3,
+    "size": 2156329,
+    "sizeFormatted": "2.1 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A470",
+    "path": "Alfa/Alfa Italia/A470",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 2,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "O A470.pdf",
+    "path": "Alfa/Alfa Italia/A470/O A470.pdf",
+    "parentPath": "Alfa/Alfa Italia/A470",
+    "order": 0,
+    "size": 1399949,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "P A 470 rev 0.pdf",
+    "path": "Alfa/Alfa Italia/A470/P A 470 rev 0.pdf",
+    "parentPath": "Alfa/Alfa Italia/A470",
+    "order": 1,
+    "size": 1393135,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "S A470 2.pdf",
+    "path": "Alfa/Alfa Italia/A470/S A470 2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A470",
+    "order": 2,
+    "size": 14290517,
+    "sizeFormatted": "13.6 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "folder",
+    "name": "A670",
+    "path": "Alfa/Alfa Italia/A670",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 3,
+    "childCount": 22
+  },
+  {
+    "type": "file",
+    "name": "CURTIS MANUAL CT80BT70  1228revB.pdf",
+    "path": "Alfa/Alfa Italia/A670/CURTIS MANUAL CT80BT70  1228revB.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 0,
+    "size": 993162,
+    "sizeFormatted": "970 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Diversos",
+    "path": "Alfa/Alfa Italia/A670/Diversos",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 1,
+    "childCount": 15
+  },
+  {
+    "type": "folder",
+    "name": "BOARDS PROGRAMMING",
+    "path": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos",
+    "order": 0,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "CT80 Parameters Programming V2.10 .pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING/CT80 Parameters Programming V2.10 .pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING",
+    "order": 0,
+    "size": 720449,
+    "sizeFormatted": "704 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CT80 Programmazione Parametri V2.10 ITA.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING/CT80 Programmazione Parametri V2.10 ITA.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING",
+    "order": 1,
+    "size": 720864,
+    "sizeFormatted": "704 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "PLDC02176 - CHEM DOSE KTRI02232.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING/PLDC02176 - CHEM DOSE KTRI02232.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/BOARDS PROGRAMMING",
+    "order": 2,
+    "size": 4648319,
+    "sizeFormatted": "4.4 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "CHARGER ON-BOARD",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos",
+    "order": 1,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "BACA00181  Setting - Error code.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD/BACA00181  Setting - Error code.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD",
+    "order": 0,
+    "size": 248847,
+    "sizeFormatted": "243 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "BACA00181_CB REPORT.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD/BACA00181_CB REPORT.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD",
+    "order": 1,
+    "size": 331455,
+    "sizeFormatted": "324 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CT80 BT60-BT70 ASSEMBLE CHARGER ON BOARD.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD/CT80 BT60-BT70 ASSEMBLE CHARGER ON BOARD.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD",
+    "order": 2,
+    "size": 3717975,
+    "sizeFormatted": "3.5 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "PLDC02137 - KTRI02230 Kit charger onboard .pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD/PLDC02137 - KTRI02230 Kit charger onboard .pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CHARGER ON-BOARD",
+    "order": 3,
+    "size": 10425091,
+    "sizeFormatted": "9.9 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "CT 80",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos",
+    "order": 2,
+    "childCount": 6
+  },
+  {
+    "type": "file",
+    "name": "Biosan-Leaflet-Eng.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80/Biosan-Leaflet-Eng.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "order": 0,
+    "size": 123511,
+    "sizeFormatted": "121 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CT80 Programmazione Parametri V2.10 ITA.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80/CT80 Programmazione Parametri V2.10 ITA.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "order": 1,
+    "size": 712129,
+    "sizeFormatted": "695 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CT80 firmware update Eng 2.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80/CT80 firmware update Eng 2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "order": 2,
+    "size": 458894,
+    "sizeFormatted": "448 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "P CT80.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80/P CT80.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "order": 3,
+    "size": 1099565,
+    "sizeFormatted": "1.0 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "ct80-ficha-tecnica-ipc.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80/ct80-ficha-tecnica-ipc.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "order": 4,
+    "size": 742901,
+    "sizeFormatted": "725 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ipc-ct80-scrubbers-leaflet.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/CT 80/ipc-ct80-scrubbers-leaflet.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/CT 80",
+    "order": 5,
+    "size": 251390,
+    "sizeFormatted": "245 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "FIRMWARE UPDATE",
+    "path": "Alfa/Alfa Italia/A670/Diversos/FIRMWARE UPDATE",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos",
+    "order": 3,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "CT80 firmware update Eng 2.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/FIRMWARE UPDATE/CT80 firmware update Eng 2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/FIRMWARE UPDATE",
+    "order": 0,
+    "size": 458894,
+    "sizeFormatted": "448 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CT80 firmware update Ita 2.pdf",
+    "path": "Alfa/Alfa Italia/A670/Diversos/FIRMWARE UPDATE/CT80 firmware update Ita 2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/Diversos/FIRMWARE UPDATE",
+    "order": 1,
+    "size": 457149,
+    "sizeFormatted": "446 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ITALSEA CARD CT80BT55 7CH4Q71M_E_1.pdf",
+    "path": "Alfa/Alfa Italia/A670/ITALSEA CARD CT80BT55 7CH4Q71M_E_1.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 2,
+    "size": 984438,
+    "sizeFormatted": "961 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "O A670.pdf",
+    "path": "Alfa/Alfa Italia/A670/O A670.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 3,
+    "size": 4850415,
+    "sizeFormatted": "4.6 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "P A670 rev 0.pdf",
+    "path": "Alfa/Alfa Italia/A670/P A670 rev 0.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 4,
+    "size": 1389691,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "S A670 2.pdf",
+    "path": "Alfa/Alfa Italia/A670/S A670 2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 5,
+    "size": 46608836,
+    "sizeFormatted": "44.4 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "folder",
+    "name": "wiring diagram",
+    "path": "Alfa/Alfa Italia/A670/wiring diagram",
+    "parentPath": "Alfa/Alfa Italia/A670",
+    "order": 6,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "PLDC02118_2.pdf",
+    "path": "Alfa/Alfa Italia/A670/wiring diagram/PLDC02118_2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/wiring diagram",
+    "order": 0,
+    "size": 86247,
+    "sizeFormatted": "84 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "PLDC02119_2.pdf",
+    "path": "Alfa/Alfa Italia/A670/wiring diagram/PLDC02119_2.pdf",
+    "parentPath": "Alfa/Alfa Italia/A670/wiring diagram",
+    "order": 1,
+    "size": 84858,
+    "sizeFormatted": "83 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa Pressure",
+    "path": "Alfa/Alfa Italia/Alfa Pressure",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 4,
+    "childCount": 6
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-100-127v-parts-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Alfa Pressure/alfa-pressure-100-127v-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Alfa Pressure",
+    "order": 0,
+    "size": 1319418,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-100-220v-parts-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Alfa Pressure/alfa-pressure-100-220v-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Alfa Pressure",
+    "order": 1,
+    "size": 936729,
+    "sizeFormatted": "915 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-400-operator-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Alfa Pressure/alfa-pressure-400-operator-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Alfa Pressure",
+    "order": 2,
+    "size": 1696581,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-500-parts-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Alfa Pressure/alfa-pressure-500-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Alfa Pressure",
+    "order": 3,
+    "size": 400077,
+    "sizeFormatted": "391 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-h900-operator-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Alfa Pressure/alfa-pressure-h900-operator-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Alfa Pressure",
+    "order": 4,
+    "size": 2338123,
+    "sizeFormatted": "2.2 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-h900-parts-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Alfa Pressure/alfa-pressure-h900-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Alfa Pressure",
+    "order": 5,
+    "size": 762483,
+    "sizeFormatted": "745 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Lavadoras_de_Alta_Pressão",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 5,
+    "childCount": 10
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operação_AlfaPressure_1.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Operação_AlfaPressure_1.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 0,
+    "size": 1070842,
+    "sizeFormatted": "1.0 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operação_AlfaPressure_100.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Operação_AlfaPressure_100.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 1,
+    "size": 500520,
+    "sizeFormatted": "489 KB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operação_AlfaPressure_3_5.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Operação_AlfaPressure_3_5.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 2,
+    "size": 886730,
+    "sizeFormatted": "866 KB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operação_AlfaPressure_9.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Operação_AlfaPressure_9.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 3,
+    "size": 4590530,
+    "sizeFormatted": "4.4 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_AlfaPressure_1.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Peças_AlfaPressure_1.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 4,
+    "size": 5935622,
+    "sizeFormatted": "5.7 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_AlfaPressure_100.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Peças_AlfaPressure_100.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 5,
+    "size": 753893,
+    "sizeFormatted": "736 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_AlfaPressure_3.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Peças_AlfaPressure_3.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 6,
+    "size": 4430286,
+    "sizeFormatted": "4.2 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_AlfaPressure_5.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Peças_AlfaPressure_5.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 7,
+    "size": 13224750,
+    "sizeFormatted": "12.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_AlfaPressure_9.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/Manual_de_Peças_AlfaPressure_9.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 8,
+    "size": 9878682,
+    "sizeFormatted": "9.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-400-parts-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão/alfa-pressure-400-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia/Lavadoras_de_Alta_Pressão",
+    "order": 9,
+    "size": 482613,
+    "sizeFormatted": "471 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Mini",
+    "path": "Alfa/Alfa Italia/Mini",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 6,
+    "childCount": 5
+  },
+  {
+    "type": "file",
+    "name": "Esquema elétrico.pdf",
+    "path": "Alfa/Alfa Italia/Mini/Esquema elétrico.pdf",
+    "parentPath": "Alfa/Alfa Italia/Mini",
+    "order": 0,
+    "size": 78426,
+    "sizeFormatted": "77 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "Guia rápido Mini.pdf",
+    "path": "Alfa/Alfa Italia/Mini/Guia rápido Mini.pdf",
+    "parentPath": "Alfa/Alfa Italia/Mini",
+    "order": 1,
+    "size": 522137,
+    "sizeFormatted": "510 KB",
+    "manualType": "quick_guide"
+  },
+  {
+    "type": "file",
+    "name": "O Mini.pdf",
+    "path": "Alfa/Alfa Italia/Mini/O Mini.pdf",
+    "parentPath": "Alfa/Alfa Italia/Mini",
+    "order": 2,
+    "size": 1324288,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "S mini.pdf",
+    "path": "Alfa/Alfa Italia/Mini/S mini.pdf",
+    "parentPath": "Alfa/Alfa Italia/Mini",
+    "order": 3,
+    "size": 18086960,
+    "sizeFormatted": "17.2 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "file",
+    "name": "p Mini.pdf",
+    "path": "Alfa/Alfa Italia/Mini/p Mini.pdf",
+    "parentPath": "Alfa/Alfa Italia/Mini",
+    "order": 4,
+    "size": 2114824,
+    "sizeFormatted": "2.0 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Pro 18",
+    "path": "Alfa/Alfa Italia/Pro 18",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 7,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "FICHAS TÉCNICAS_LINHA ALFA.pdf",
+    "path": "Alfa/Alfa Italia/Pro 18/FICHAS TÉCNICAS_LINHA ALFA.pdf",
+    "parentPath": "Alfa/Alfa Italia/Pro 18",
+    "order": 0,
+    "size": 434894,
+    "sizeFormatted": "425 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "MANUAL_ALFA PRO 18.pdf",
+    "path": "Alfa/Alfa Italia/Pro 18/MANUAL_ALFA PRO 18.pdf",
+    "parentPath": "Alfa/Alfa Italia/Pro 18",
+    "order": 1,
+    "size": 1672942,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "MANUAL_ASPIRADORES ALFA.pdf",
+    "path": "Alfa/Alfa Italia/Pro 18/MANUAL_ASPIRADORES ALFA.pdf",
+    "parentPath": "Alfa/Alfa Italia/Pro 18",
+    "order": 2,
+    "size": 2220463,
+    "sizeFormatted": "2.1 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "SD CARD INFORMATION",
+    "path": "Alfa/Alfa Italia/SD CARD INFORMATION",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 8,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "CT80 ONBOARD CHARGER LOG.pdf",
+    "path": "Alfa/Alfa Italia/SD CARD INFORMATION/CT80 ONBOARD CHARGER LOG.pdf",
+    "parentPath": "Alfa/Alfa Italia/SD CARD INFORMATION",
+    "order": 0,
+    "size": 501187,
+    "sizeFormatted": "489 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CT80 ONBOARD DAILY USE LOG.pdf",
+    "path": "Alfa/Alfa Italia/SD CARD INFORMATION/CT80 ONBOARD DAILY USE LOG.pdf",
+    "parentPath": "Alfa/Alfa Italia/SD CARD INFORMATION",
+    "order": 1,
+    "size": 377747,
+    "sizeFormatted": "369 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "alfa-pressure-400-parts-manual-pt-br.pdf",
+    "path": "Alfa/Alfa Italia/alfa-pressure-400-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Alfa Italia",
+    "order": 9,
+    "size": 485115,
+    "sizeFormatted": "474 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Aspi Alfa Clean",
+    "path": "Alfa/Aspi Alfa Clean",
+    "parentPath": "Alfa",
+    "order": 1,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "ACB210_211.pdf",
+    "path": "Alfa/Aspi Alfa Clean/ACB210_211.pdf",
+    "parentPath": "Alfa/Aspi Alfa Clean",
+    "order": 0,
+    "size": 95495,
+    "sizeFormatted": "93 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ACI050.pdf",
+    "path": "Alfa/Aspi Alfa Clean/ACI050.pdf",
+    "parentPath": "Alfa/Aspi Alfa Clean",
+    "order": 1,
+    "size": 64156,
+    "sizeFormatted": "63 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ARC027.pdf",
+    "path": "Alfa/Aspi Alfa Clean/ARC027.pdf",
+    "parentPath": "Alfa/Aspi Alfa Clean",
+    "order": 2,
+    "size": 57118,
+    "sizeFormatted": "56 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ASP0516_0517.pdf",
+    "path": "Alfa/Aspi Alfa Clean/ASP0516_0517.pdf",
+    "parentPath": "Alfa/Aspi Alfa Clean",
+    "order": 3,
+    "size": 79005,
+    "sizeFormatted": "77 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Enceradeira Alfa",
+    "path": "Alfa/Enceradeira Alfa",
+    "parentPath": "Alfa",
+    "order": 2,
+    "childCount": 6
+  },
+  {
+    "type": "file",
+    "name": "Alfa enceradeira.pdf",
+    "path": "Alfa/Enceradeira Alfa/Alfa enceradeira.pdf",
+    "parentPath": "Alfa/Enceradeira Alfa",
+    "order": 0,
+    "size": 720963,
+    "sizeFormatted": "704 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Alfa_00 - sem tanque.pdf",
+    "path": "Alfa/Enceradeira Alfa/Alfa_00 - sem tanque.pdf",
+    "parentPath": "Alfa/Enceradeira Alfa",
+    "order": 1,
+    "size": 787561,
+    "sizeFormatted": "769 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operação_Enceradeiras_Alfa.pdf",
+    "path": "Alfa/Enceradeira Alfa/Manual_de_Operação_Enceradeiras_Alfa.pdf",
+    "parentPath": "Alfa/Enceradeira Alfa",
+    "order": 2,
+    "size": 1701938,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Enceradeiras_Alfa_00.pdf",
+    "path": "Alfa/Enceradeira Alfa/Manual_de_Peças_Enceradeiras_Alfa_00.pdf",
+    "parentPath": "Alfa/Enceradeira Alfa",
+    "order": 3,
+    "size": 795247,
+    "sizeFormatted": "777 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Enceradeiras_Alfa_03_Set20 Cabo preto.pdf",
+    "path": "Alfa/Enceradeira Alfa/Manual_de_Peças_Enceradeiras_Alfa_03_Set20 Cabo preto.pdf",
+    "parentPath": "Alfa/Enceradeira Alfa",
+    "order": 4,
+    "size": 937957,
+    "sizeFormatted": "916 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "VE enceradeiras (350, 400 e 500) versão de 09.20.pdf",
+    "path": "Alfa/Enceradeira Alfa/VE enceradeiras (350, 400 e 500) versão de 09.20.pdf",
+    "parentPath": "Alfa/Enceradeira Alfa",
+    "order": 5,
+    "size": 890383,
+    "sizeFormatted": "870 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Hiper",
+    "path": "Alfa/Hiper",
+    "parentPath": "Alfa",
+    "order": 3,
+    "childCount": 1
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO HIPER_ABR_12.pdf",
+    "path": "Alfa/Hiper/DESENHO EXPLODIDO HIPER_ABR_12.pdf",
+    "parentPath": "Alfa/Hiper",
+    "order": 0,
+    "size": 1436692,
+    "sizeFormatted": "1.4 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "folder",
+    "name": "Linha Lavor",
+    "path": "Alfa/Linha Lavor",
+    "parentPath": "Alfa",
+    "order": 4,
+    "childCount": 18
+  },
+  {
+    "type": "folder",
+    "name": "Alfa Pressure",
+    "path": "Alfa/Linha Lavor/Alfa Pressure",
+    "parentPath": "Alfa/Linha Lavor",
+    "order": 0,
+    "childCount": 10
+  },
+  {
+    "type": "folder",
+    "name": "Alfa Pressure 1",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa Pressure 1",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure",
+    "order": 0,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFA pressure 1  manual.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa Pressure 1/ALFA pressure 1  manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa Pressure 1",
+    "order": 0,
+    "size": 1070842,
+    "sizeFormatted": "1.0 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRESSURE 1.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa Pressure 1/ALFAPRESSURE 1.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa Pressure 1",
+    "order": 1,
+    "size": 5935622,
+    "sizeFormatted": "5.7 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa pressure 3",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 3",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure",
+    "order": 1,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFA pressure 3 manual.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 3/ALFA pressure 3 manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 3",
+    "order": 0,
+    "size": 886472,
+    "sizeFormatted": "866 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRESSURE 3.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 3/ALFAPRESSURE 3.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 3",
+    "order": 1,
+    "size": 4430286,
+    "sizeFormatted": "4.2 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa pressure 5",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure",
+    "order": 2,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "ALFA pressure 5 manual.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5/ALFA pressure 5 manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5",
+    "order": 0,
+    "size": 886471,
+    "sizeFormatted": "866 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRESSURE 5.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5/ALFAPRESSURE 5.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5",
+    "order": 1,
+    "size": 13224750,
+    "sizeFormatted": "12.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Esquema Eletrico ALFA Pressure 5_220v.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5/Esquema Eletrico ALFA Pressure 5_220v.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5",
+    "order": 2,
+    "size": 203908,
+    "sizeFormatted": "199 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "Esquema Eletrico ALFA Pressure 5_380v_(com Contator 220v)_pdf.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5/Esquema Eletrico ALFA Pressure 5_380v_(com Contator 220v)_pdf.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 5",
+    "order": 3,
+    "size": 208088,
+    "sizeFormatted": "203 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa pressure 9 BX",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 9 BX",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure",
+    "order": 3,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRESSURE 9.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 9 BX/ALFAPRESSURE 9.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 9 BX",
+    "order": 0,
+    "size": 9878682,
+    "sizeFormatted": "9.4 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual Pressure 9 BX.pdf",
+    "path": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 9 BX/Manual Pressure 9 BX.pdf",
+    "parentPath": "Alfa/Linha Lavor/Alfa Pressure/Alfa pressure 9 BX",
+    "order": 1,
+    "size": 4590504,
+    "sizeFormatted": "4.4 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Aspiradores",
+    "path": "Alfa/Linha Lavor/Aspiradores",
+    "parentPath": "Alfa/Linha Lavor",
+    "order": 1,
+    "childCount": 8
+  },
+  {
+    "type": "folder",
+    "name": "Alfa Pro 3",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa Pro 3",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores",
+    "order": 0,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFA PRO 3  manual.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa Pro 3/ALFA PRO 3  manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa Pro 3",
+    "order": 0,
+    "size": 530503,
+    "sizeFormatted": "518 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRO 3.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa Pro 3/ALFAPRO 3.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa Pro 3",
+    "order": 1,
+    "size": 2371774,
+    "sizeFormatted": "2.3 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa pro 10",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 10",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores",
+    "order": 1,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFA PRO 10   manual.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 10/ALFA PRO 10   manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa pro 10",
+    "order": 0,
+    "size": 670213,
+    "sizeFormatted": "655 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRO 10.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 10/ALFAPRO 10.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa pro 10",
+    "order": 1,
+    "size": 3440347,
+    "sizeFormatted": "3.3 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa pro 7",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 7",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores",
+    "order": 2,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFA PRO 7   manual.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 7/ALFA PRO 7   manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa pro 7",
+    "order": 0,
+    "size": 670232,
+    "sizeFormatted": "655 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRO 7.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 7/ALFAPRO 7.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa pro 7",
+    "order": 1,
+    "size": 3980948,
+    "sizeFormatted": "3.8 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Alfa pro 9",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 9",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores",
+    "order": 3,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ALFA PRO 9   manual.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 9/ALFA PRO 9   manual.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa pro 9",
+    "order": 0,
+    "size": 670219,
+    "sizeFormatted": "655 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ALFAPRO 9.pdf",
+    "path": "Alfa/Linha Lavor/Aspiradores/Alfa pro 9/ALFAPRO 9.pdf",
+    "parentPath": "Alfa/Linha Lavor/Aspiradores/Alfa pro 9",
+    "order": 1,
+    "size": 3859399,
+    "sizeFormatted": "3.7 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Maquinas Alfa",
+    "path": "Alfa/Maquinas Alfa",
+    "parentPath": "Alfa",
+    "order": 5,
+    "childCount": 132
+  },
+  {
+    "type": "folder",
+    "name": "1051 cabo",
+    "path": "Alfa/Maquinas Alfa/1051 cabo",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 0,
+    "childCount": 8
+  },
+  {
+    "type": "folder",
+    "name": "Antigas",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/Antigas",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo",
+    "order": 0,
+    "childCount": 5
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Eco_02.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/Antigas/Manual_de_Peças_Eco_02.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo/Antigas",
+    "order": 0,
+    "size": 4546928,
+    "sizeFormatted": "4.3 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o_manual_alfamat_série 1000_e_2000.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/Antigas/o_manual_alfamat_série 1000_e_2000.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo/Antigas",
+    "order": 1,
+    "size": 789806,
+    "sizeFormatted": "771 KB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p1051 CABO.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/Antigas/p1051 CABO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo/Antigas",
+    "order": 2,
+    "size": 994182,
+    "sizeFormatted": "971 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "p_DES EXPL 1051 CABO VERDE.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/Antigas/p_DES EXPL 1051 CABO VERDE.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo/Antigas",
+    "order": 3,
+    "size": 810420,
+    "sizeFormatted": "791 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "p_Des Expl Eco INM.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/Antigas/p_Des Expl Eco INM.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo/Antigas",
+    "order": 4,
+    "size": 1875909,
+    "sizeFormatted": "1.8 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "P_Eco_03_Jun18.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/P_Eco_03_Jun18.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo",
+    "order": 1,
+    "size": 4367384,
+    "sizeFormatted": "4.2 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o_MANUAL USUARIO ECO_INMETRO C.pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/o_MANUAL USUARIO ECO_INMETRO C.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo",
+    "order": 2,
+    "size": 358440,
+    "sizeFormatted": "350 KB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p_Des_Expl_1000_2000_(bateria).pdf",
+    "path": "Alfa/Maquinas Alfa/1051 cabo/p_Des_Expl_1000_2000_(bateria).pdf",
+    "parentPath": "Alfa/Maquinas Alfa/1051 cabo",
+    "order": 3,
+    "size": 12295077,
+    "sizeFormatted": "11.7 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "2051 cabo",
+    "path": "Alfa/Maquinas Alfa/2051 cabo",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 1,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "Des_Expl_1000_2000_(impressão).pdf",
+    "path": "Alfa/Maquinas Alfa/2051 cabo/Des_Expl_1000_2000_(impressão).pdf",
+    "parentPath": "Alfa/Maquinas Alfa/2051 cabo",
+    "order": 0,
+    "size": 12294166,
+    "sizeFormatted": "11.7 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "manual_serviçoalfamat_série 1000_e_2000.pdf",
+    "path": "Alfa/Maquinas Alfa/2051 cabo/manual_serviçoalfamat_série 1000_e_2000.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/2051 cabo",
+    "order": 1,
+    "size": 789806,
+    "sizeFormatted": "771 KB",
+    "manualType": "service"
+  },
+  {
+    "type": "file",
+    "name": "p2051 CABO.pdf",
+    "path": "Alfa/Maquinas Alfa/2051 cabo/p2051 CABO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/2051 cabo",
+    "order": 2,
+    "size": 1820956,
+    "sizeFormatted": "1.7 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "500 fox",
+    "path": "Alfa/Maquinas Alfa/500 fox",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 2,
+    "childCount": 7
+  },
+  {
+    "type": "folder",
+    "name": "Antigas",
+    "path": "Alfa/Maquinas Alfa/500 fox/Antigas",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox",
+    "order": 0,
+    "childCount": 5
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO FOX INM.pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/Antigas/DESENHO EXPLODIDO FOX INM.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox/Antigas",
+    "order": 0,
+    "size": 1799178,
+    "sizeFormatted": "1.7 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO FOX VERDE_NOV_10.pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/Antigas/DESENHO EXPLODIDO FOX VERDE_NOV_10.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox/Antigas",
+    "order": 1,
+    "size": 1926972,
+    "sizeFormatted": "1.8 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "Pfox Tennant.pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/Antigas/Pfox Tennant.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox/Antigas",
+    "order": 2,
+    "size": 3733853,
+    "sizeFormatted": "3.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "oFox .pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/Antigas/oFox .pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox/Antigas",
+    "order": 3,
+    "size": 526823,
+    "sizeFormatted": "514 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "pFOX .pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/Antigas/pFOX .pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox/Antigas",
+    "order": 4,
+    "size": 1443928,
+    "sizeFormatted": "1.4 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "o_FOX rev 2.pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/o_FOX rev 2.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox",
+    "order": 1,
+    "size": 315056,
+    "sizeFormatted": "308 KB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p_Fox (03-2013).pdf",
+    "path": "Alfa/Maquinas Alfa/500 fox/p_Fox (03-2013).pdf",
+    "parentPath": "Alfa/Maquinas Alfa/500 fox",
+    "order": 2,
+    "size": 3513722,
+    "sizeFormatted": "3.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "A140",
+    "path": "Alfa/Maquinas Alfa/A140",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 3,
+    "childCount": 7
+  },
+  {
+    "type": "folder",
+    "name": "Antigas",
+    "path": "Alfa/Maquinas Alfa/A140/Antigas",
+    "parentPath": "Alfa/Maquinas Alfa/A140",
+    "order": 0,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "140_P_C_Portuguese.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/Antigas/140_P_C_Portuguese.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140/Antigas",
+    "order": 0,
+    "size": 55358,
+    "sizeFormatted": "54 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A140.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/Antigas/Manual_de_Peças_Rev00_A140.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140/Antigas",
+    "order": 1,
+    "size": 3794016,
+    "sizeFormatted": "3.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev02_A140.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/Antigas/Manual_de_Peças_Rev02_A140.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140/Antigas",
+    "order": 2,
+    "size": 3739145,
+    "sizeFormatted": "3.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "pA140.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/Antigas/pA140.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140/Antigas",
+    "order": 3,
+    "size": 3716786,
+    "sizeFormatted": "3.5 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "GUIA_RAPIDO_A140_Rev00 BAIXA.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/GUIA_RAPIDO_A140_Rev00 BAIXA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140",
+    "order": 1,
+    "size": 4393837,
+    "sizeFormatted": "4.2 MB",
+    "manualType": "quick_guide"
+  },
+  {
+    "type": "file",
+    "name": "P_A140.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/P_A140.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140",
+    "order": 2,
+    "size": 4098882,
+    "sizeFormatted": "3.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "oA140.pdf",
+    "path": "Alfa/Maquinas Alfa/A140/oA140.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A140",
+    "order": 3,
+    "size": 1513112,
+    "sizeFormatted": "1.4 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A3",
+    "path": "Alfa/Maquinas Alfa/A3",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 4,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "A3 rev2.pdf",
+    "path": "Alfa/Maquinas Alfa/A3/A3 rev2.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A3",
+    "order": 0,
+    "size": 3261340,
+    "sizeFormatted": "3.1 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "oA3 port.pdf",
+    "path": "Alfa/Maquinas Alfa/A3/oA3 port.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A3",
+    "order": 1,
+    "size": 2633879,
+    "sizeFormatted": "2.5 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A300",
+    "path": "Alfa/Maquinas Alfa/A300",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 5,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "Guia_Rápido_Rev00_A300.pdf",
+    "path": "Alfa/Maquinas Alfa/A300/Guia_Rápido_Rev00_A300.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A300",
+    "order": 0,
+    "size": 470769,
+    "sizeFormatted": "460 KB",
+    "manualType": "quick_guide"
+  },
+  {
+    "type": "file",
+    "name": "P A300.pdf",
+    "path": "Alfa/Maquinas Alfa/A300/P A300.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A300",
+    "order": 1,
+    "size": 3602717,
+    "sizeFormatted": "3.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o A300 port.pdf",
+    "path": "Alfa/Maquinas Alfa/A300/o A300 port.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A300",
+    "order": 2,
+    "size": 4034707,
+    "sizeFormatted": "3.8 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "s A300.pdf",
+    "path": "Alfa/Maquinas Alfa/A300/s A300.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A300",
+    "order": 3,
+    "size": 7714757,
+    "sizeFormatted": "7.4 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "folder",
+    "name": "A300 L",
+    "path": "Alfa/Maquinas Alfa/A300 L",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 6,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "O_A300L.pdf",
+    "path": "Alfa/Maquinas Alfa/A300 L/O_A300L.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A300 L",
+    "order": 0,
+    "size": 2902493,
+    "sizeFormatted": "2.8 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "P_A300L.pdf",
+    "path": "Alfa/Maquinas Alfa/A300 L/P_A300L.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A300 L",
+    "order": 1,
+    "size": 5067387,
+    "sizeFormatted": "4.8 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "A5",
+    "path": "Alfa/Maquinas Alfa/A5",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 7,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "oA5 rev00.pdf",
+    "path": "Alfa/Maquinas Alfa/A5/oA5 rev00.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A5",
+    "order": 0,
+    "size": 3808583,
+    "sizeFormatted": "3.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "pA5 rev06.pdf",
+    "path": "Alfa/Maquinas Alfa/A5/pA5 rev06.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A5",
+    "order": 1,
+    "size": 4466990,
+    "sizeFormatted": "4.3 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A500",
+    "path": "Alfa/Maquinas Alfa/A500",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 8,
+    "childCount": 5
+  },
+  {
+    "type": "file",
+    "name": "Carregador.pdf",
+    "path": "Alfa/Maquinas Alfa/A500/Carregador.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A500",
+    "order": 0,
+    "size": 446173,
+    "sizeFormatted": "436 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "GUIA_RAPIDO_A500.pdf",
+    "path": "Alfa/Maquinas Alfa/A500/GUIA_RAPIDO_A500.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A500",
+    "order": 1,
+    "size": 481300,
+    "sizeFormatted": "470 KB",
+    "manualType": "quick_guide"
+  },
+  {
+    "type": "file",
+    "name": "oA500.pdf",
+    "path": "Alfa/Maquinas Alfa/A500/oA500.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A500",
+    "order": 2,
+    "size": 2983011,
+    "sizeFormatted": "2.8 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "p A500.pdf",
+    "path": "Alfa/Maquinas Alfa/A500/p A500.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A500",
+    "order": 3,
+    "size": 3660523,
+    "sizeFormatted": "3.5 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "sA500.pdf",
+    "path": "Alfa/Maquinas Alfa/A500/sA500.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A500",
+    "order": 4,
+    "size": 10046549,
+    "sizeFormatted": "9.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A500 L",
+    "path": "Alfa/Maquinas Alfa/A500 L",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 9,
+    "childCount": 1
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_A500L_Rev00_2022.pdf",
+    "path": "Alfa/Maquinas Alfa/A500 L/Manual_de_Peças_A500L_Rev00_2022.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/A500 L",
+    "order": 0,
+    "size": 2719013,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "B65",
+    "path": "Alfa/Maquinas Alfa/B65",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 10,
+    "childCount": 22
+  },
+  {
+    "type": "folder",
+    "name": "Pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65",
+    "order": 0,
+    "childCount": 22
+  },
+  {
+    "type": "file",
+    "name": "01 CAPA 3000.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/01 CAPA 3000.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 0,
+    "size": 118068,
+    "sizeFormatted": "115 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "02 SUMARIO 3000.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/02 SUMARIO 3000.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 1,
+    "size": 5449,
+    "sizeFormatted": "5 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "03 DE-100B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/03 DE-100B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 2,
+    "size": 190197,
+    "sizeFormatted": "186 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "04 DE-100B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/04 DE-100B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 3,
+    "size": 4836,
+    "sizeFormatted": "5 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "05 DE-300B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/05 DE-300B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 4,
+    "size": 310218,
+    "sizeFormatted": "303 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "06 DE-300B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/06 DE-300B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 5,
+    "size": 5511,
+    "sizeFormatted": "5 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "07 DE-400B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/07 DE-400B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 6,
+    "size": 35627,
+    "sizeFormatted": "35 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "08 DE-400B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/08 DE-400B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 7,
+    "size": 3413,
+    "sizeFormatted": "3 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "09 DE-500B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/09 DE-500B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 8,
+    "size": 189486,
+    "sizeFormatted": "185 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "10 DE-500B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/10 DE-500B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 9,
+    "size": 3513,
+    "sizeFormatted": "3 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "11 DE-700B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/11 DE-700B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 10,
+    "size": 221991,
+    "sizeFormatted": "217 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "12 DE-700B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/12 DE-700B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 11,
+    "size": 5703,
+    "sizeFormatted": "6 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "13 DE-800B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/13 DE-800B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 12,
+    "size": 140538,
+    "sizeFormatted": "137 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "14 DE-800B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/14 DE-800B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 13,
+    "size": 4112,
+    "sizeFormatted": "4 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "15 DE-900B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/15 DE-900B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 14,
+    "size": 89803,
+    "sizeFormatted": "88 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "16 DE-900B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/16 DE-900B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 15,
+    "size": 3241,
+    "sizeFormatted": "3 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "17 DE-1100B65 DESENHO.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/17 DE-1100B65 DESENHO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 16,
+    "size": 107895,
+    "sizeFormatted": "105 KB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "18 DE-1100B65 TABELA.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/18 DE-1100B65 TABELA.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 17,
+    "size": 2974,
+    "sizeFormatted": "3 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "19 DE-26704.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/19 DE-26704.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 18,
+    "size": 29500,
+    "sizeFormatted": "29 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "20 DE-26704E.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/20 DE-26704E.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 19,
+    "size": 18885,
+    "sizeFormatted": "18 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "21 CONTRA CAPA 3000.pdf",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/21 CONTRA CAPA 3000.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 20,
+    "size": 3694,
+    "sizeFormatted": "4 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "R0.PDF",
+    "path": "Alfa/Maquinas Alfa/B65/Pdf/R0.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/B65/Pdf",
+    "order": 21,
+    "size": 129285,
+    "sizeFormatted": "126 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "B70",
+    "path": "Alfa/Maquinas Alfa/B70",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 11,
+    "childCount": 10
+  },
+  {
+    "type": "file",
+    "name": "Adendo Eliminador de Baterias.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Adendo Eliminador de Baterias.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70",
+    "order": 0,
+    "size": 154153,
+    "sizeFormatted": "151 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Antigas",
+    "path": "Alfa/Maquinas Alfa/B70/Antigas",
+    "parentPath": "Alfa/Maquinas Alfa/B70",
+    "order": 1,
+    "childCount": 5
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO B70 VERDE SET 11.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Antigas/DESENHO EXPLODIDO B70 VERDE SET 11.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70/Antigas",
+    "order": 0,
+    "size": 1423216,
+    "sizeFormatted": "1.4 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO B70 VERDE SET 11_freio.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Antigas/DESENHO EXPLODIDO B70 VERDE SET 11_freio.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70/Antigas",
+    "order": 1,
+    "size": 1469336,
+    "sizeFormatted": "1.4 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO B70 VERDE novo.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Antigas/DESENHO EXPLODIDO B70 VERDE novo.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70/Antigas",
+    "order": 2,
+    "size": 1270557,
+    "sizeFormatted": "1.2 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "oB70 membrana.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Antigas/oB70 membrana.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70/Antigas",
+    "order": 3,
+    "size": 635634,
+    "sizeFormatted": "621 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "pB70 (Agos 2006).pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Antigas/pB70 (Agos 2006).pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70/Antigas",
+    "order": 4,
+    "size": 505224,
+    "sizeFormatted": "493 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Instruções de Instalação do Anti-Respingo I.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/Instruções de Instalação do Anti-Respingo I.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70",
+    "order": 2,
+    "size": 49565,
+    "sizeFormatted": "48 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "MT19653M.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/MT19653M.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70",
+    "order": 3,
+    "size": 24558,
+    "sizeFormatted": "24 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "P_B70_00_50001-XXXXX.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/P_B70_00_50001-XXXXX.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70",
+    "order": 4,
+    "size": 1528026,
+    "sizeFormatted": "1.5 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o B70.pdf",
+    "path": "Alfa/Maquinas Alfa/B70/o B70.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70",
+    "order": 5,
+    "size": 2674493,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "folder",
+    "name": "B70 analogica",
+    "path": "Alfa/Maquinas Alfa/B70 analogica",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 12,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "b70-operator-manual-pt-br.pdf",
+    "path": "Alfa/Maquinas Alfa/B70 analogica/b70-operator-manual-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70 analogica",
+    "order": 0,
+    "size": 2011497,
+    "sizeFormatted": "1.9 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "b70-parts-manual-pt-br analogica.pdf",
+    "path": "Alfa/Maquinas Alfa/B70 analogica/b70-parts-manual-pt-br analogica.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70 analogica",
+    "order": 1,
+    "size": 1701665,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "b70-wall-chart-pt-br.pdf",
+    "path": "Alfa/Maquinas Alfa/B70 analogica/b70-wall-chart-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/B70 analogica",
+    "order": 2,
+    "size": 1161587,
+    "sizeFormatted": "1.1 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Brava",
+    "path": "Alfa/Maquinas Alfa/Brava",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 13,
+    "childCount": 13
+  },
+  {
+    "type": "folder",
+    "name": "Antigas",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "parentPath": "Alfa/Maquinas Alfa/Brava",
+    "order": 0,
+    "childCount": 8
+  },
+  {
+    "type": "file",
+    "name": "ESQ EL BRAVA 2 MTB NOVO.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/ESQ EL BRAVA 2 MTB NOVO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 0,
+    "size": 79679,
+    "sizeFormatted": "78 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ESQUEMA ELETRICO 1 MTB.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/ESQUEMA ELETRICO 1 MTB.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 1,
+    "size": 74788,
+    "sizeFormatted": "73 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Brava_00_40001-XXXXX.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/Manual_de_Peças_Brava_00_40001-XXXXX.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 2,
+    "size": 2990765,
+    "sizeFormatted": "2.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Brava_Rev.03 4_18.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/Manual_de_Peças_Brava_Rev.03 4_18.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 3,
+    "size": 3232121,
+    "sizeFormatted": "3.1 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Brava_Rev.03.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/Manual_de_Peças_Brava_Rev.03.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 4,
+    "size": 3363772,
+    "sizeFormatted": "3.2 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Brava_Rev.04.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/Manual_de_Peças_Brava_Rev.04.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 5,
+    "size": 3546622,
+    "sizeFormatted": "3.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Posição boia na Brava.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/Posição boia na Brava.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 6,
+    "size": 36715,
+    "sizeFormatted": "36 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "pPRÉ-VARRIÇÃO.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Antigas/pPRÉ-VARRIÇÃO.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava/Antigas",
+    "order": 7,
+    "size": 202800,
+    "sizeFormatted": "198 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Carrinho novo Bava BV28200.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/Carrinho novo Bava BV28200.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava",
+    "order": 1,
+    "size": 256444,
+    "sizeFormatted": "250 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "ESQUEMA ELETRICO 2 MTB NOVO CORRIGIDO FAROL B.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/ESQUEMA ELETRICO 2 MTB NOVO CORRIGIDO FAROL B.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava",
+    "order": 2,
+    "size": 87122,
+    "sizeFormatted": "85 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "oBRAVA.PDF",
+    "path": "Alfa/Maquinas Alfa/Brava/oBRAVA.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Brava",
+    "order": 3,
+    "size": 863430,
+    "sizeFormatted": "843 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "pBrava.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/pBrava.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava",
+    "order": 4,
+    "size": 3312325,
+    "sizeFormatted": "3.2 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "sBRAVA_ Br.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava/sBRAVA_ Br.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava",
+    "order": 5,
+    "size": 363286,
+    "sizeFormatted": "355 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Brava Modulo Itausea",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 14,
+    "childCount": 10
+  },
+  {
+    "type": "file",
+    "name": "7RS2USB_general.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/7RS2USB_general.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 0,
+    "size": 794702,
+    "sizeFormatted": "776 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Boletim 02 Revisao 00 pulso.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/Boletim 02 Revisao 00 pulso.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 1,
+    "size": 223079,
+    "sizeFormatted": "218 KB",
+    "manualType": "bulletin"
+  },
+  {
+    "type": "file",
+    "name": "Boletim nova Brava Revisão 00.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/Boletim nova Brava Revisão 00.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 2,
+    "size": 262477,
+    "sizeFormatted": "256 KB",
+    "manualType": "bulletin"
+  },
+  {
+    "type": "file",
+    "name": "ITALSEA BRAVA 4001.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/ITALSEA BRAVA 4001.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 3,
+    "size": 2540755,
+    "sizeFormatted": "2.4 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Informativo BV13400 - TSB_BR Nº 004.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/Informativo BV13400 - TSB_BR Nº 004.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 4,
+    "size": 251042,
+    "sizeFormatted": "245 KB",
+    "manualType": "bulletin"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_BRAVA-4001_Rev.04_abr2025-1.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/Manual_de_Peças_BRAVA-4001_Rev.04_abr2025-1.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 5,
+    "size": 7284006,
+    "sizeFormatted": "6.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_BRAVA-4001_Rev.04_abr2025.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/Manual_de_Peças_BRAVA-4001_Rev.04_abr2025.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 6,
+    "size": 7284006,
+    "sizeFormatted": "6.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "P Brava Itausea rev 02.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/P Brava Itausea rev 02.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 7,
+    "size": 7141966,
+    "sizeFormatted": "6.8 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "TSB_BR Nº 004 - RECALL BRAVA - DG11943213.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/TSB_BR Nº 004 - RECALL BRAVA - DG11943213.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 8,
+    "size": 284151,
+    "sizeFormatted": "277 KB",
+    "manualType": "bulletin"
+  },
+  {
+    "type": "file",
+    "name": "p Brava rev itausea.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava Modulo Itausea/p Brava rev itausea.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava Modulo Itausea",
+    "order": 9,
+    "size": 7534538,
+    "sizeFormatted": "7.2 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Brava trio",
+    "path": "Alfa/Maquinas Alfa/Brava trio",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 15,
+    "childCount": 1
+  },
+  {
+    "type": "file",
+    "name": "LAVADORA BRAVA_Trio.pdf",
+    "path": "Alfa/Maquinas Alfa/Brava trio/LAVADORA BRAVA_Trio.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Brava trio",
+    "order": 0,
+    "size": 2735704,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Twister",
+    "path": "Alfa/Maquinas Alfa/Twister",
+    "parentPath": "Alfa/Maquinas Alfa",
+    "order": 16,
+    "childCount": 32
+  },
+  {
+    "type": "file",
+    "name": "DESENHO EXPLODIDO TWISTER 2011.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/DESENHO EXPLODIDO TWISTER 2011.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 0,
+    "size": 1658267,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "file",
+    "name": "Declaração de dados técnicos.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Declaração de dados técnicos.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 1,
+    "size": 484437,
+    "sizeFormatted": "473 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Des_Expl_Twister_motor_inclinado_Mar_12_.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Des_Expl_Twister_motor_inclinado_Mar_12_.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 2,
+    "size": 2063544,
+    "sizeFormatted": "2.0 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Desenho Explodido Twister Hidraulica.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenho Explodido Twister Hidraulica.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 3,
+    "size": 3828906,
+    "sizeFormatted": "3.7 MB",
+    "manualType": "exploded_view"
+  },
+  {
+    "type": "folder",
+    "name": "Desenhos",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 4,
+    "childCount": 19
+  },
+  {
+    "type": "file",
+    "name": "Alternador TW27000.PDF",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/Alternador TW27000.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 0,
+    "size": 319609,
+    "sizeFormatted": "312 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "EIXO GUIA BOMBA TWISTER.PDF",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/EIXO GUIA BOMBA TWISTER.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 1,
+    "size": 121888,
+    "sizeFormatted": "119 KB",
+    "manualType": "quick_guide"
+  },
+  {
+    "type": "file",
+    "name": "Freio twister TW13200.PDF",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/Freio twister TW13200.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 2,
+    "size": 266598,
+    "sizeFormatted": "260 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW13200.PDF",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW13200.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 3,
+    "size": 266598,
+    "sizeFormatted": "260 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW17100.PDF",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW17100.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 4,
+    "size": 161596,
+    "sizeFormatted": "158 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22040.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22040.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 5,
+    "size": 141889,
+    "sizeFormatted": "139 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22111FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22111FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 6,
+    "size": 130077,
+    "sizeFormatted": "127 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22116FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22116FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 7,
+    "size": 164858,
+    "sizeFormatted": "161 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22117FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22117FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 8,
+    "size": 223321,
+    "sizeFormatted": "218 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22118FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22118FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 9,
+    "size": 135241,
+    "sizeFormatted": "132 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22211FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22211FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 10,
+    "size": 142171,
+    "sizeFormatted": "139 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22212FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22212FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 11,
+    "size": 182392,
+    "sizeFormatted": "178 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22213FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22213FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 12,
+    "size": 207686,
+    "sizeFormatted": "203 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22214FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22214FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 13,
+    "size": 195159,
+    "sizeFormatted": "191 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22215FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22215FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 14,
+    "size": 190140,
+    "sizeFormatted": "186 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22216FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22216FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 15,
+    "size": 181021,
+    "sizeFormatted": "177 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22218FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22218FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 16,
+    "size": 189555,
+    "sizeFormatted": "185 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW22219FP.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW22219FP.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 17,
+    "size": 210569,
+    "sizeFormatted": "206 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "TW27000.PDF",
+    "path": "Alfa/Maquinas Alfa/Twister/Desenhos/TW27000.PDF",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Desenhos",
+    "order": 18,
+    "size": 329815,
+    "sizeFormatted": "322 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Diversos",
+    "path": "Alfa/Maquinas Alfa/Twister/Diversos",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 5,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "18_690_08_PTE.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Diversos/18_690_08_PTE.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Diversos",
+    "order": 0,
+    "size": 2724543,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "CH440+Parts+List1.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Diversos/CH440+Parts+List1.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Diversos",
+    "order": 1,
+    "size": 2679077,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Esquemas",
+    "path": "Alfa/Maquinas Alfa/Twister/Esquemas",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 6,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "ESQUEMA ELETRICO TW HID.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Esquemas/ESQUEMA ELETRICO TW HID.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Esquemas",
+    "order": 0,
+    "size": 37599,
+    "sizeFormatted": "37 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "Esquema hidráulico TW nova.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Esquemas/Esquema hidráulico TW nova.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister/Esquemas",
+    "order": 1,
+    "size": 223303,
+    "sizeFormatted": "218 KB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "MANUAL_DE_INSTRUÇÕES_NOVA_TWISTER.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/MANUAL_DE_INSTRUÇÕES_NOVA_TWISTER.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 7,
+    "size": 2098397,
+    "sizeFormatted": "2.0 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Twister_02_60306-.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Manual_de_Peças_Twister_02_60306-.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 8,
+    "size": 2885141,
+    "sizeFormatted": "2.8 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "Twister_03 (2).pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Twister_03 (2).pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 9,
+    "size": 3687486,
+    "sizeFormatted": "3.5 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Twister_03.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/Twister_03.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 10,
+    "size": 3687486,
+    "sizeFormatted": "3.5 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "oTwister - abr06.pdf",
+    "path": "Alfa/Maquinas Alfa/Twister/oTwister - abr06.pdf",
+    "parentPath": "Alfa/Maquinas Alfa/Twister",
+    "order": 11,
+    "size": 399495,
+    "sizeFormatted": "390 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "Maquinas Gaomei",
+    "path": "Alfa/Maquinas Gaomei",
+    "parentPath": "Alfa",
+    "order": 6,
+    "childCount": 46
+  },
+  {
+    "type": "folder",
+    "name": "A260",
+    "path": "Alfa/Maquinas Gaomei/A260",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 0,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A260.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260/Manual_de_Peças_Rev00_A260.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260",
+    "order": 0,
+    "size": 1601177,
+    "sizeFormatted": "1.5 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "VE A260 versão de 10.24 c esquema.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260/VE A260 versão de 10.24 c esquema.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260",
+    "order": 1,
+    "size": 1478100,
+    "sizeFormatted": "1.4 MB",
+    "manualType": "diagram"
+  },
+  {
+    "type": "file",
+    "name": "a260-parts-manual-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260/a260-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260",
+    "order": 2,
+    "size": 1360256,
+    "sizeFormatted": "1.3 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "a260-wall-chart-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260/a260-wall-chart-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260",
+    "order": 3,
+    "size": 2052389,
+    "sizeFormatted": "2.0 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "A260c",
+    "path": "Alfa/Maquinas Gaomei/A260c",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 1,
+    "childCount": 4
+  },
+  {
+    "type": "file",
+    "name": "A260(AC220V)-1(1).pdf",
+    "path": "Alfa/Maquinas Gaomei/A260c/A260(AC220V)-1(1).pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260c",
+    "order": 0,
+    "size": 52460,
+    "sizeFormatted": "51 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "A260(AC220V)-2.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260c/A260(AC220V)-2.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260c",
+    "order": 1,
+    "size": 42774,
+    "sizeFormatted": "42 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operações_A260-220_2022.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260c/Manual_de_Operações_A260-220_2022.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260c",
+    "order": 2,
+    "size": 2550230,
+    "sizeFormatted": "2.4 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A260c.pdf",
+    "path": "Alfa/Maquinas Gaomei/A260c/Manual_de_Peças_Rev00_A260c.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A260c",
+    "order": 3,
+    "size": 1794031,
+    "sizeFormatted": "1.7 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "A650",
+    "path": "Alfa/Maquinas Gaomei/A650",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 2,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "Folheto A650.pdf",
+    "path": "Alfa/Maquinas Gaomei/A650/Folheto A650.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A650",
+    "order": 0,
+    "size": 262018,
+    "sizeFormatted": "256 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A650.pdf",
+    "path": "Alfa/Maquinas Gaomei/A650/Manual_de_Peças_Rev00_A650.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A650",
+    "order": 1,
+    "size": 2701397,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o A650.pdf",
+    "path": "Alfa/Maquinas Gaomei/A650/o A650.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A650",
+    "order": 2,
+    "size": 6289219,
+    "sizeFormatted": "6.0 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "folder",
+    "name": "A670",
+    "path": "Alfa/Maquinas Gaomei/A670",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 3,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "mt98240.pdf",
+    "path": "Alfa/Maquinas Gaomei/A670/mt98240.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A670",
+    "order": 0,
+    "size": 1230465,
+    "sizeFormatted": "1.2 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "o A670.pdf",
+    "path": "Alfa/Maquinas Gaomei/A670/o A670.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A670",
+    "order": 1,
+    "size": 4850415,
+    "sizeFormatted": "4.6 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p A670.pdf",
+    "path": "Alfa/Maquinas Gaomei/A670/p A670.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A670",
+    "order": 2,
+    "size": 1729932,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "A750",
+    "path": "Alfa/Maquinas Gaomei/A750",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 4,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "A750.pdf",
+    "path": "Alfa/Maquinas Gaomei/A750/A750.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A750",
+    "order": 0,
+    "size": 258966,
+    "sizeFormatted": "253 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A750.pdf",
+    "path": "Alfa/Maquinas Gaomei/A750/Manual_de_Peças_Rev00_A750.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A750",
+    "order": 1,
+    "size": 5169537,
+    "sizeFormatted": "4.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o A750.pdf",
+    "path": "Alfa/Maquinas Gaomei/A750/o A750.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A750",
+    "order": 2,
+    "size": 4251479,
+    "sizeFormatted": "4.1 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "folder",
+    "name": "A780",
+    "path": "Alfa/Maquinas Gaomei/A780",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 5,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_A650.pdf",
+    "path": "Alfa/Maquinas Gaomei/A780/Manual_de_Peças_Rev00_A650.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A780",
+    "order": 0,
+    "size": 2701397,
+    "sizeFormatted": "2.6 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "a780-operator-manual-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/A780/a780-operator-manual-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A780",
+    "order": 1,
+    "size": 2040762,
+    "sizeFormatted": "1.9 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "a780-parts-manual-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/A780/a780-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/A780",
+    "order": 2,
+    "size": 2044275,
+    "sizeFormatted": "1.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "Bizz",
+    "path": "Alfa/Maquinas Gaomei/Bizz",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 6,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operação_ALFA_BIZZ.pdf",
+    "path": "Alfa/Maquinas Gaomei/Bizz/Manual_de_Operação_ALFA_BIZZ.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/Bizz",
+    "order": 0,
+    "size": 7691387,
+    "sizeFormatted": "7.3 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_ALFA_BIZZ.pdf",
+    "path": "Alfa/Maquinas Gaomei/Bizz/Manual_de_Peças_ALFA_BIZZ.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/Bizz",
+    "order": 1,
+    "size": 400490,
+    "sizeFormatted": "391 KB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "S960",
+    "path": "Alfa/Maquinas Gaomei/S960",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 7,
+    "childCount": 1
+  },
+  {
+    "type": "file",
+    "name": "s960-brochure-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/S960/s960-brochure-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/S960",
+    "order": 0,
+    "size": 1173043,
+    "sizeFormatted": "1.1 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "SA1200",
+    "path": "Alfa/Maquinas Gaomei/SA1200",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 8,
+    "childCount": 6
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Operações_SA1200_Rev00_2023.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA1200/Manual_de_Operações_SA1200_Rev00_2023.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA1200",
+    "order": 0,
+    "size": 2290409,
+    "sizeFormatted": "2.2 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "O  SA1200.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA1200/O  SA1200.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA1200",
+    "order": 1,
+    "size": 2290409,
+    "sizeFormatted": "2.2 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "S SA1200.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA1200/S SA1200.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA1200",
+    "order": 2,
+    "size": 94574689,
+    "sizeFormatted": "90.2 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "file",
+    "name": "SA 1200 Peças.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA1200/SA 1200 Peças.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA1200",
+    "order": 3,
+    "size": 3032028,
+    "sizeFormatted": "2.9 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "o SA1200.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA1200/o SA1200.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA1200",
+    "order": 4,
+    "size": 2290409,
+    "sizeFormatted": "2.2 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "sa1200-parts-manual-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA1200/sa1200-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA1200",
+    "order": 5,
+    "size": 2672275,
+    "sizeFormatted": "2.5 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "SA2000",
+    "path": "Alfa/Maquinas Gaomei/SA2000",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 9,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "o_sa2000.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA2000/o_sa2000.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA2000",
+    "order": 0,
+    "size": 4893692,
+    "sizeFormatted": "4.7 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p_sa2000.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA2000/p_sa2000.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA2000",
+    "order": 1,
+    "size": 2491196,
+    "sizeFormatted": "2.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "SA3000",
+    "path": "Alfa/Maquinas Gaomei/SA3000",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 10,
+    "childCount": 2
+  },
+  {
+    "type": "file",
+    "name": "o_sa3000.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA3000/o_sa3000.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA3000",
+    "order": 0,
+    "size": 8120698,
+    "sizeFormatted": "7.7 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p_sa3000.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA3000/p_sa3000.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA3000",
+    "order": 1,
+    "size": 2489330,
+    "sizeFormatted": "2.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "folder",
+    "name": "SA4000",
+    "path": "Alfa/Maquinas Gaomei/SA4000",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 11,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_SA4000.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA4000/Manual_de_Peças_Rev00_SA4000.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA4000",
+    "order": 0,
+    "size": 5693592,
+    "sizeFormatted": "5.4 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "VE SA4000.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA4000/VE SA4000.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA4000",
+    "order": 1,
+    "size": 5602591,
+    "sizeFormatted": "5.3 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "sa4000-brochure-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/SA4000/sa4000-brochure-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/SA4000",
+    "order": 2,
+    "size": 262481,
+    "sizeFormatted": "256 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "T360",
+    "path": "Alfa/Maquinas Gaomei/T360",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 12,
+    "childCount": 7
+  },
+  {
+    "type": "file",
+    "name": "T360_SERVICE_MANUAL_Rev. 01 (08-2025）.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/T360_SERVICE_MANUAL_Rev. 01 (08-2025）.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 0,
+    "size": 3210175,
+    "sizeFormatted": "3.1 MB",
+    "manualType": "service"
+  },
+  {
+    "type": "file",
+    "name": "TN5100898.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/TN5100898.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 1,
+    "size": 3887081,
+    "sizeFormatted": "3.7 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "o T360.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/o T360.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 2,
+    "size": 5253057,
+    "sizeFormatted": "5.0 MB",
+    "manualType": "operation"
+  },
+  {
+    "type": "file",
+    "name": "p T360.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/p T360.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 3,
+    "size": 1169735,
+    "sizeFormatted": "1.1 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "t360-brochure-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/t360-brochure-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 4,
+    "size": 288322,
+    "sizeFormatted": "282 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "t360-pc-sheet-pt-br.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/t360-pc-sheet-pt-br.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 5,
+    "size": 90885,
+    "sizeFormatted": "89 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "t360.pdf",
+    "path": "Alfa/Maquinas Gaomei/T360/t360.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T360",
+    "order": 6,
+    "size": 900119,
+    "sizeFormatted": "879 KB",
+    "manualType": "other"
+  },
+  {
+    "type": "folder",
+    "name": "T760",
+    "path": "Alfa/Maquinas Gaomei/T760",
+    "parentPath": "Alfa/Maquinas Gaomei",
+    "order": 13,
+    "childCount": 3
+  },
+  {
+    "type": "file",
+    "name": "MANUAL OPERADOR T760___.pdf",
+    "path": "Alfa/Maquinas Gaomei/T760/MANUAL OPERADOR T760___.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T760",
+    "order": 0,
+    "size": 2346589,
+    "sizeFormatted": "2.2 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "Manual_de_Peças_Rev00_T760_mar25-1.pdf",
+    "path": "Alfa/Maquinas Gaomei/T760/Manual_de_Peças_Rev00_T760_mar25-1.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T760",
+    "order": 1,
+    "size": 1854971,
+    "sizeFormatted": "1.8 MB",
+    "manualType": "parts"
+  },
+  {
+    "type": "file",
+    "name": "propel controller error code.pdf",
+    "path": "Alfa/Maquinas Gaomei/T760/propel controller error code.pdf",
+    "parentPath": "Alfa/Maquinas Gaomei/T760",
+    "order": 2,
+    "size": 1240619,
+    "sizeFormatted": "1.2 MB",
+    "manualType": "other"
+  },
+  {
+    "type": "file",
+    "name": "alfa-mini-parts-manual-pt-br.pdf",
+    "path": "Alfa/alfa-mini-parts-manual-pt-br.pdf",
+    "parentPath": "Alfa",
+    "order": 7,
+    "size": 1687212,
+    "sizeFormatted": "1.6 MB",
+    "manualType": "parts"
+  }
+]

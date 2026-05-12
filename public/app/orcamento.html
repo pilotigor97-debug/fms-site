@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoluClean — Orçamento</title>
+  <style>
+    :root {
+      --primary: #1B4F8A;
+      --secondary: #0D2B4A;
+      --accent: #E8A020;
+      --bg: #F4F6F9;
+      --success: #1A7A3C;
+      --warning: #D4700A;
+      --error: #C42B2B;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--secondary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      background: var(--secondary);
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 { color: white; font-size: 20px; font-weight: 600; }
+    .header p { color: rgba(255,255,255,0.6); font-size: 13px; margin-top: 4px; }
+    .card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 28px 24px;
+      margin: 24px 16px;
+      max-width: 540px;
+      width: calc(100% - 32px);
+    }
+    .card h2 { font-size: 17px; margin-bottom: 16px; }
+    .badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .badge-enviado { background: #E8EFF8; color: var(--primary); }
+    .badge-aprovado { background: #E6F4EB; color: var(--success); }
+    .badge-aprovacao_parcial { background: #FEF3E7; color: var(--warning); }
+    .badge-rejeitado { background: #FDECEA; color: var(--error); }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px solid #f0f2f5;
+      font-size: 14px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #8899AA; }
+    .info-value { font-weight: 500; }
+
+    /* Items table with checkboxes */
+    .items-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .items-table th {
+      text-align: left;
+      font-size: 10.5px;
+      color: #8899AA;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 8px 4px 8px 0;
+      border-bottom: 1.5px solid #E8ECF0;
+    }
+    .items-table th.col-check { width: 32px; }
+    .items-table th.col-qty { width: 40px; text-align: center; }
+    .items-table th.col-total { text-align: right; }
+    .items-table td {
+      padding: 12px 4px 12px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #F4F6F9;
+      vertical-align: middle;
+    }
+    .items-table td.col-total { text-align: right; font-weight: 600; }
+    .items-table td.col-qty { text-align: center; color: #667788; }
+    .items-table tr.item-row { cursor: pointer; transition: background 0.15s; }
+
+    /* Report cards */
+    .report-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      background: #F8FAFB;
+      border: 1px solid #E8ECF0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: background 0.15s, border-color 0.15s;
+      text-decoration: none;
+      color: var(--secondary);
+    }
+    .report-card:hover {
+      background: #EEF3F7;
+      border-color: var(--primary);
+    }
+    .report-card-icon {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      background: var(--primary);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .report-card-body { flex: 1; min-width: 0; }
+    .report-card-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+    .report-card-meta { font-size: 12px; color: #8899AA; }
+    .report-card-arrow { color: #8899AA; font-size: 18px; }
+    .report-card.no-pdf {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .report-card.no-pdf .report-card-arrow { display: none; }
+
+    /* Modal de relatório elaborado */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-content {
+      background: white;
+      border-radius: 14px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+    .modal-header {
+      background: var(--primary);
+      color: white;
+      padding: 18px 22px;
+      border-radius: 14px 14px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .modal-header h2 { font-size: 17px; color: white; }
+    .modal-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    .modal-body { padding: 20px 22px 28px; }
+    .report-meta {
+      font-size: 12px;
+      color: #8899AA;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #E8ECF0;
+    }
+    .report-section {
+      margin-bottom: 18px;
+    }
+    .report-section-title {
+      font-size: 11px;
+      color: white;
+      background: var(--primary);
+      padding: 6px 12px;
+      border-radius: 6px 6px 0 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .report-section-body {
+      border: 1px solid #E8ECF0;
+      border-top: none;
+      padding: 12px 14px;
+      border-radius: 0 0 6px 6px;
+      font-size: 14px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      color: var(--secondary);
+    }
+    .report-pdf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: var(--bg);
+      color: var(--primary);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .report-pdf-link:hover { background: #E8EFF8; }
+    .items-table tr.item-row:hover td { background: #F8FAFC; }
+    .items-table tr.item-row.deselected td { opacity: 0.4; }
+    .items-table tr.item-row.deselected td.col-check { opacity: 1; }
+    .item-check {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+
+    .selected-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 13px;
+      color: #667788;
+    }
+    .total-section {
+      margin-top: 8px;
+      padding-top: 12px;
+      border-top: 2px solid var(--primary);
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    .total-row.grand {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      padding-top: 8px;
+    }
+
+    /* Disclaimer */
+    .disclaimer-box {
+      margin-top: 20px;
+      background: #F4F6F9;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .disclaimer-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #8899AA;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .disclaimer-text {
+      font-size: 12px;
+      color: #556;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    /* Checkbox agree */
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 14px;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .checkbox-row input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      cursor: pointer;
+      margin-top: 1px;
+      accent-color: var(--primary);
+    }
+    .checkbox-row span {
+      font-size: 13px;
+      font-weight: 500;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .approve-section {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #E8ECF0;
+    }
+    label.field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #556677;
+      margin-bottom: 6px;
+      margin-top: 18px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    input[type="text"]:focus { border-color: var(--primary); }
+    .input-hint { font-size: 11px; color: #8899AA; margin-top: 4px; }
+
+    /* Action buttons */
+    .action-buttons { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .btn:hover:not(:disabled) { opacity: 0.88; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-approve { background: var(--primary); color: white; }
+    .btn-reject  { background: white; color: var(--error); border: 1.5px solid var(--error); }
+    .btn-reject:hover:not(:disabled) { background: #FEF0F0; }
+
+    .error-msg {
+      background: #FDECEA;
+      color: var(--error);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 15px;
+      color: #8899AA;
+    }
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .footer {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #8899AA;
+    }
+    .footer a { color: var(--primary); text-decoration: none; }
+
+    /* Result overlays */
+    .result-overlay {
+      padding: 24px 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .result-overlay .icon { font-size: 44px; margin-bottom: 8px; }
+    .result-overlay h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+    .result-overlay .conf-number {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin: 8px 0 4px;
+      font-family: monospace;
+    }
+    .result-overlay .conf-detail { font-size: 13px; opacity: 0.85; line-height: 1.5; }
+    .result-overlay .legal-note { margin-top: 14px; font-size: 11.5px; opacity: 0.7; line-height: 1.5; }
+
+    .overlay-approved { background: linear-gradient(135deg, #1A7A3C, #22944A); color: white; }
+    .overlay-partial  { background: linear-gradient(135deg, #B25500, #D4700A); color: white; }
+    .overlay-rejected { background: linear-gradient(135deg, #8B1F1F, #C42B2B); color: white; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>SoluClean</h1>
+    <p>Orçamento de Serviços</p>
+  </div>
+
+  <div class="card" id="loadingCard">
+    <div class="loading">Carregando orçamento...</div>
+  </div>
+
+  <div class="card" id="errorCard" style="display:none">
+    <div class="error-msg" style="display:block" id="loadError"></div>
+  </div>
+
+  <div class="card" id="quoteCard" style="display:none">
+    <div id="statusBadge" class="badge badge-enviado"></div>
+    <h2 id="quoteTitle"></h2>
+    <div class="info-row">
+      <span class="info-label">Cliente</span>
+      <span class="info-value" id="clientName"></span>
+    </div>
+    <div class="info-row" id="ticketRow" style="display:none">
+      <span class="info-label">Chamado</span>
+      <span class="info-value" id="ticketNumber"></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Data</span>
+      <span class="info-value" id="quoteDate"></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Validade</span>
+      <span class="info-value" id="validity"></span>
+    </div>
+
+    <div id="descriptionBox" style="display:none; margin-top:16px;">
+      <p id="quoteDescription" style="font-size:14px; color:#556677; line-height:1.5;"></p>
+    </div>
+
+    <!-- Items table — com checkboxes quando aguardando aprovação -->
+    <table class="items-table" style="margin-top:20px" id="itemsTable">
+      <thead>
+        <tr>
+          <th class="col-check" id="checkCol" style="display:none"></th>
+          <th>Item</th>
+          <th class="col-qty">Qtd</th>
+          <th class="col-total">Valor</th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+
+    <!-- Subtotal selecionado (aparece só quando há checkboxes) -->
+    <div id="selectedTotalRow" class="selected-total-row" style="display:none">
+      <span>Itens selecionados:</span>
+      <span id="selectedTotal" style="font-weight:600; color:var(--primary)">R$ 0,00</span>
+    </div>
+
+    <div class="total-section">
+      <div class="total-row">
+        <span>Subtotal peças</span>
+        <span id="subtotal"></span>
+      </div>
+      <div class="total-row" id="laborRow" style="display:none">
+        <span id="laborLabel">Mão de obra</span>
+        <span id="laborCost"></span>
+      </div>
+      <div class="total-row grand">
+        <span>Total</span>
+        <span id="grandTotal"></span>
+      </div>
+    </div>
+
+    <!-- Relatórios Técnicos do chamado (visível quando há relatórios) -->
+    <div id="reportsBox" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid #E8ECF0;">
+      <h3 style="font-size:13px; color:#8899AA; text-transform:uppercase; letter-spacing:0.4px; margin-bottom:12px;">
+        Relatórios Técnicos do Chamado
+      </h3>
+      <div id="reportsList"></div>
+    </div>
+
+    <!-- Formulário de aprovação (visível só quando status == enviado) -->
+    <div id="approveSection" class="approve-section" style="display:none">
+
+      <div class="disclaimer-box">
+        <div class="disclaimer-title">Termos e Condições</div>
+        <div class="disclaimer-text">Ao aprovar este orçamento, o cliente declara estar de acordo com os serviços descritos, valores apresentados e condições informadas.
+
+A aprovação autoriza o início da execução dos serviços, incluindo a aplicação de peças e materiais necessários para a conclusão do atendimento.
+
+O cliente reconhece que este orçamento está vinculado ao diagnóstico técnico realizado no momento da avaliação. Devido ao estado geral do equipamento e ao seu tempo de uso, poderão existir falhas ou problemas ocultos não identificados previamente.
+
+Caso novas condições ou necessidades sejam identificadas durante ou após a execução dos serviços, estas serão comunicadas para análise, podendo resultar na elaboração de um novo orçamento.
+
+Após a execução dos serviços e instalação das peças, o equipamento será testado em condições normais de operação. No entanto, não se garante a inexistência de defeitos adicionais que possam surgir posteriormente.
+
+As peças estão sujeitas à disponibilidade e este orçamento possui validade conforme prazo indicado.
+
+Esta aprovação possui validade legal e poderá ser utilizada como comprovação formal de autorização para execução dos serviços.</div>
+      </div>
+
+      <label class="checkbox-row" id="agreeLabel">
+        <input type="checkbox" id="agreeCheck" onchange="onAgreeChange()">
+        <span>Li e concordo com os termos e condições acima</span>
+      </label>
+
+      <label class="field-label" for="cnpjInput">CNPJ</label>
+      <input type="text" id="cnpjInput" placeholder="00.000.000/0000-00"
+             maxlength="18" inputmode="numeric">
+      <div class="input-hint">Digite os 14 dígitos do CNPJ cadastrado</div>
+
+      <div class="action-buttons">
+        <button class="btn btn-approve" id="approveBtn" onclick="approve()" disabled>
+          Aprovar Orçamento
+        </button>
+        <button class="btn btn-reject" id="rejectBtn" onclick="rejectQuote()" disabled>
+          Recusar Orçamento
+        </button>
+      </div>
+      <div class="error-msg" id="approveError"></div>
+    </div>
+
+    <!-- Resultado — aparece DEPOIS do formulário -->
+    <div id="resultBox" style="display:none; margin-top: 24px;"></div>
+  </div>
+
+  <div class="footer">
+    <a href="https://solucleanrj.com.br" target="_blank">solucleanrj.com.br</a>
+  </div>
+
+  <script>
+    const BASE_URL = '';
+
+    // ── Utilitários ───────────────────────────────────────────────────────────
+    function fmtCurrency(v) {
+      return 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      const d = new Date(iso), p = n => String(n).padStart(2, '0');
+      return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()}`;
+    }
+    function fmtDateTime(iso) {
+      if (!iso) return '—';
+      const d = new Date(iso), p = n => String(n).padStart(2, '0');
+      return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} às ${p(d.getHours())}:${p(d.getMinutes())}`;
+    }
+    function fmtCnpj(value) {
+      const d = value.replace(/\D/g, '');
+      if (d.length <= 2) return d;
+      if (d.length <= 5) return d.replace(/(\d{2})(\d)/, '$1.$2');
+      if (d.length <= 8) return d.replace(/(\d{2})(\d{3})(\d)/, '$1.$2.$3');
+      if (d.length <= 12) return d.replace(/(\d{2})(\d{3})(\d{3})(\d)/, '$1.$2.$3/$4');
+      return d.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{1,2})/, '$1.$2.$3/$4-$5');
+    }
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ── CNPJ auto-format ─────────────────────────────────────────────────────
+    const cnpjInput = document.getElementById('cnpjInput');
+    cnpjInput.addEventListener('input', function() {
+      const cursor = this.selectionStart, prev = this.value;
+      this.value = fmtCnpj(this.value);
+      const diff = this.value.length - prev.length;
+      this.setSelectionRange(cursor + diff, cursor + diff);
+    });
+
+    // ── Estado ────────────────────────────────────────────────────────────────
+    let quoteData = null;          // dados carregados
+    let itemChecks = [];           // array de booleans por item
+    let laborCostValue = 0;
+
+    // ── Checkbox agree → habilita botões ─────────────────────────────────────
+    function onAgreeChange() {
+      const ok = document.getElementById('agreeCheck').checked;
+      document.getElementById('approveBtn').disabled = !ok || getSelectedCount() === 0;
+      document.getElementById('rejectBtn').disabled = !ok;
+    }
+
+    // ── Checkbox de item ─────────────────────────────────────────────────────
+    function onItemCheck(idx) {
+      itemChecks[idx] = !itemChecks[idx];
+      const rows = document.querySelectorAll('.item-row');
+      rows[idx].classList.toggle('deselected', !itemChecks[idx]);
+      updateSelectedTotal();
+      // Revalida botão aprovar (precisa de pelo menos 1 item + agree)
+      const agreed = document.getElementById('agreeCheck').checked;
+      document.getElementById('approveBtn').disabled = !agreed || getSelectedCount() === 0;
+      // Atualiza label do botão
+      updateApproveLabel();
+    }
+
+    function getSelectedCount() {
+      return itemChecks.filter(Boolean).length;
+    }
+
+    function getSelectedIndices() {
+      return itemChecks.map((v, i) => v ? i : -1).filter(i => i >= 0);
+    }
+
+    function updateSelectedTotal() {
+      if (!quoteData) return;
+      const indices = getSelectedIndices();
+      let total = 0;
+      for (const i of indices) {
+        const item = quoteData.items[i];
+        total += (item.total || item.quantity * item.unitPrice);
+      }
+      total += (indices.length > 0 ? laborCostValue : 0);
+      document.getElementById('selectedTotal').textContent = fmtCurrency(total);
+    }
+
+    function updateApproveLabel() {
+      const sel = getSelectedCount();
+      const total = quoteData ? quoteData.items.length : 0;
+      const btn = document.getElementById('approveBtn');
+      if (sel === total) {
+        btn.textContent = 'Aprovar Orçamento';
+      } else {
+        btn.textContent = `Aprovar ${sel} de ${total} item${sel !== 1 ? 's' : ''}`;
+      }
+    }
+
+    // ── API ───────────────────────────────────────────────────────────────────
+    async function callApi(path, body) {
+      let resp;
+      try {
+        resp = await fetch(`${BASE_URL}${path}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: body }),
+        });
+      } catch (_) {
+        throw new Error('Sem conexão com o servidor. Verifique sua internet e tente novamente.');
+      }
+      let json;
+      try { json = await resp.json(); } catch (_) {
+        throw new Error('Erro ao processar resposta do servidor. Tente novamente.');
+      }
+      if (json.error) throw new Error((json.error && json.error.message) || 'Erro desconhecido.');
+      return json.result || json;
+    }
+
+    // ── Carregamento ──────────────────────────────────────────────────────────
+    const params = new URLSearchParams(location.search);
+    const quoteId = params.get('id');
+
+    if (!quoteId) {
+      document.getElementById('loadingCard').style.display = 'none';
+      document.getElementById('errorCard').style.display = '';
+      document.getElementById('loadError').textContent = 'Link inválido. ID do orçamento não informado.';
+    } else {
+      loadQuote();
+    }
+
+    async function loadQuote() {
+      try {
+        const data = await callApi('/api/lookupQuote', { quoteId });
+        quoteData = data;
+        renderQuote(data);
+      } catch (err) {
+        document.getElementById('loadingCard').style.display = 'none';
+        document.getElementById('errorCard').style.display = '';
+        document.getElementById('loadError').textContent = err.message || 'Erro de conexão. Tente novamente.';
+      }
+    }
+
+    function renderQuote(data) {
+      document.getElementById('loadingCard').style.display = 'none';
+      document.getElementById('quoteCard').style.display = '';
+
+      const badge = document.getElementById('statusBadge');
+      badge.textContent = data.statusLabel;
+      badge.className = 'badge badge-' + data.status;
+
+      document.getElementById('quoteTitle').textContent = data.title;
+      document.getElementById('clientName').textContent = data.clientName;
+      document.getElementById('quoteDate').textContent = fmtDate(data.createdAt);
+      document.getElementById('validity').textContent = data.validityDays + ' dias';
+
+      if (data.ticketNumber) {
+        document.getElementById('ticketNumber').textContent = '#' + data.ticketNumber;
+        document.getElementById('ticketRow').style.display = '';
+      }
+      if (data.description) {
+        document.getElementById('quoteDescription').textContent = data.description;
+        document.getElementById('descriptionBox').style.display = '';
+      }
+
+      const canApprove = data.status === 'enviado';
+
+      // Mostra coluna de checkbox só quando pode aprovar
+      if (canApprove) {
+        document.getElementById('checkCol').style.display = '';
+        document.getElementById('selectedTotalRow').style.display = '';
+      }
+
+      // Inicializa checks (todos marcados)
+      itemChecks = data.items.map(() => true);
+
+      const tbody = document.getElementById('itemsBody');
+      tbody.innerHTML = '';
+      let itemsTotal = 0;
+
+      data.items.forEach((item, idx) => {
+        const total = item.total || (item.quantity * item.unitPrice);
+        itemsTotal += total;
+
+        const tr = document.createElement('tr');
+        tr.className = 'item-row';
+        tr.dataset.idx = idx;
+
+        let checkCell = '';
+        if (canApprove) {
+          checkCell = `<td class="col-check"><input type="checkbox" class="item-check" checked
+            onchange="onItemCheck(${idx})" onclick="event.stopPropagation()"></td>`;
+        }
+
+        tr.innerHTML = `
+          ${checkCell}
+          <td>
+            <span>${escapeHtml(item.description)}</span><br>
+            <small style="color:#8899AA">${fmtCurrency(item.unitPrice)} un.</small>
+          </td>
+          <td class="col-qty">${escapeHtml(String(item.quantity))}</td>
+          <td class="col-total">${fmtCurrency(total)}</td>
+        `;
+
+        if (canApprove) {
+          tr.addEventListener('click', () => onItemCheck(idx));
+        }
+        tbody.appendChild(tr);
+      });
+
+      laborCostValue = data.laborCost || 0;
+      document.getElementById('subtotal').textContent = fmtCurrency(itemsTotal);
+
+      if (laborCostValue > 0) {
+        if (data.laborHours > 0 && data.laborHourlyRate > 0) {
+          document.getElementById('laborLabel').textContent =
+            `Mão de obra (${data.laborHours}h × ${fmtCurrency(data.laborHourlyRate)}/h)`;
+        }
+        document.getElementById('laborCost').textContent = fmtCurrency(laborCostValue);
+        document.getElementById('laborRow').style.display = '';
+      }
+      document.getElementById('grandTotal').textContent = fmtCurrency(data.grandTotal);
+      updateSelectedTotal();
+
+      // Relatórios técnicos do chamado
+      renderReports(data.reports || []);
+
+      if (data.status === 'aprovado') {
+        showApproved(data.approval && data.approval.confirmationNumber, data.approval && data.approval.approvedAt);
+      } else if (data.status === 'aprovacao_parcial') {
+        showPartialSent();
+      } else if (data.status === 'enviado') {
+        document.getElementById('approveSection').style.display = '';
+      }
+    }
+
+    // ── Relatórios técnicos ───────────────────────────────────────────────────
+    // Guarda os reports pro modal usar
+    let allReports = [];
+
+    function renderReports(reports) {
+      if (!reports || reports.length === 0) return;
+      allReports = reports;
+
+      const list = document.getElementById('reportsList');
+      list.innerHTML = '';
+
+      reports.forEach((r, idx) => {
+        const num = idx + 1;
+        const dateStr = r.date ? fmtDate(r.date) : 'Data indisponível';
+        const tech = r.technicianName ? escapeHtml(r.technicianName) : '—';
+        const equip = r.equipmentName ? escapeHtml(r.equipmentName) : '';
+        const svcType = r.serviceType ? escapeHtml(r.serviceType) : '';
+        const metaParts = [dateStr];
+        if (svcType) metaParts.push(svcType);
+        if (equip) metaParts.push(equip);
+        metaParts.push(tech);
+
+        const hasElab = !!r.elaboratedReport;
+        const hasPdf = !!r.pdfUrl;
+        const canView = hasElab || hasPdf;
+
+        const card = document.createElement('div');
+        card.className = 'report-card' + (canView ? '' : ' no-pdf');
+        if (canView) {
+          card.style.cursor = 'pointer';
+          card.onclick = () => openReportModal(idx);
+        }
+
+        card.innerHTML = `
+          <div class="report-card-icon">${num}</div>
+          <div class="report-card-body">
+            <div class="report-card-title">Relatório Técnico ${num}</div>
+            <div class="report-card-meta">${metaParts.join(' · ')}</div>
+          </div>
+          ${canView ? '<div class="report-card-arrow">→</div>' : '<div class="report-card-meta" style="font-size:11px;">sem relatório</div>'}
+        `;
+        list.appendChild(card);
+      });
+
+      document.getElementById('reportsBox').style.display = '';
+    }
+
+    // ── Modal de Relatório ────────────────────────────────────────────────────
+    function openReportModal(idx) {
+      const r = allReports[idx];
+      if (!r) return;
+
+      const num = idx + 1;
+      document.getElementById('reportModalTitle').textContent =
+        'Relatório Técnico ' + num;
+
+      const dateStr = r.date ? fmtDate(r.date) : '—';
+      const metaParts = [];
+      if (r.serviceType) metaParts.push(escapeHtml(r.serviceType));
+      if (r.equipmentName) metaParts.push(escapeHtml(r.equipmentName));
+      if (r.technicianName) metaParts.push('Técnico: ' + escapeHtml(r.technicianName));
+      document.getElementById('reportModalMeta').innerHTML =
+        `<strong>Data:</strong> ${dateStr}<br>${metaParts.join(' · ')}`;
+
+      const sections = document.getElementById('reportModalSections');
+      sections.innerHTML = '';
+
+      const elab = r.elaboratedReport;
+      if (elab) {
+        const sectionMap = {
+          equipamento: '1. Equipamento',
+          tipoAtendimento: '2. Tipo de Atendimento',
+          diagnostico: '3. Diagnóstico',
+          intervencaoRealizada: '4. Intervenção Realizada',
+          pecasEMateriais: '5. Peças e Materiais',
+          recomendacoes: '6. Recomendações',
+          observacoesFinais: '7. Observações Finais',
+        };
+        for (const [key, title] of Object.entries(sectionMap)) {
+          const content = elab[key];
+          if (!content || !content.trim()) continue;
+          const div = document.createElement('div');
+          div.className = 'report-section';
+          div.innerHTML = `
+            <div class="report-section-title">${title}</div>
+            <div class="report-section-body">${escapeHtml(content)}</div>
+          `;
+          sections.appendChild(div);
+        }
+      } else if (r.description) {
+        // Fallback: mostra descrição bruta
+        const div = document.createElement('div');
+        div.className = 'report-section';
+        div.innerHTML = `
+          <div class="report-section-title">Descrição do Serviço</div>
+          <div class="report-section-body">${escapeHtml(r.description)}</div>
+        `;
+        sections.appendChild(div);
+      }
+
+      // Link do PDF (se tiver)
+      const pdfBox = document.getElementById('reportModalPdf');
+      if (r.pdfUrl) {
+        pdfBox.innerHTML = `
+          <a href="${r.pdfUrl}" target="_blank" rel="noopener noreferrer" class="report-pdf-link">
+            📄 Baixar PDF do relatório técnico →
+          </a>
+        `;
+      } else {
+        pdfBox.innerHTML = '';
+      }
+
+      document.getElementById('reportModal').classList.add('open');
+    }
+
+    function closeReportModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById('reportModal').classList.remove('open');
+    }
+
+    // ── Telas de resultado ────────────────────────────────────────────────────
+    function showResult(html) {
+      const box = document.getElementById('resultBox');
+      box.innerHTML = html;
+      box.style.display = '';
+      document.getElementById('approveSection').style.display = 'none';
+      setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+    }
+
+    function showApproved(confirmationNumber, approvedAt) {
+      const badge = document.getElementById('statusBadge');
+      badge.textContent = 'Aprovado';
+      badge.className = 'badge badge-aprovado';
+
+      const confLine = confirmationNumber
+        ? `<div class="conf-number">${escapeHtml(confirmationNumber)}</div>`
+        : '';
+      const dateLine = approvedAt
+        ? `<div class="conf-detail">Data: ${fmtDateTime(approvedAt)}</div>`
+        : '';
+
+      showResult(`
+        <div class="result-overlay overlay-approved">
+          <div class="icon">✓</div>
+          <h3>Orçamento aprovado com sucesso.</h3>
+          ${confLine}
+          ${dateLine}
+          <div class="legal-note">
+            Esta confirmação registra a autorização formal para execução dos serviços conforme orçamento aprovado.
+          </div>
+        </div>
+      `);
+    }
+
+    function showPartialSent() {
+      const badge = document.getElementById('statusBadge');
+      badge.textContent = 'Aprovação Parcial';
+      badge.className = 'badge badge-aprovacao_parcial';
+
+      showResult(`
+        <div class="result-overlay overlay-partial">
+          <div class="icon">⏳</div>
+          <h3>Aprovação parcial enviada.</h3>
+          <div class="conf-detail">
+            Sua seleção foi registrada e está aguardando revisão da equipe SoluClean.<br>
+            Você será contatado para confirmação.
+          </div>
+          <div class="legal-note">
+            A SoluClean analisará os itens selecionados e entrará em contato para prosseguir.
+          </div>
+        </div>
+      `);
+    }
+
+    function showRejected() {
+      const badge = document.getElementById('statusBadge');
+      badge.textContent = 'Recusado';
+      badge.className = 'badge badge-rejeitado';
+
+      showResult(`
+        <div class="result-overlay overlay-rejected">
+          <div class="icon">✕</div>
+          <h3>Orçamento recusado.</h3>
+          <div class="conf-detail">
+            Seu cancelamento foi registrado.<br>
+            Entre em contato caso queira discutir alternativas.
+          </div>
+        </div>
+      `);
+    }
+
+    // ── Validação CNPJ ────────────────────────────────────────────────────────
+    function getCnpj() {
+      return document.getElementById('cnpjInput').value.replace(/\D/g, '');
+    }
+    function showError(msg) {
+      const el = document.getElementById('approveError');
+      el.textContent = msg;
+      el.style.display = '';
+    }
+    function clearError() {
+      document.getElementById('approveError').style.display = 'none';
+    }
+    function setBusy(btn, label) {
+      btn.disabled = true;
+      btn.innerHTML = `<span class="spinner"></span>${label}`;
+    }
+    function resetBtn(btn, label) {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+
+    // ── Aprovar ───────────────────────────────────────────────────────────────
+    async function approve() {
+      clearError();
+      const cnpj = getCnpj();
+      if (cnpj.length !== 14) { showError('Informe o CNPJ completo (14 dígitos).'); return; }
+
+      const approveBtn = document.getElementById('approveBtn');
+      const originalLabel = approveBtn.textContent;
+      setBusy(approveBtn, 'Enviando...');
+      document.getElementById('rejectBtn').disabled = true;
+
+      const indices = getSelectedIndices();
+      const isPartial = indices.length < (quoteData ? quoteData.items.length : 0);
+
+      try {
+        const body = { quoteId, cnpj };
+        if (isPartial) body.approvedItemIndices = indices;
+
+        const result = await callApi('/api/approveQuote', body);
+
+        if (result.partial) {
+          showPartialSent();
+        } else {
+          showApproved(result.confirmationNumber, result.approvedAt || new Date().toISOString());
+        }
+      } catch (err) {
+        showError(err.message || 'Erro ao aprovar. Tente novamente.');
+        resetBtn(approveBtn, originalLabel);
+        document.getElementById('rejectBtn').disabled = false;
+      }
+    }
+
+    // ── Recusar ───────────────────────────────────────────────────────────────
+    async function rejectQuote() {
+      clearError();
+      const cnpj = getCnpj();
+      if (cnpj.length !== 14) { showError('Informe o CNPJ para confirmar a recusa.'); return; }
+
+      if (!confirm('Confirmar a recusa deste orçamento?')) return;
+
+      const rejectBtn = document.getElementById('rejectBtn');
+      setBusy(rejectBtn, 'Enviando...');
+      document.getElementById('approveBtn').disabled = true;
+
+      try {
+        await callApi('/api/approveQuote', { quoteId, cnpj, reject: true });
+        showRejected();
+      } catch (err) {
+        showError(err.message || 'Erro ao recusar. Tente novamente.');
+        resetBtn(rejectBtn, 'Recusar Orçamento');
+        document.getElementById('approveBtn').disabled = false;
+      }
+    }
+  </script>
+
+  <!-- Modal de Relatório Elaborado -->
+  <div id="reportModal" class="modal-overlay" onclick="closeReportModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2 id="reportModalTitle">Relatório Técnico</h2>
+        <button class="modal-close" onclick="closeReportModal()" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="reportModalMeta" class="report-meta"></div>
+        <div id="reportModalSections"></div>
+        <div id="reportModalPdf"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
