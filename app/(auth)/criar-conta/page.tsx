@@ -88,7 +88,7 @@ export default function CriarContaPage() {
 
 function SelfServiceForm({
   router,
-  vertical,
+  vertical: verticalFromUrl,
 }: {
   router: ReturnType<typeof useRouter>;
   vertical: Vertical | null;
@@ -97,12 +97,22 @@ function SelfServiceForm({
   const [directorName, setDirectorName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // Quando URL já trouxe vertical (vindo da landing /cleaning, /hvac etc),
+  // usa esse e esconde o selector. Senão, tenant escolhe manualmente.
+  const [verticalSelected, setVerticalSelected] = useState<Vertical | null>(
+    verticalFromUrl,
+  );
+  const vertical = verticalFromUrl ?? verticalSelected;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (loading) return;
+    if (!vertical) {
+      setError("Selecione o segmento da sua empresa antes de continuar.");
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -172,6 +182,36 @@ function SelfServiceForm({
 
   return (
     <form onSubmit={submit} className="flex flex-col gap-4">
+      {!verticalFromUrl && (
+        <div className="flex flex-col gap-1.5">
+          <label className="mono">Qual o segmento da sua empresa? *</label>
+          <div className="grid grid-cols-2 gap-2">
+            {(
+              Object.entries(VERTICAL_LABELS) as Array<[Vertical, string]>
+            ).map(([id, label]) => {
+              const selected = verticalSelected === id;
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => setVerticalSelected(id)}
+                  className={`text-left text-sm px-3 py-2.5 rounded-md border transition-colors ${
+                    selected
+                      ? "border-navy-900 bg-navy-50 ring-1 ring-navy-900"
+                      : "border-ink-200 hover:border-ink-400"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+          <span className="text-xs text-ink-500">
+            Vamos adaptar o sistema ao seu segmento. A escolha é permanente
+            (mudança só pelo suporte).
+          </span>
+        </div>
+      )}
       <div className="flex flex-col gap-1.5">
         <label className="mono">Nome da empresa *</label>
         <input
@@ -183,7 +223,6 @@ function SelfServiceForm({
           value={companyName}
           onChange={(e) => setCompanyName(e.target.value)}
           placeholder="Ex: Cleanpro Serviços"
-          autoFocus
         />
       </div>
       <div className="flex flex-col gap-1.5">
