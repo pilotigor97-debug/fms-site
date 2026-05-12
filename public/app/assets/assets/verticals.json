@@ -120,7 +120,16 @@
           "calendar": "Agenda",
           "report": "Visitas concluídas",
           "client": "Clientes",
-          "contract": "Contratos recorrentes"
+          "contract": "Contratos recorrentes",
+          "status.aberto": "Nova solicitação",
+          "status.emDiagnostico": "Em avaliação",
+          "status.aguardandoDecisao": "Aguardando cliente",
+          "status.aguardandoOrcamento": "Aguardando proposta",
+          "status.aguardandoAprovacao": "Proposta enviada",
+          "status.aprovado": "Confirmada",
+          "status.emExecucao": "Em limpeza",
+          "status.finalizado": "Concluída",
+          "status.rejeitado": "Recusada"
         },
         "en": {
           "ticket": "Requests",
@@ -129,7 +138,16 @@
           "calendar": "Schedule",
           "report": "Completed visits",
           "client": "Clients",
-          "contract": "Recurring contracts"
+          "contract": "Recurring contracts",
+          "status.aberto": "New request",
+          "status.emDiagnostico": "Under assessment",
+          "status.aguardandoDecisao": "Awaiting client",
+          "status.aguardandoOrcamento": "Awaiting proposal",
+          "status.aguardandoAprovacao": "Proposal sent",
+          "status.aprovado": "Confirmed",
+          "status.emExecucao": "Cleaning in progress",
+          "status.finalizado": "Completed",
+          "status.rejeitado": "Declined"
         }
       }
     },
@@ -248,7 +266,13 @@
           "calendar": "Cronograma",
           "report": "Diário de obra",
           "quote": "Orçamentos",
-          "client": "Clientes"
+          "client": "Clientes",
+          "status.aberto": "Nova solicitação",
+          "status.emDiagnostico": "Em vistoria",
+          "status.aguardandoDecisao": "Aguardando cliente",
+          "status.aguardandoPecas": "Aguardando material",
+          "status.emExecucao": "Em obra",
+          "status.finalizado": "Etapa concluída"
         },
         "en": {
           "ticket": "Requests",
@@ -257,7 +281,13 @@
           "calendar": "Timeline",
           "report": "Daily log",
           "quote": "Quotes",
-          "client": "Clients"
+          "client": "Clients",
+          "status.aberto": "New request",
+          "status.emDiagnostico": "On-site survey",
+          "status.aguardandoDecisao": "Awaiting client",
+          "status.aguardandoPecas": "Awaiting materials",
+          "status.emExecucao": "In progress",
+          "status.finalizado": "Stage completed"
         }
       }
     }
