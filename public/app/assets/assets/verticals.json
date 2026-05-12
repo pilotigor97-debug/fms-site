@@ -44,6 +44,30 @@
       "enabledModules": ["tickets", "orders", "quotes", "reports", "equipment", "manuals", "alerts", "rentals"],
       "defaultBranding": {
         "primaryColorHex": "#0F766E"
+      },
+      "labels": {
+        "pt": {
+          "ticket": "Chamados",
+          "order": "Ordens de Serviço",
+          "dispatch": "Despacho",
+          "calendar": "Calendário",
+          "report": "Relatórios",
+          "quote": "Orçamentos",
+          "client": "Clientes",
+          "equipment": "Equipamentos",
+          "contract": "Contratos"
+        },
+        "en": {
+          "ticket": "Tickets",
+          "order": "Service Orders",
+          "dispatch": "Dispatch",
+          "calendar": "Calendar",
+          "report": "Reports",
+          "quote": "Quotes",
+          "client": "Clients",
+          "equipment": "Equipment",
+          "contract": "Contracts"
+        }
       }
     },
     "cleaning": {
@@ -87,6 +111,24 @@
       "enabledModules": ["tickets", "orders", "reports", "clients", "recurring"],
       "defaultBranding": {
         "primaryColorHex": "#2563EB"
+      },
+      "labels": {
+        "pt": {
+          "ticket": "Solicitações",
+          "order": "Agendamentos",
+          "dispatch": "Escala de equipes",
+          "calendar": "Agenda",
+          "report": "Visitas concluídas",
+          "client": "Clientes"
+        },
+        "en": {
+          "ticket": "Requests",
+          "order": "Appointments",
+          "dispatch": "Team scheduling",
+          "calendar": "Schedule",
+          "report": "Completed visits",
+          "client": "Clients"
+        }
       }
     },
     "hvac": {
@@ -130,6 +172,28 @@
       "enabledModules": ["tickets", "orders", "quotes", "reports", "equipment", "alerts"],
       "defaultBranding": {
         "primaryColorHex": "#DC2626"
+      },
+      "labels": {
+        "pt": {
+          "ticket": "Chamados",
+          "order": "Ordens de Serviço",
+          "dispatch": "Despacho",
+          "calendar": "Calendário",
+          "report": "Relatórios",
+          "quote": "Orçamentos",
+          "client": "Clientes",
+          "equipment": "Aparelhos"
+        },
+        "en": {
+          "ticket": "Tickets",
+          "order": "Service Orders",
+          "dispatch": "Dispatch",
+          "calendar": "Calendar",
+          "report": "Reports",
+          "quote": "Quotes",
+          "client": "Clients",
+          "equipment": "Equipment"
+        }
       }
     },
     "remodeling": {
@@ -173,6 +237,26 @@
       "enabledModules": ["tickets", "orders", "quotes", "reports", "clients", "milestones"],
       "defaultBranding": {
         "primaryColorHex": "#EA580C"
+      },
+      "labels": {
+        "pt": {
+          "ticket": "Solicitações",
+          "order": "Visitas / Etapas",
+          "dispatch": "Equipe diária",
+          "calendar": "Cronograma",
+          "report": "Diário de obra",
+          "quote": "Orçamentos",
+          "client": "Clientes"
+        },
+        "en": {
+          "ticket": "Requests",
+          "order": "Site visits / Stages",
+          "dispatch": "Daily crew",
+          "calendar": "Timeline",
+          "report": "Daily log",
+          "quote": "Quotes",
+          "client": "Clients"
+        }
       }
     }
   }
