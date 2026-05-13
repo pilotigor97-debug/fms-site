@@ -256,12 +256,12 @@ function SelfServiceForm({
           className="border rounded-md px-3 py-2.5"
           type="password"
           required
-          minLength={6}
+          minLength={8}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="new-password"
         />
-        <span className="text-xs text-ink-500">Mínimo 6 caracteres</span>
+        <PasswordStrength password={password} />
       </div>
 
       <ul className="flex flex-col gap-1.5 text-sm text-ink-700 mt-1">
@@ -437,5 +437,60 @@ function SalesForm() {
         )}
       </button>
     </form>
+  );
+}
+
+// ─── Strength meter inline — 3 bars + texto curto ───────────────────
+//
+// Regras (conservadoras pra MVP, alinhadas com server: min 8 chars):
+//   - Score 0: vazio
+//   - Score 1: 8+ chars         (mínimo aceito)
+//   - Score 2: 8+ chars + digit OU uppercase
+//   - Score 3: 8+ chars + digit + uppercase
+//
+// Server-side a regra é só "8+ chars". Strength meter é UX guidance,
+// não bloqueio — força tudo acima de 8 passa. Bumpar pra obrigar
+// digit/upper exige mexer em signupCompany CF + helper.
+function PasswordStrength({ password }: { password: string }) {
+  if (!password) {
+    return (
+      <span className="text-xs text-ink-500">Mínimo 8 caracteres</span>
+    );
+  }
+  const checks = {
+    length: password.length >= 8,
+    digit: /\d/.test(password),
+    upper: /[A-Z]/.test(password),
+  };
+  const score =
+    (checks.length ? 1 : 0) +
+    (checks.length && checks.digit ? 1 : 0) +
+    (checks.length && checks.upper ? 1 : 0);
+  const labels = [
+    "Muito curta — mínimo 8 caracteres",
+    "Curta — adicione um número ou maiúscula",
+    "Boa — pode adicionar um número ou maiúscula",
+    "Forte",
+  ];
+  const colors = [
+    "bg-red-400",
+    "bg-yellow-400",
+    "bg-yellow-500",
+    "bg-success",
+  ];
+  return (
+    <div className="flex flex-col gap-1 mt-0.5">
+      <div className="flex gap-1 h-1">
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className={`flex-1 rounded ${
+              score > i ? colors[score] : "bg-ink-100"
+            }`}
+          />
+        ))}
+      </div>
+      <span className="text-xs text-ink-500">{labels[score]}</span>
+    </div>
   );
 }

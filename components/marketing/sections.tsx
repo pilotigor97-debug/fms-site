@@ -18,16 +18,9 @@ export function LogoStrip() {
     <div className="container-wide">
       <div className="logo-strip">
         <span className="logo-strip-label">
-          Mais de 4.200 equipes de campo confiam no FMS
+          Sistema operacional pra equipes de campo no Brasil — limpeza,
+          locação, HVAC, facilities, reforma e jardinagem
         </span>
-        <div className="logo-strip-row">
-          <span className="logo">◆ Cleanpro</span>
-          <span className="logo">▲ NorthGate</span>
-          <span className="logo">○ Atlas Facilities</span>
-          <span className="logo">▢ Bluestone</span>
-          <span className="logo">◇ Harborline</span>
-          <span className="logo">✦ Vertex</span>
-        </div>
       </div>
     </div>
   );

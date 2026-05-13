@@ -2,7 +2,7 @@
 // (ProblemSolution, HowItWorks, FeatureShowcase, Segments, SocialProof, FinalCTA).
 // Mantemos export plano aqui para não quebrar imports da página principal.
 
-export function LogoStrip()       { return <section className="container-wide py-12 mono">+4.200 equipes confiam no FMS</section>; }
+export function LogoStrip()       { return <section className="container-wide py-12 mono">Sistema operacional pra equipes de campo no Brasil</section>; }
 export function ProblemSolution() { return <section className="container-wide py-20"><h2 className="text-4xl font-medium">Operações de campo, sem o caos.</h2></section>; }
 export function HowItWorks()      { return <section className="container-wide py-20"><h2 className="text-4xl font-medium">Três movimentos. É o produto inteiro.</h2></section>; }
 export function FeatureShowcase() { return <section className="container-wide py-20"><h2 className="text-4xl font-medium">Tudo o que você precisa.</h2></section>; }

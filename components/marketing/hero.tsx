@@ -11,9 +11,9 @@ export function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 text-xs text-ink-500">
             <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-blue-100 text-blue-600 font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-success ring-2 ring-success/25" />v4.2
+              <span className="w-1.5 h-1.5 rounded-full bg-success ring-2 ring-success/25" />BETA
             </span>
-            Agora com otimização de rotas por IA
+            IA contextual por vertical — limpeza, HVAC, locação e mais
             <ArrowRight size={13} />
           </span>
           <h1 className="mt-5 text-5xl lg:text-7xl font-medium tracking-tight leading-[1.05] text-balance">

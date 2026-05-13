@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight, Check, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Check, Mail, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -15,8 +15,7 @@ export default function ContactPage() {
         <div className="mt-8 flex flex-col gap-4 text-sm">
           {[
             { icon: Mail,   label: "E-mail",  value: "ola@fms.io" },
-            { icon: Phone,  label: "Vendas",  value: "+55 (11) 4000-0182" },
-            { icon: MapPin, label: "Sede",    value: "Av. Paulista, 1578 · São Paulo, SP" },
+            { icon: MapPin, label: "Sede",    value: "São Paulo · SP · Brasil" },
           ].map(it => (
             <div key={it.label} className="flex items-center gap-3">
               <span className="w-9 h-9 rounded-lg bg-ink-100 grid place-items-center"><it.icon size={16} /></span>
