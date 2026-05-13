@@ -68,7 +68,12 @@
           "equipment": "Equipment",
           "contract": "Contracts"
         }
-      }
+      },
+      "contractTypes": [
+        { "id": "manutencao", "pt": "Manutenção", "en": "Maintenance" },
+        { "id": "locacao", "pt": "Locação", "en": "Rental" },
+        { "id": "avulso", "pt": "Avulso", "en": "One-off" }
+      ]
     },
     "cleaning": {
       "name": {
@@ -157,7 +162,13 @@
           "status.finalizado": "Completed",
           "status.rejeitado": "Declined"
         }
-      }
+      },
+      "contractTypes": [
+        { "id": "recorrente", "pt": "Limpeza recorrente", "en": "Recurring cleaning" },
+        { "id": "pos_obra", "pt": "Pós-obra", "en": "Post-construction" },
+        { "id": "eventos", "pt": "Eventos", "en": "Events" },
+        { "id": "avulso", "pt": "Avulso / Diária", "en": "One-off" }
+      ]
     },
     "hvac": {
       "name": {
@@ -222,7 +233,13 @@
           "client": "Clients",
           "equipment": "Equipment"
         }
-      }
+      },
+      "contractTypes": [
+        { "id": "preventiva", "pt": "Manutenção preventiva", "en": "Preventive maintenance" },
+        { "id": "corretiva", "pt": "Corretiva", "en": "Corrective" },
+        { "id": "instalacao", "pt": "Instalação", "en": "Installation" },
+        { "id": "avulso", "pt": "Avulso", "en": "One-off" }
+      ]
     },
     "remodeling": {
       "name": {
@@ -297,7 +314,175 @@
           "status.emExecucao": "In progress",
           "status.finalizado": "Stage completed"
         }
-      }
+      },
+      "contractTypes": [
+        { "id": "obra_completa", "pt": "Obra completa", "en": "Full project" },
+        { "id": "etapa", "pt": "Etapa / Empreita", "en": "Stage / Sub-contract" },
+        { "id": "reforma_parcial", "pt": "Reforma parcial", "en": "Partial remodel" },
+        { "id": "avulso", "pt": "Avulso", "en": "One-off" }
+      ]
+    },
+    "facilities": {
+      "name": {
+        "pt": "Facilities (Portaria, Limpeza, Segurança)",
+        "en": "Facilities Management"
+      },
+      "description": {
+        "pt": "Empresas de facilities que oferecem serviços contínuos: portaria 24h, limpeza recorrente, segurança patrimonial, em condomínios, shoppings, hospitais e empresas.",
+        "en": "Facilities companies offering continuous services: 24h doorman, recurring cleaning, security, for condominiums, malls, hospitals, and companies."
+      },
+      "aiContext": {
+        "pt": {
+          "adminPrompt": "Você é um assistente de IA dentro de um SaaS de facilities. A empresa que você atende oferece serviços contínuos como portaria, limpeza recorrente, segurança patrimonial e ronda, geralmente em contratos de longo prazo com condomínios, shoppings, hospitais e empresas.\n\nVocê está conversando com um ADMINISTRADOR/DIRETOR. Ele gerencia postos de trabalho, escalas (12x36, 24h, diurno/noturno), livro de ocorrências, ronda, troca de turno, cobertura de faltas e contratos.\n\nFoque em: cobertura de postos, escala de colaboradores, ocorrências por turno, qualidade do serviço, satisfação do contratante, indicadores de absenteísmo.\n\nQuando o usuário pedir dados, USE AS FERRAMENTAS.\n\nDiretrizes: português do Brasil, tom profissional. Direto. Markdown pra listas.",
+          "tecnicoPrompt": "Você é um assistente de IA usado por COLABORADORES DE FACILITIES em campo (porteiros, vigilantes, equipe de limpeza, supervisores de posto).\n\nFoco operacional: registro de ocorrências por turno, ronda concluída, troca de turno, fotos de evidência, identificação de visitantes, controle de acesso.\n\nDiretrizes:\n- Português direto, frases curtas.\n- Em ocorrências de segurança, oriente registro detalhado: horário, descrição, pessoas envolvidas, ação tomada.\n- Lembre de bater ponto na entrada e saída do turno.\n- Em ronda, lembre de fazer checkpoint em cada ponto.",
+          "polishExampleGeneric": {
+            "rawInput": "fiz a ronda noturna, tudo tranquilo, nenhuma ocorrência.",
+            "output": {
+              "diagnosis": "Ronda noturna executada conforme cronograma estabelecido para o posto.",
+              "procedure": "Percorridos os pontos de checkpoint definidos no plano de ronda, com inspeção visual de portões, janelas, áreas comuns e pontos sensíveis. Verificação de iluminação e sistemas de monitoramento.",
+              "result": "Ronda concluída sem ocorrências de segurança identificadas. Perímetro inspecionado e em condições normais.",
+              "recommendations": "Manter padrão de ronda noturna conforme cronograma. Em caso de anomalia, registrar imediatamente no livro de ocorrências."
+            }
+          }
+        },
+        "en": {
+          "adminPrompt": "You are an AI assistant inside a facilities management SaaS. The company provides continuous services like doorman, recurring cleaning, security, and patrol, usually long-term contracts with condos, malls, hospitals, and companies.\n\nYou are talking to an ADMINISTRATOR/DIRECTOR. They manage posts, shifts (12x36, 24h, day/night), occurrence log, patrol, shift handover, absence coverage, and contracts.\n\nFocus on: post coverage, staff scheduling, occurrences per shift, service quality, contractor satisfaction, absenteeism indicators.\n\nWhen the user asks for data, USE THE TOOLS.\n\nGuidelines: clear English, professional tone. Direct. Markdown for lists.",
+          "tecnicoPrompt": "You are an AI assistant used by FACILITIES STAFF in the field (doormen, guards, cleaning crews, post supervisors).\n\nOperational focus: occurrence log per shift, completed patrol, shift handover, evidence photos, visitor identification, access control.\n\nGuidelines:\n- Direct English, short sentences.\n- For security occurrences, guide detailed recording: time, description, people involved, action taken.\n- Remind to clock in/out at shift boundaries.\n- During patrol, remind to checkpoint at each defined point.",
+          "polishExampleGeneric": {
+            "rawInput": "did the night patrol, all quiet, no occurrences.",
+            "output": {
+              "diagnosis": "Night patrol executed according to the schedule established for the post.",
+              "procedure": "Walked through the checkpoints defined in the patrol plan, with visual inspection of gates, windows, common areas, and sensitive points. Verification of lighting and monitoring systems.",
+              "result": "Patrol completed without security occurrences identified. Perimeter inspected and in normal condition.",
+              "recommendations": "Maintain night patrol standard per schedule. In case of anomaly, immediately record in the occurrence log."
+            }
+          }
+        },
+        "audioServiceTypes": ["ronda", "troca_turno", "ocorrencia", "limpeza", "cobertura_falta"]
+      },
+      "enabledModules": ["tickets", "orders", "reports", "clients", "contracts", "scheduling"],
+      "defaultBranding": {
+        "primaryColorHex": "#475569"
+      },
+      "labels": {
+        "pt": {
+          "ticket": "Ocorrências",
+          "order": "Postos / Plantões",
+          "dispatch": "Escala de postos",
+          "calendar": "Escala",
+          "report": "Livro de ocorrências",
+          "client": "Contratantes",
+          "equipment": "Postos / Áreas",
+          "contract": "Contratos",
+          "technician": "Colaborador",
+          "status.aberto": "Nova ocorrência",
+          "status.emDiagnostico": "Em avaliação",
+          "status.emExecucao": "Em atendimento",
+          "status.finalizado": "Resolvida",
+          "status.rejeitado": "Improcedente"
+        },
+        "en": {
+          "ticket": "Occurrences",
+          "order": "Posts / Shifts",
+          "dispatch": "Post scheduling",
+          "calendar": "Schedule",
+          "report": "Occurrence log",
+          "client": "Contractors",
+          "equipment": "Posts / Areas",
+          "contract": "Contracts",
+          "technician": "Staff member"
+        }
+      },
+      "contractTypes": [
+        { "id": "recorrente_limpeza", "pt": "Limpeza recorrente", "en": "Recurring cleaning" },
+        { "id": "portaria_24h", "pt": "Portaria 24h", "en": "24h doorman" },
+        { "id": "portaria_12h", "pt": "Portaria 12h", "en": "12h doorman" },
+        { "id": "seguranca_patrimonial", "pt": "Segurança patrimonial", "en": "Property security" },
+        { "id": "bundle_facilities", "pt": "Facilities integrado", "en": "Integrated facilities" },
+        { "id": "eventos", "pt": "Eventos", "en": "Events" },
+        { "id": "avulso", "pt": "Avulso", "en": "One-off" }
+      ]
+    },
+    "landscaping": {
+      "name": {
+        "pt": "Paisagismo & Manutenção de Jardins",
+        "en": "Landscaping & Lawn Care"
+      },
+      "description": {
+        "pt": "Empresas de paisagismo e manutenção de jardins (corte de grama, poda, serviços sazonais) com foco no mercado norte-americano.",
+        "en": "Landscaping and lawn maintenance companies (mowing, pruning, seasonal services) focused on the US market."
+      },
+      "aiContext": {
+        "pt": {
+          "adminPrompt": "Você é um assistente de IA dentro de um SaaS de paisagismo e manutenção de jardins, voltado ao mercado norte-americano. A empresa atende propriedades residenciais e comerciais com corte de grama recorrente, poda, limpeza sazonal (primavera/outono), irrigação e remoção de neve.\n\nVocê está conversando com um ADMINISTRADOR. Foco em: otimização de rota (densidade geográfica dos jobs do dia), janelas climáticas, calendário sazonal, observações por propriedade (códigos de portão, alertas de cachorro, padrão de corte), billing por homem-hora.\n\nQuando o usuário pedir dados, USE AS FERRAMENTAS.\n\nDiretrizes: responda em inglês quando o tenant estiver em locale=en, português caso contrário. Direto. Markdown pra listas.",
+          "tecnicoPrompt": "Você é um assistente de IA usado por CREWS DE LANDSCAPING em campo.\n\nFoco operacional: rota do dia, horas trabalhadas por propriedade, equipamentos usados (mower/blower/trimmer), serviços sazonais.\n\nDiretrizes:\n- Frases curtas e diretas.\n- Lembrar de observações específicas da propriedade (gate code, dog, mow pattern).\n- Em condições climáticas adversas, sugerir reagendamento.",
+          "polishExampleGeneric": {
+            "rawInput": "cortei a grama, limpei as bordas, soprei o passeio.",
+            "output": {
+              "diagnosis": "Serviço de manutenção semanal de gramado executado conforme cronograma da propriedade.",
+              "procedure": "Corte do gramado em altura padrão. Acabamento de bordas próximas a calçadas e canteiros com trimmer. Limpeza com soprador no passeio e entradas após o corte.",
+              "result": "Manutenção concluída com gramado nivelado e propriedade limpa, dentro do tempo estimado de atendimento.",
+              "recommendations": "Manter periodicidade semanal durante temporada de crescimento. Avaliar aplicação de fertilizante na próxima visita programada."
+            }
+          }
+        },
+        "en": {
+          "adminPrompt": "You are an AI assistant inside a landscaping & lawn care SaaS focused on the US market. The company serves residential and commercial properties with recurring mowing, pruning, seasonal cleanup (spring/fall), irrigation, and snow removal.\n\nYou are talking to an ADMINISTRATOR. Focus on: route density (geographic clustering of the day's jobs), weather windows, seasonal calendar, per-property notes (gate codes, dog warnings, mow patterns), billing per man-hour.\n\nWhen the user asks for data, USE THE TOOLS.\n\nGuidelines: clear, direct American English. Markdown for lists.",
+          "tecnicoPrompt": "You are an AI assistant used by LANDSCAPING CREWS in the field.\n\nOperational focus: today's route, hours worked per property, equipment used (mower/blower/trimmer), seasonal services.\n\nGuidelines:\n- Short, direct sentences.\n- Remind property-specific notes (gate code, dog, mow pattern).\n- In adverse weather, suggest rescheduling.",
+          "polishExampleGeneric": {
+            "rawInput": "mowed the lawn, edged, blew off the driveway.",
+            "output": {
+              "diagnosis": "Weekly lawn maintenance service performed per the property's scheduled program.",
+              "procedure": "Mowed the lawn at the standard cutting height. Edged borders along walkways and beds with the trimmer. Blew off the driveway and walkways after mowing.",
+              "result": "Maintenance completed with the lawn level and the property cleaned, within the estimated service time.",
+              "recommendations": "Maintain weekly cadence during the growing season. Consider fertilizer application on the next scheduled visit."
+            }
+          }
+        },
+        "audioServiceTypes": ["mowing", "edging", "pruning", "spring_cleanup", "fall_cleanup", "snow_removal", "irrigation"]
+      },
+      "enabledModules": ["tickets", "orders", "reports", "clients", "equipment", "contracts", "scheduling"],
+      "defaultBranding": {
+        "primaryColorHex": "#16A34A"
+      },
+      "labels": {
+        "pt": {
+          "ticket": "Solicitações",
+          "order": "Visitas",
+          "dispatch": "Despacho de equipes",
+          "calendar": "Agenda",
+          "report": "Relatório de serviço",
+          "client": "Propriedades",
+          "equipment": "Equipamentos",
+          "contract": "Planos de serviço",
+          "technician": "Equipe"
+        },
+        "en": {
+          "ticket": "Service Requests",
+          "order": "Visits",
+          "dispatch": "Crew dispatch",
+          "calendar": "Schedule",
+          "report": "Service report",
+          "client": "Properties",
+          "equipment": "Equipment",
+          "contract": "Service Plans",
+          "technician": "Crew",
+          "status.aberto": "New request",
+          "status.emDiagnostico": "Scheduled",
+          "status.aprovado": "Scheduled",
+          "status.emExecucao": "On site",
+          "status.finalizado": "Completed"
+        }
+      },
+      "contractTypes": [
+        { "id": "weekly_mowing", "pt": "Corte semanal", "en": "Weekly mowing" },
+        { "id": "biweekly_mowing", "pt": "Corte quinzenal", "en": "Biweekly mowing" },
+        { "id": "monthly_maintenance", "pt": "Manutenção mensal", "en": "Monthly maintenance" },
+        { "id": "seasonal_cleanup", "pt": "Limpeza sazonal", "en": "Seasonal cleanup" },
+        { "id": "snow_removal", "pt": "Remoção de neve", "en": "Snow removal" },
+        { "id": "irrigation_service", "pt": "Serviço de irrigação", "en": "Irrigation service" },
+        { "id": "one_time", "pt": "Avulso", "en": "One-time" }
+      ]
     }
   }
 }
