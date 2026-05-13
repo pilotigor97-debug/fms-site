@@ -18,7 +18,7 @@ const APK_URL =
 export const metadata = {
   title: "Baixar app · FMS",
   description:
-    "Baixe o app FMS pra Android e gerencie operações de campo do celular.",
+    "Baixe o app FMS pra Android (APK) ou instale como Web App no iPhone. Mesmo workspace que você usa no navegador, no bolso da equipe.",
 };
 
 export default function DownloadPage() {
@@ -70,34 +70,38 @@ export default function DownloadPage() {
           </div>
 
           {/* iOS */}
-          <div className="border rounded-xl p-7 bg-ink-50">
+          <div className="border rounded-xl p-7 bg-white">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-lg bg-ink-200 grid place-items-center">
-                <Apple size={24} className="text-ink-700" />
+              <div className="w-12 h-12 rounded-lg bg-blue-50 grid place-items-center">
+                <Apple size={24} className="text-blue-700" />
               </div>
               <div>
-                <div className="mono text-xs text-ink-500">EM BREVE</div>
-                <h2 className="text-xl font-medium">iOS</h2>
+                <div className="mono text-xs">DISPONÍVEL · WEB APP</div>
+                <h2 className="text-xl font-medium">iPhone</h2>
               </div>
             </div>
             <p className="text-sm text-ink-700 mb-5">
-              A versão para iPhone está em revisão da Apple. Enquanto isso,
-              acesse pelo navegador — o app web funciona idêntico.
+              App Store em breve. Por enquanto instale como Web App pelo
+              Safari — fica idêntico ao app nativo: ícone na tela de início,
+              tela cheia, funciona offline.
             </p>
-            <Link
-              href="/login"
-              className="inline-flex items-center gap-2 border bg-white px-5 py-3 rounded font-medium hover:bg-ink-100"
+            <a
+              href="#instalar-iphone"
+              className="inline-flex items-center gap-2 bg-navy-900 text-white px-5 py-3 rounded font-medium hover:bg-ink-900"
             >
-              <Smartphone size={16} /> Abrir no navegador{" "}
+              <Smartphone size={16} /> Como instalar
               <ArrowRight size={14} />
-            </Link>
+            </a>
+            <p className="text-xs text-ink-500 mt-3">
+              Requer iOS 14+ e Safari (Chrome no iPhone não instala).
+            </p>
           </div>
         </div>
       </section>
 
       {/* Como instalar Android */}
       <section className="container-wide py-16 border-t">
-        <span className="mono">Instalação Android</span>
+        <span className="mono">Instalação no Android</span>
         <h2 className="text-3xl font-medium mt-2">5 passos.</h2>
         <ol className="mt-8 grid md:grid-cols-5 gap-4">
           {[
@@ -136,6 +140,64 @@ export default function DownloadPage() {
         </ol>
       </section>
 
+      {/* Como instalar iPhone */}
+      <section
+        id="instalar-iphone"
+        className="container-wide py-16 border-t scroll-mt-20"
+      >
+        <span className="mono">Instalação no iPhone</span>
+        <h2 className="text-3xl font-medium mt-2">5 passos.</h2>
+        <p className="text-ink-700 mt-3 max-w-2xl">
+          O FMS no iPhone é um <strong>Web App</strong> — não tem APK nem
+          App Store, mas depois de instalado pela tela de início ele vira
+          ícone fixo, abre em tela cheia e funciona offline igual ao nativo.
+        </p>
+        <ol className="mt-8 grid md:grid-cols-5 gap-4">
+          {[
+            {
+              n: "01",
+              t: "Abra o Safari",
+              d: "No iPhone, abra o Safari (Chrome no iOS não permite instalar Web App).",
+            },
+            {
+              n: "02",
+              t: "Acesse o site",
+              d: "Digite o endereço deste site e toque em Entrar no menu.",
+            },
+            {
+              n: "03",
+              t: "Faça login",
+              d: "Mesmo email/senha que usa no navegador. Você cai no workspace.",
+            },
+            {
+              n: "04",
+              t: "Toque em Compartilhar",
+              d: "Ícone de caixa com seta (↑) na barra inferior do Safari.",
+            },
+            {
+              n: "05",
+              t: "Adicionar à Tela de Início",
+              d: "Role o menu, toque na opção, confirme o nome (FMS) e Adicionar.",
+            },
+          ].map((s) => (
+            <li key={s.n} className="border rounded-xl p-5">
+              <div className="mono text-xs text-ink-500">{s.n}</div>
+              <div className="font-medium mt-2">{s.t}</div>
+              <div className="text-sm text-ink-700 mt-1">{s.d}</div>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-8 rounded-xl border border-blue-100 bg-blue-50 p-5 text-sm text-ink-700 max-w-3xl">
+          <strong className="block mb-1">
+            Sobre notificações push no iPhone
+          </strong>
+          Push funciona no iOS 16.4 ou superior, mas <strong>só depois</strong>{" "}
+          de adicionar o app à tela de início — não pelo Safari direto. Quando
+          abrir o FMS pela primeira vez pelo ícone, ele vai pedir permissão.
+          Aceite pra receber alertas de novos chamados e mudanças de status.
+        </div>
+      </section>
+
       {/* Segurança */}
       <section className="container-wide py-16 border-t">
         <div className="grid md:grid-cols-[1fr_2fr] gap-8 items-start">
@@ -170,6 +232,15 @@ export default function DownloadPage() {
                 Atualizações: por enquanto manuais — quando sair uma versão
                 nova, baixar APK novo. Versão Play Store (auto-update) está
                 em desenvolvimento.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <ShieldCheck size={20} className="text-success mt-1 shrink-0" />
+              <p>
+                <strong>iPhone (Web App):</strong> sem instalador, sem permissão
+                de "fonte desconhecida". É o mesmo site HTTPS que você abre no
+                navegador, só salvo como ícone na tela de início — atualizações
+                chegam automaticamente quando publicamos.
               </p>
             </div>
           </div>
