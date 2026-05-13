@@ -28,27 +28,34 @@ export default function TenantDetailPage() {
   const cid = String(params.cid);
   const [tenant, setTenant] = useState<TenantDetail | null>(null);
   const [logs, setLogs] = useState<AuditLog[]>([]);
+  const [logsError, setLogsError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [openModal, setOpenModal] = useState<
     "extend" | "credits" | "suspend" | "reactivate" | null
   >(null);
 
+  // 2 loads separados — audit pode falhar (ex: index ainda buildando)
+  // sem derrubar a página de detail inteira. Detail é o que importa
+  // pra agir no tenant; audit é histórico complementar.
   const load = useCallback(async () => {
     setLoading(true);
     setError(null);
-    try {
-      const [t, l] = await Promise.all([
-        platformGetTenantDetail({ companyId: cid }),
-        platformListAuditLogs({ companyId: cid }),
-      ]);
-      setTenant(t);
-      setLogs(l.logs);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Erro ao carregar tenant.");
-    } finally {
-      setLoading(false);
-    }
+    setLogsError(null);
+    const tenantPromise = platformGetTenantDetail({ companyId: cid })
+      .then((t) => setTenant(t))
+      .catch((e) =>
+        setError(e instanceof Error ? e.message : "Erro ao carregar tenant.")
+      );
+    const logsPromise = platformListAuditLogs({ companyId: cid })
+      .then((l) => setLogs(l.logs))
+      .catch((e) =>
+        setLogsError(
+          e instanceof Error ? e.message : "Erro ao carregar audit log."
+        )
+      );
+    await Promise.all([tenantPromise, logsPromise]);
+    setLoading(false);
   }, [cid]);
 
   useEffect(() => {
@@ -251,7 +258,17 @@ export default function TenantDetailPage() {
       <div className="mt-8">
         <h2 className="text-xl font-medium mb-3">Audit log (últimos 50)</h2>
         <div className="bg-white border rounded-lg overflow-hidden">
-          {logs.length === 0 ? (
+          {logsError ? (
+            <div className="p-6 text-center text-sm text-yellow-900 bg-yellow-50">
+              Audit log indisponível: {logsError}.{" "}
+              <button
+                onClick={load}
+                className="underline hover:text-yellow-950"
+              >
+                Tentar de novo
+              </button>
+            </div>
+          ) : logs.length === 0 ? (
             <div className="p-6 text-center text-ink-500 text-sm">
               Sem ações registradas pra este tenant.
             </div>
