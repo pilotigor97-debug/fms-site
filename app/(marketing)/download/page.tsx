@@ -61,7 +61,7 @@ export default function DownloadPage() {
             >
               <Download size={16} /> Baixar APK
               <span className="text-xs font-mono opacity-70 ml-2">
-                ~101 MB
+                ~110 MB
               </span>
             </a>
             <p className="text-xs text-ink-500 mt-3">
