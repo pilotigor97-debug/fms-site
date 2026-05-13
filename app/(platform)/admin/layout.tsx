@@ -59,12 +59,22 @@ export default function AdminLayout({
     return () => unsub();
   }, []);
 
-  // Redirect to login se não autenticado.
+  // Redirect to /admin/login (dedicated platform auth) se não autenticado.
+  // Não /login do tenant — platform admin tem surface separada.
   useEffect(() => {
-    if (!loading && !user) {
-      router.replace(`/login?next=${encodeURIComponent(pathname)}`);
+    if (!loading && !user && pathname !== "/admin/login") {
+      router.replace(
+        `/admin/login?next=${encodeURIComponent(pathname)}` as never
+      );
     }
   }, [loading, user, router, pathname]);
+
+  // Bypass: /admin/login renderiza fora do gate (é a porta de entrada).
+  // Sem isso, navegar pra /admin/login com sessão null entra em loop
+  // (gate redireciona pra /admin/login que tenta renderizar dentro do gate).
+  if (pathname === "/admin/login") {
+    return <>{children}</>;
+  }
 
   if (loading) {
     return (
