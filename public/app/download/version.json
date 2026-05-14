@@ -1,13 +1,13 @@
 {
-  "version": "1.3.0-dev",
-  "buildNumber": 12,
-  "flavor": "dev",
+  "version": "1.5.0",
+  "buildNumber": 14,
+  "flavor": "prod",
   "minAndroid": "6.0+",
   "url": "opspilot.apk",
-  "sizeMb": 101,
-  "releasedAt": "2026-04-27",
+  "sizeMb": 112,
+  "releasedAt": "2026-05-13",
   "firebaseProject": "opspilot-dev",
-  "appName": "DEV — FMS",
-  "applicationId": "com.opspilot.app.dev",
-  "notes": "v1.3.0+12 (DEV) — Sprint 3 QA + Manuais Interativos. Drawer ganhou 'Manuais interativos' (Estoque) lendo de interactive_manuals/* no Firestore. Page viewer com 173 páginas, hotspots clicáveis, dialog de info da peça com botão copiar código."
+  "appName": "FMS",
+  "applicationId": "com.opspilot.app",
+  "notes": "v1.5.0+14 — Rental completo: equipment lifecycle (status + rentOut/devolução), módulo Entregas (com assinatura + PDF), Painel de locação, PDF de contrato. Portal do cliente com Equipamentos/Chamados/Aprovações/Relatórios (sem valores no dashboard). Visit-driven verticals (cleaning/landscaping) com VisitDetailScreen + calendário + reagendamento. OS avulsa sem obrigatoriedade de chamado + auto-criar chamado. Entregas aparecem no Hoje do técnico e no Calendário. Fix base-href Flutter web."
 }
