@@ -160089,7 +160089,8 @@ $S:2}
 A.arK.prototype={
 t(a){var s=$.z,r=(s==null?$.z=$.ai():s).X("[DEFAULT]")
 A.a3(r,$.aS(),!0)
-return A.ez(new A.bs0(),A.bn(new A.af(r)).T("equipment").aN(0,"clientId",this.c.c).fc(),t._C)}}
+s=this.c
+return A.ez(new A.bs0(),A.bn(new A.af(r)).T("equipment").aN(0,"companyId",s.b).aN(0,"clientId",s.c).fc(),t._C)}}
 A.bs0.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l=null
 if(b.a===B.bt)return B.bp
