@@ -9,5 +9,5 @@
   "firebaseProject": "opspilot-dev",
   "appName": "FMS",
   "applicationId": "com.opspilot.app",
-  "notes": "v1.5.0+14 — Rental completo: equipment lifecycle (status + rentOut/devolução), módulo Entregas (com assinatura + PDF), Painel de locação, PDF de contrato. Portal do cliente com Equipamentos/Chamados/Aprovações/Relatórios (sem valores no dashboard). Visit-driven verticals (cleaning/landscaping) com VisitDetailScreen + calendário + reagendamento. OS avulsa sem obrigatoriedade de chamado + auto-criar chamado. Entregas aparecem no Hoje do técnico e no Calendário. Fix base-href Flutter web."
+  "notes": "v1.5.0+14 — Rental completo: equipment lifecycle (status + rentOut/devolução), módulo Entregas (com assinatura + PDF), Painel de locação, PDF de contrato. Portal do cliente com Equipamentos/Chamados/Aprovações/Relatórios (sem valores no dashboard). Visit-driven verticals (cleaning/landscaping) com VisitDetailScreen + calendário + reagendamento. OS avulsa sem obrigatoriedade de chamado + auto-criar chamado. Entregas aparecem no Hoje do técnico e no Calendário. Fix base-href Flutter web + fix Android crash duplicate-app no boot."
 }
