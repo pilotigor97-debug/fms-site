@@ -1,6 +1,6 @@
 # Sprint 5+ — Deploy Prod `getfms.pro` (Cloudflare + Firebase)
 
-**Domínio:** getfms.pro (Cloudflare Registrar)
+**Domínio:** getfms.pro (Hostinger Registrar)
 **Project Firebase:** opspilot-prod
 **Data:** 2026-05-19
 
@@ -32,32 +32,43 @@ app.getfms.pro      → opspilot-prod.web.app (Flutter app) [FASE 1 ⚡ AGORA]
    - **A** record (final): `app` apontando pra IPs Firebase (2 IPs)
 7. **NÃO CLICA "Verify" AINDA** — primeiro adiciona DNS no Cloudflare (Passo 1.2)
 
-### Passo 1.2 — Cloudflare: adicionar DNS records
+### Passo 1.2 — Hostinger: adicionar DNS records
 
-1. Abrir: <https://dash.cloudflare.com> > selecionar zona `getfms.pro`
-2. Aba **DNS** > **Records**
-3. **Add record TXT** (pra verificação inicial):
-   - Type: `TXT`
-   - Name: `_acme-challenge.app` (Cloudflare pode auto-encurtar pra `_acme-challenge.app`)
-   - Content: (cola exatamente o que Firebase mostrou, começa com `firebase=`)
-   - **Proxy status: OFF (cinza, DNS only)** — CRÍTICO
-   - TTL: Auto
-   - Save
-4. **Add record A** (pra apontar pro Firebase Hosting):
-   - Type: `A`
-   - Name: `app`
-   - IPv4 address: (cola **primeiro IP** que Firebase mostrou)
-   - **Proxy status: OFF (cinza, DNS only)** — CRÍTICO
-   - TTL: Auto
-   - Save
-5. **Add record A** segundo IP:
-   - Type: `A`
-   - Name: `app`
-   - IPv4 address: (cola **segundo IP** Firebase)
-   - **Proxy status: OFF (cinza, DNS only)** — CRÍTICO
-   - Save
+1. Abrir: <https://hpanel.hostinger.com> → login
+2. Menu lateral: **Domínios** → click em `getfms.pro`
+3. Submenu: **DNS / Nameservers** (ou "Zona DNS" / "DNS Zone Editor")
+4. Confirma que está usando **nameservers do Hostinger** (NS1.HOSTINGER.COM etc) — se aparecer mensagem "Você está usando nameservers externos", precisa trocar pra Hostinger primeiro
+5. Aba **Gerenciar Registros DNS** (Manage DNS records)
 
-⚠ **Por que proxy OFF:** se proxy ON (laranja), Cloudflare intercepta SSL e Firebase não consegue emitir Let's Encrypt cert. Resultado: app.getfms.pro nunca fica HTTPS válido. **DNS only (cinza) é mandatório**.
+#### Adicionar 3 records:
+
+**Record 1 — TXT (verificação Firebase):**
+- Type: `TXT`
+- Name (Host): `_acme-challenge.app`
+- Value (Content/Points to): cola o `firebase=...` que Firebase mostrou
+- TTL: deixa padrão (3600 ou Auto)
+- Save / Adicionar
+
+**Record 2 — A (primeiro IP):**
+- Type: `A`
+- Name (Host): `app`
+- Points to (IPv4): cola **primeiro IP** Firebase
+- TTL: padrão
+- Save / Adicionar
+
+**Record 3 — A (segundo IP):**
+- Type: `A`
+- Name (Host): `app`
+- Points to (IPv4): cola **segundo IP** Firebase
+- TTL: padrão
+- Save / Adicionar
+
+✅ **Sem proxy/CDN intermediário em Hostinger** — DNS direto, sem complicação. Firebase emite SSL Let's Encrypt sem conflito.
+
+⚠ **Atenção comum**:
+- Se Hostinger pré-popular o campo Name como `app.getfms.pro` completo, deixa **só `app`** — sistema auto-adiciona o domínio
+- Hostinger às vezes mostra "Aguardando propagação" por até 6h. Normalmente vai em 30min
+- Se já tinha um CNAME ou A `app` apontando pra outro lugar (parking page), **delete** antes de adicionar os novos
 
 ### Passo 1.3 — Voltar Firebase: clicar Verify
 
@@ -147,8 +158,8 @@ URL temporária: `https://getfms-prod--opspilot-prod.us-central1.hosted.app`
 1. App Hosting > backend `getfms-prod` > **Settings** > **Custom domain** > **Add domain**
 2. Digite: `getfms.pro` (raiz)
 3. Firebase mostra TXT + A records
-4. Cloudflare: add records (proxy OFF):
-   - TXT `_acme-challenge` (raiz, deixa `Name` vazio ou `@`)
+4. Hostinger: add records:
+   - TXT `_acme-challenge` (Name: deixa vazio ou `@`)
    - A `@` (raiz) → IP Firebase 1
    - A `@` (raiz) → IP Firebase 2
 5. Verify > aguarda SSL ~24h
@@ -156,7 +167,15 @@ URL temporária: `https://getfms-prod--opspilot-prod.us-central1.hosted.app`
 ### Passo 2.6 — www redirect (opcional)
 
 Se quiser que `www.getfms.pro` redirecione pra `getfms.pro`:
-- Cloudflare > Rules > Page Rules > URL: `www.getfms.pro/*` > Setting: `Forwarding URL (301)` > `https://getfms.pro/$1`
+- Hostinger: hPanel > Domínios > getfms.pro > **Redirecionamentos** > Adicionar redirect 301 `www` → `https://getfms.pro`
+- OU usar Firebase Hosting redirect (mais clean):
+  ```json
+  // firebase.json → hosting.redirects:
+  "redirects": [
+    {"source": "**", "destination": "https://getfms.pro/:splat",
+     "type": 301, "regex": "^https://www\\.getfms\\.pro(.*)$"}
+  ]
+  ```
 
 ---
 
