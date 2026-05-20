@@ -23,8 +23,11 @@ env:
       - RUNTIME
 
   - variable: NEXT_PUBLIC_APP_URL
-    # URL do app Flutter (subdomain dedicado) em prod
-    value: https://app.getfms.pro
+    # 2026-05-19 hotfix — URL RELATIVA pra unificar origin
+    # (mesmo padrão Apple: landing e app numa coisa só).
+    # /app/index.html é servido por Next.js como static via public/app/.
+    # public/app/ tem Flutter buildado pra opspilot-prod nesta branch.
+    value: /app/index.html
     availability:
       - BUILD
       - RUNTIME
