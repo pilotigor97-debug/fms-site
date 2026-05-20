@@ -182835,8 +182835,7 @@ j=o.pop()
 m=A.Y(j)
 l=a.a
 A.eB().$1("[FinancialDashboard] margin "+l+" falhou: "+A.t(m))
-l=A.cIx(0,0,0,l,l,0,0,!1,0,0,0,0,0,0,0,0,0,0)
-q=l
+q=A.cIx(0,0,0,l,a.e,0,0,!1,0,0,0,0,0,0,0,0,0,0)
 s=1
 break
 s=6
