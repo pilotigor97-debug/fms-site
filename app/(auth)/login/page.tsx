@@ -2,8 +2,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Check, AlertCircle } from "lucide-react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { ArrowRight, Check, AlertCircle, Mail, X } from "lucide-react";
+import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { getClientAuth } from "@/lib/firebase-client";
 
 export default function LoginPage() {
@@ -13,6 +16,65 @@ export default function LoginPage() {
   const [remember, setRemember] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Esqueci senha — modal inline + sendPasswordResetEmail
+  const [resetOpen, setResetOpen] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+  const [resetLoading, setResetLoading] = useState(false);
+  const [resetMessage, setResetMessage] = useState<{
+    kind: "success" | "error";
+    text: string;
+  } | null>(null);
+
+  async function submitReset(e: React.FormEvent) {
+    e.preventDefault();
+    if (resetLoading) return;
+    const targetEmail = resetEmail.trim();
+    if (!targetEmail) {
+      setResetMessage({ kind: "error", text: "Digite seu e-mail primeiro." });
+      return;
+    }
+    setResetLoading(true);
+    setResetMessage(null);
+    try {
+      const auth = getClientAuth();
+      await sendPasswordResetEmail(auth, targetEmail);
+      setResetMessage({
+        kind: "success",
+        text:
+          "Se essa conta existe, enviamos um link de redefinição. Confere a caixa de entrada e o spam.",
+      });
+    } catch (err) {
+      const code = (err as { code?: unknown })?.code;
+      // Por segurança, NÃO confirma se conta existe — mesma mensagem
+      // pra "user-not-found" e sucesso. Só revela erros operacionais.
+      if (typeof code === "string") {
+        if (code === "auth/invalid-email") {
+          setResetMessage({ kind: "error", text: "E-mail inválido." });
+        } else if (code === "auth/too-many-requests") {
+          setResetMessage({
+            kind: "error",
+            text: "Muitas tentativas. Aguarde uns minutos.",
+          });
+        } else {
+          // user-not-found, network-failed, etc — mostra mensagem genérica
+          setResetMessage({
+            kind: "success",
+            text:
+              "Se essa conta existe, enviamos um link de redefinição. Confere a caixa de entrada e o spam.",
+          });
+        }
+      }
+    } finally {
+      setResetLoading(false);
+    }
+  }
+
+  function openReset() {
+    setResetEmail(email); // Pre-preenche se já tinha digitado no form
+    setResetMessage(null);
+    setResetOpen(true);
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -110,9 +172,13 @@ export default function LoginPage() {
         <div className="flex flex-col gap-1.5">
           <label className="mono flex justify-between">
             <span>Senha</span>
-            <a href="#" className="text-blue-600 normal-case tracking-normal">
+            <button
+              type="button"
+              onClick={openReset}
+              className="text-blue-600 normal-case tracking-normal hover:underline"
+            >
               Esqueci
-            </a>
+            </button>
           </label>
           <input
             className="border rounded-md px-3 py-2.5"
@@ -163,6 +229,88 @@ export default function LoginPage() {
           Criar workspace
         </Link>
       </p>
+
+      {/* Modal Esqueci senha — overlay + form simples */}
+      {resetOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4"
+          onClick={() => setResetOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-xl max-w-md w-full p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h2 className="text-xl font-medium tracking-tight">
+                  Esqueci minha senha
+                </h2>
+                <p className="text-sm text-ink-500 mt-1">
+                  Vamos enviar um link de redefinição pro seu email.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setResetOpen(false)}
+                className="text-ink-400 hover:text-ink-700"
+                aria-label="Fechar"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <form onSubmit={submitReset} className="flex flex-col gap-3">
+              <label className="mono text-xs">E-mail da conta</label>
+              <input
+                className="border rounded-md px-3 py-2.5"
+                type="email"
+                required
+                value={resetEmail}
+                onChange={(e) => setResetEmail(e.target.value)}
+                autoFocus
+                autoComplete="email"
+                placeholder="voce@empresa.com.br"
+              />
+
+              {resetMessage && (
+                <div
+                  className={`text-sm rounded-md p-3 flex items-start gap-2 ${
+                    resetMessage.kind === "success"
+                      ? "bg-green-50 text-green-700 border border-green-200"
+                      : "bg-red-50 text-red-600 border border-red-200"
+                  }`}
+                >
+                  {resetMessage.kind === "success" ? (
+                    <Mail size={16} className="mt-0.5 shrink-0" />
+                  ) : (
+                    <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                  )}
+                  <span>{resetMessage.text}</span>
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={resetLoading}
+                className="bg-navy-900 text-white rounded-md py-2.5 font-medium disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                {resetLoading ? (
+                  <span className="text-sm">Enviando…</span>
+                ) : (
+                  <>
+                    Enviar link <ArrowRight size={14} />
+                  </>
+                )}
+              </button>
+            </form>
+
+            <p className="text-xs text-ink-400 mt-3 text-center">
+              Por segurança, NÃO informamos se a conta existe.
+              {" "}Se você cadastrou com esse email, vai chegar.
+            </p>
+          </div>
+        </div>
+      )}
     </>
   );
 }
