@@ -81,7 +81,7 @@ export default function DownloadPage() {
               </div>
             </div>
             <p className="text-sm text-ink-700 mb-5">
-              App Store em breve. Por enquanto instale como Web App pelo
+              App Store planejado pra H2 2026. Por enquanto instale como Web App pelo
               Safari — fica idêntico ao app nativo: ícone na tela de início,
               tela cheia, funciona offline.
             </p>

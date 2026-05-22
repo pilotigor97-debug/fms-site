@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Termos de uso do FMS (Field Management System) — condições de utilização da plataforma SaaS.",
 };
 
-const TERMS_VERSION = "2026-05-08";
+const TERMS_VERSION = "2026-05-21";
 
 export default function TermosUso() {
   return (
@@ -70,7 +70,7 @@ export default function TermosUso() {
         <p>
           O FMS é cobrado via assinatura mensal recorrente, processada pelo
           parceiro Asaas IP S.A. (PIX, boleto ou cartão de crédito). Período
-          de teste gratuito (trial) de 7 dias está disponível para novos
+          de teste gratuito (trial) de 14 dias está disponível para novos
           cadastros, sem necessidade de cartão.
         </p>
         <p>
@@ -101,7 +101,85 @@ export default function TermosUso() {
         </p>
       </Section>
 
-      <Section title="6. Propriedade intelectual">
+      <Section title="6. Confidencialidade e Compromisso de Não-Concorrência">
+        <p>
+          <strong>6.1. Divulgação de conflito de interesse.</strong> A operadora do FMS
+          declara que possui vínculo familiar/societário com{" "}
+          <strong>SoluClean LTDA</strong>, empresa atuante na vertical de
+          locação de equipamentos. Este vínculo é divulgado em conformidade com
+          princípios de transparência e boa-fé contratual.
+        </p>
+        <p>
+          <strong>6.2. Compromisso formal de não-uso comercial.</strong> A operadora do
+          FMS compromete-se a:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            <strong>Nunca compartilhar, vender, ceder, expor, agregar ou
+            repassar</strong> dados da Cliente Contratante (incluindo dados de
+            seus clientes finais, equipamentos, contratos, faturamento, margem
+            ou qualquer informação operacional) à SoluClean LTDA ou a qualquer
+            outra pessoa física ou jurídica;
+          </li>
+          <li>
+            <strong>Limitar acesso técnico aos dados</strong> exclusivamente a
+            operações necessárias para manutenção do sistema (suporte, debug,
+            migração), sempre com <strong>audit log inviolável</strong>{" "}
+            disponível à Cliente Contratante mediante solicitação;
+          </li>
+          <li>
+            <strong>Garantir isolamento técnico</strong> entre Clientes
+            Contratantes via arquitetura multi-tenant com regras de acesso em
+            três camadas (Firestore rules + filtros de consulta + asserts no
+            backend), auditável por terceiros mediante NDA recíproco.
+          </li>
+        </ul>
+        <p>
+          <strong>6.3. Direito de auditoria.</strong> A Cliente Contratante tem
+          o direito de solicitar, a qualquer tempo e sem custo:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            Relatório de quem acessou seus dados nos últimos 90 dias (incluindo
+            acessos da operadora para fins de suporte);
+          </li>
+          <li>
+            Auditoria independente, mediante NDA recíproco, das regras técnicas
+            de isolamento multi-tenant;
+          </li>
+          <li>
+            Documentação técnica do isolamento, disponível publicamente em{" "}
+            <a className="underline" href="/seguranca">fms.io/seguranca</a>.
+          </li>
+        </ul>
+        <p>
+          <strong>6.4. Penalidade.</strong> A violação comprovada deste
+          compromisso enseja:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            Indenização integral por perdas e danos materiais e morais à
+            Cliente Contratante prejudicada;
+          </li>
+          <li>
+            <strong>Direito de rescisão imediata sem multa</strong> por parte da
+            Cliente Contratante;
+          </li>
+          <li>
+            Sanções administrativas e civis cabíveis nos termos da LGPD (Lei
+            13.709/2018) e do Código Civil.
+          </li>
+        </ul>
+        <p>
+          <strong>6.5. Transparência radical.</strong> O FMS mantém política
+          pública e atualizada de segurança e isolamento técnico em{" "}
+          <a className="underline" href="/seguranca">fms.io/seguranca</a>, com
+          documentação acessível para due diligence pela Cliente Contratante ou
+          seus consultores jurídicos antes da contratação.
+        </p>
+      </Section>
+
+      <Section title="7. Propriedade intelectual">
         <p>
           O FMS, incluindo código-fonte, design, marca e todas as
           funcionalidades, é propriedade exclusiva de{" "}
@@ -118,7 +196,7 @@ export default function TermosUso() {
         </p>
       </Section>
 
-      <Section title="7. Disponibilidade e SLA">
+      <Section title="8. Disponibilidade e SLA">
         <p>
           Buscamos disponibilidade de 99,5% mensal. Manutenções programadas
           serão comunicadas com 48h de antecedência sempre que possível.
@@ -128,7 +206,7 @@ export default function TermosUso() {
         </p>
       </Section>
 
-      <Section title="8. Limitação de responsabilidade">
+      <Section title="9. Limitação de responsabilidade">
         <p>
           Na máxima extensão permitida por lei:
         </p>
@@ -154,7 +232,7 @@ export default function TermosUso() {
         </ul>
       </Section>
 
-      <Section title="9. Cancelamento e rescisão">
+      <Section title="10. Cancelamento e rescisão">
         <p>
           A Cliente Contratante pode cancelar a qualquer momento pela tela
           "Configurações da conta". Após confirmação, o acesso continua
@@ -167,7 +245,7 @@ export default function TermosUso() {
         </p>
       </Section>
 
-      <Section title="10. Alterações dos Termos">
+      <Section title="11. Alterações dos Termos">
         <p>
           Reservamo-nos o direito de atualizar estes Termos. Mudanças
           materiais serão notificadas por email e via banner no app, com
@@ -176,7 +254,7 @@ export default function TermosUso() {
         </p>
       </Section>
 
-      <Section title="11. Foro">
+      <Section title="12. Foro">
         <p>
           Aplica-se a legislação brasileira. Fica eleito o foro da Comarca
           de <strong>[SUA COMARCA]</strong>, Estado <strong>[SEU ESTADO]</strong>,
@@ -185,11 +263,11 @@ export default function TermosUso() {
         </p>
       </Section>
 
-      <Section title="12. Contato">
+      <Section title="13. Contato">
         <p>
           Dúvidas sobre estes Termos:{" "}
-          <a className="underline" href="mailto:atendimento.solucleanrj@gmail.com">
-            atendimento.solucleanrj@gmail.com
+          <a className="underline" href="mailto:fms.saas@gmail.com">
+            fms.saas@gmail.com
           </a>
         </p>
       </Section>

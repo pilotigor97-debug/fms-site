@@ -42,7 +42,7 @@ export const facilities: VerticalMarketing = {
     ],
   },
   ia: {
-    eyebrow: "IA contextual",
+    eyebrow: "IA contextual · beta temporário",
     headline: "A IA entende facilities.",
     intro:
       "Vocabulário operacional do seu setor — postos, escalas, ocorrências, rondas — sem precisar adaptar prompts de outro segmento.",

@@ -42,7 +42,7 @@ export const hvac: VerticalMarketing = {
     ],
   },
   ia: {
-    eyebrow: "IA contextual",
+    eyebrow: "IA contextual · beta temporário",
     headline: "A IA fala HVAC.",
     intro:
       "Assistente treinado pro vocabulário de climatização — compressor, capilar, gás refrigerante, capacidade BTU — e conectado ao histórico real dos equipamentos.",

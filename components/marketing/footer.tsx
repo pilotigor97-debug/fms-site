@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const cols = [
-  { title: "Produto",   links: [["Recursos","/recursos"],["Planos","/planos"],["Baixar app","/download"],["Roadmap","#"]] },
-  { title: "Empresa",   links: [["Sobre","#"],["Clientes","#"],["Contato","/contato"],["Carreiras","#"]] },
-  { title: "Recursos",  links: [["Documentação","#"],["API","#"],["Status","#"],["Segurança","#"]] },
-  { title: "Legal",     links: [["Privacidade","/politica-privacidade"],["Termos","/termos-uso"],["DPO: atendimento.solucleanrj@gmail.com","mailto:atendimento.solucleanrj@gmail.com"]] },
+  { title: "Produto",   links: [["Recursos","/recursos"],["Planos","/planos"],["Economia","/economia"],["Comparar","/comparacao"]] },
+  { title: "Empresa",   links: [["FAQ","/faq"],["Contato","/contato"],["Baixar app","/download"]] },
+  { title: "Guias",     links: [["Guia Rental","/rental/guia"],["Guia Facilities","/facilities/guia"]] },
+  { title: "Legal",     links: [["Privacidade","/politica-privacidade"],["Termos","/termos-uso"],["Segurança","/seguranca"],["DPO: fms.saas@gmail.com","mailto:fms.saas@gmail.com"]] },
 ] as const;
 
 export function Footer() {

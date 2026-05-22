@@ -107,12 +107,19 @@ function SelfServiceForm({
   const vertical = verticalFromUrl ?? verticalSelected;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (loading) return;
     if (!vertical) {
       setError("Selecione o segmento da sua empresa antes de continuar.");
+      return;
+    }
+    if (!acceptedTerms) {
+      setError(
+        "Você precisa aceitar os Termos de Uso e a Política de Privacidade.",
+      );
       return;
     }
     setLoading(true);
@@ -127,6 +134,8 @@ function SelfServiceForm({
           directorName,
           email,
           password,
+          acceptedTermsVersion: "2026-05-21",
+          acceptedPrivacyVersion: "2026-05-21",
           ...(vertical ? { vertical } : {}),
         }),
       });
@@ -276,6 +285,38 @@ function SelfServiceForm({
         </li>
       </ul>
 
+      <label className="flex items-start gap-2.5 text-sm text-ink-700 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          required
+          checked={acceptedTerms}
+          onChange={(e) => setAcceptedTerms(e.target.checked)}
+          className="mt-0.5 w-4 h-4 accent-navy-900 cursor-pointer"
+        />
+        <span>
+          Li e aceito os{" "}
+          <a
+            href="/termos-uso"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-ink-900"
+          >
+            Termos de Uso
+          </a>{" "}
+          e a{" "}
+          <a
+            href="/politica-privacidade"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-ink-900"
+          >
+            Política de Privacidade
+          </a>{" "}
+          (versão 2026-05-21), incluindo a cláusula de confidencialidade e
+          compromisso de não-uso comercial dos dados (Seção 6).
+        </span>
+      </label>
+
       {error && (
         <div className="flex items-start gap-2 px-3 py-2.5 bg-red-50 border border-red-200 rounded-md text-sm text-red-900">
           <AlertCircle size={16} className="mt-0.5 flex-shrink-0" />
@@ -284,8 +325,8 @@ function SelfServiceForm({
       )}
 
       <button
-        disabled={loading}
-        className="inline-flex items-center justify-center gap-2 bg-navy-900 text-white px-5 py-3 rounded font-medium hover:bg-ink-900 disabled:opacity-60"
+        disabled={loading || !acceptedTerms}
+        className="inline-flex items-center justify-center gap-2 bg-navy-900 text-white px-5 py-3 rounded font-medium hover:bg-ink-900 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? (
           "Criando empresa…"

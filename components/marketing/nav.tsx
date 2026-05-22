@@ -11,8 +11,9 @@ export function Nav() {
         </Link>
         <nav className="ml-10 flex items-center gap-7 text-sm text-ink-700">
           <Link href="/recursos">Recursos</Link>
+          <Link href="/comparacao">Comparar</Link>
           <Link href="/planos">Planos</Link>
-          <Link href="/download">App</Link>
+          <Link href="/economia">Economia</Link>
           <Link href="/contato">Contato</Link>
         </nav>
         <div className="ml-auto flex items-center gap-2">

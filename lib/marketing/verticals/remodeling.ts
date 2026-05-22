@@ -42,7 +42,7 @@ export const remodeling: VerticalMarketing = {
     ],
   },
   ia: {
-    eyebrow: "IA contextual",
+    eyebrow: "IA contextual · beta temporário",
     headline: "A IA entende obra.",
     intro:
       "Assistente configurado pra o vocabulário de reforma e construção. Sem termos genéricos de manutenção industrial.",

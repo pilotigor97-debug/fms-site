@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Política de privacidade do FMS (Field Management System) — em conformidade com a LGPD (Lei 13.709/2018).",
 };
 
-const PRIVACY_VERSION = "2026-05-08";
+const PRIVACY_VERSION = "2026-05-21";
 
 export default function PoliticaPrivacidade() {
   return (
@@ -27,8 +27,8 @@ export default function PoliticaPrivacidade() {
           <strong>[SUA RAZÃO SOCIAL LTDA]</strong>, inscrita no CNPJ sob{" "}
           <strong>[SEU CNPJ]</strong>, com sede em{" "}
           <strong>[SEU ENDEREÇO]</strong>, endereço eletrônico{" "}
-          <a className="underline" href="mailto:atendimento.solucleanrj@gmail.com">
-            atendimento.solucleanrj@gmail.com
+          <a className="underline" href="mailto:fms.saas@gmail.com">
+            fms.saas@gmail.com
           </a>
           .
         </p>
@@ -226,8 +226,8 @@ export default function PoliticaPrivacidade() {
           </li>
           <li>
             Por email:{" "}
-            <a className="underline" href="mailto:atendimento.solucleanrj@gmail.com">
-              atendimento.solucleanrj@gmail.com
+            <a className="underline" href="mailto:fms.saas@gmail.com">
+              fms.saas@gmail.com
             </a>
             . Resposta em até 15 dias úteis.
           </li>
@@ -274,13 +274,91 @@ export default function PoliticaPrivacidade() {
         </p>
         <p className="mt-2">
           <strong>Email:</strong>{" "}
-          <a className="underline" href="mailto:atendimento.solucleanrj@gmail.com">
-            atendimento.solucleanrj@gmail.com
+          <a className="underline" href="mailto:fms.saas@gmail.com">
+            fms.saas@gmail.com
           </a>
         </p>
       </Section>
 
-      <Section title="14. Atualizações desta política">
+      <Section title="14. Compromisso de Não-Uso Comercial e Conflito de Interesses">
+        <p>
+          <strong>14.1. Divulgação de conflito de interesse.</strong> A
+          operadora do FMS possui vínculo familiar/societário com{" "}
+          <strong>SoluClean LTDA</strong>, empresa atuante na vertical de
+          locação de equipamentos. Esta divulgação atende aos princípios de
+          transparência (Art. 6, VI da LGPD) e boa-fé.
+        </p>
+        <p>
+          <strong>14.2. Compromisso de não-uso dos dados.</strong> Os dados
+          tratados em nome dos Clientes Contratantes <strong>não são
+          acessados, copiados, agregados, vendidos ou repassados</strong> à
+          SoluClean LTDA nem a qualquer outra pessoa física ou jurídica para
+          fins comerciais, competitivos, de benchmark ou inteligência de
+          mercado.
+        </p>
+        <p>
+          <strong>14.3. Acesso técnico restrito.</strong> Apenas a operadora
+          (atualmente: 1 desenvolvedor responsável) possui acesso técnico aos
+          dados, exclusivamente para:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>Manutenção, suporte e debug do sistema;</li>
+          <li>Migração de dados sob solicitação;</li>
+          <li>Investigação de incidentes de segurança.</li>
+        </ul>
+        <p>
+          Todo acesso é registrado em <strong>audit log inviolável</strong>{" "}
+          (coleção <code>audit_logs</code>) disponível à Cliente Contratante
+          mediante solicitação ou via tela administrativa do app (em
+          implementação).
+        </p>
+        <p>
+          <strong>14.4. Isolamento técnico multi-tenant.</strong> A arquitetura
+          do FMS implementa isolamento em três camadas:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            <strong>Camada 1:</strong> Regras Firestore (<code>firestore.rules</code>)
+            que negam acesso cross-tenant no banco;
+          </li>
+          <li>
+            <strong>Camada 2:</strong> Filtros obrigatórios por <code>companyId</code>{" "}
+            em todas as queries de leitura;
+          </li>
+          <li>
+            <strong>Camada 3:</strong> Asserts (<code>assertCompanyId</code>,{" "}
+            <code>assertOwnership</code>) em todas as Cloud Functions antes
+            de qualquer operação.
+          </li>
+        </ul>
+        <p>
+          Documentação técnica completa do isolamento está disponível em{" "}
+          <a className="underline" href="/seguranca">fms.io/seguranca</a> para
+          due diligence prévia à contratação.
+        </p>
+        <p>
+          <strong>14.5. Direitos da Cliente Contratante.</strong> A Cliente
+          pode, a qualquer tempo e sem custo, solicitar:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>Relatório de acessos aos seus dados nos últimos 90 dias;</li>
+          <li>
+            Auditoria independente das regras técnicas de isolamento (mediante
+            NDA recíproco);
+          </li>
+          <li>
+            Rescisão imediata sem multa caso descumprimento deste compromisso
+            seja comprovado.
+          </li>
+        </ul>
+        <p>
+          Penalidades por violação estão previstas na Seção 6 dos Termos de
+          Uso, sem prejuízo das sanções administrativas e civis cabíveis nos
+          termos da LGPD.
+        </p>
+      </Section>
+
+      <Section title="15. Atualizações desta política">
         <p>
           Podemos atualizar esta política periodicamente. Mudanças relevantes
           serão notificadas aos clientes contratantes por email e via banner
@@ -289,7 +367,7 @@ export default function PoliticaPrivacidade() {
         </p>
       </Section>
 
-      <Section title="15. Foro">
+      <Section title="16. Foro">
         <p>
           Esta política é regida pelas leis brasileiras. Fica eleito o foro
           da Comarca de [SUA COMARCA], Estado [SEU ESTADO], para dirimir

@@ -43,7 +43,7 @@ export const rental: VerticalMarketing = {
     ],
   },
   ia: {
-    eyebrow: "IA contextual",
+    eyebrow: "IA contextual · beta temporário",
     headline: "A IA fala manutenção industrial.",
     intro:
       "O assistente entende o vocabulário operacional do seu setor — preventiva, corretiva, instalação, retirada — e usa os dados reais do sistema, não palpite.",

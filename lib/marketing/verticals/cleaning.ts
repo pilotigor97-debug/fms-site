@@ -42,7 +42,7 @@ export const cleaning: VerticalMarketing = {
     ],
   },
   ia: {
-    eyebrow: "IA contextual",
+    eyebrow: "IA contextual · beta temporário",
     headline: "A IA fala como sua equipe fala.",
     intro:
       "O FMS configura automaticamente o assistente para o seu segmento. Nenhuma frase genérica de manutenção industrial — só o que faz sentido pra limpeza.",

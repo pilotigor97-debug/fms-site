@@ -82,7 +82,7 @@ env:
       - RUNTIME
 
   - variable: SALES_LEAD_EMAIL
-    value: atendimento.solucleanrj@gmail.com
+    value: fms.saas@gmail.com
     availability:
       - RUNTIME
 

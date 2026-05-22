@@ -75,7 +75,7 @@ env:
   - variable: SALES_LEAD_EMAIL
     # Pode ser o mesmo do dev por enquanto. Atualizar se quiser email
     # dedicado pra leads prod.
-    value: atendimento.solucleanrj@gmail.com
+    value: fms.saas@gmail.com
     availability:
       - RUNTIME
 
