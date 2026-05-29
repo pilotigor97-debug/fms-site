@@ -41,8 +41,16 @@
   <script>
     (async function() {
       try {
-        // TROCAR EM PROD: 'opspilot-dev' → 'opspilot-prod'
-        var PROJECT = 'opspilot-dev';
+        // Detect Firebase project pelo hostname.
+        //  - opspilot-dev.web.app + dev preview channels + localhost → opspilot-dev
+        //  - getfms.pro + opspilot-prod.web.app + custom domains → opspilot-prod
+        // 2026-05-28 Plano 9: alinhar com Flutter bundle env-aware via APP_ENV.
+        var host = window.location.hostname;
+        var PROJECT = (host.indexOf('opspilot-dev') !== -1 ||
+                       host === 'localhost' ||
+                       host === '127.0.0.1')
+          ? 'opspilot-dev'
+          : 'opspilot-prod';
         var REST_BASE = 'https://firestore.googleapis.com/v1/projects/' + PROJECT +
                         '/databases/(default)/documents/';
 
